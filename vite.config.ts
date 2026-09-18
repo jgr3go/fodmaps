@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
 // GitHub Pages serves project sites under /<repo>/. Override with VITE_BASE=/ for a custom domain.
-const base = process.env.VITE_BASE ?? '/fodmap/';
+const base = process.env.VITE_BASE ?? '/fodmaps/';
 
 export default defineConfig({
   base,

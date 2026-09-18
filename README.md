@@ -13,7 +13,7 @@ sensitivities (allergens, histamine, caffeine, fat) precede bad days, at 0 to 3 
 
 ```bash
 npm install
-npm run dev          # http://localhost:5173/fodmap/  (open on your phone via the LAN address vite prints)
+npm run dev          # http://localhost:5173/fodmaps/  (open on your phone via the LAN address vite prints)
 npm test             # analysis engine tests (synthetic trigger detection)
 npm run build        # regenerates data/ and src/data/, typechecks, builds dist/
 ```
@@ -22,7 +22,7 @@ Rebuild the reference table after editing anything in `research/`: `npm run data
 
 ## Deploy the app
 
-Push to `main`. `.github/workflows/deploy.yml` builds and publishes to GitHub Pages at `https://<user>.github.io/<repo>/`.
+Push to `main`. `.github/workflows/deploy.yml` builds and publishes to GitHub Pages at `https://jgr3go.github.io/fodmaps/`.
 Enable Pages (Settings, Pages, Source: GitHub Actions) once. For a custom domain set the repo variable `VITE_BASE=/`.
 
 Install on Android: open the Pages URL in Chrome, menu, "Add to Home screen".
