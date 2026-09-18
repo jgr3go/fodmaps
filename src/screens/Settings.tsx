@@ -4,7 +4,7 @@ import { Button, Card, Label } from '../components/ui';
 import { getSetting, setSetting } from '../db/repo';
 import { downloadExport, importJson } from '../lib/export';
 import { requestPermission } from '../lib/notifications';
-import { syncNow, type SyncStatus } from '../lib/sync';
+import { normalizeApiBase, syncNow, type SyncStatus } from '../lib/sync';
 import { REFERENCE } from '../lib/fodmap';
 
 export default function Settings() {
@@ -15,15 +15,23 @@ export default function Settings() {
     setApiBase((await getSetting('apiBase')) ?? ''); setToken((await getSetting('token')) ?? '');
     const s = await getSetting('lastSync'); if (s) setStatus(JSON.parse(s)); setReminder((await getSetting('reminder')) !== 'off');
   })(); }, []);
-  async function save() { await setSetting('apiBase', apiBase.trim()); await setSetting('token', token.trim()); setBusy(true); setStatus(await syncNow()); setBusy(false); }
+  async function save() {
+    const base = normalizeApiBase(apiBase); setApiBase(base);
+    await setSetting('apiBase', base); await setSetting('token', token.trim());
+    await runSync();
+  }
+  async function runSync() {
+    setBusy(true);
+    try { setStatus(await syncNow()); } catch (e) { setStatus({ at: Date.now(), ok: false, pushed: 0, pulled: 0, error: (e as Error).message }); } finally { setBusy(false); }
+  }
   return (
     <div className="space-y-3">
       <h1 className="text-lg font-semibold">Settings</h1>
       <Card>
         <Label>Sync server</Label>
-        <input value={apiBase} onChange={(e) => setApiBase(e.target.value)} placeholder="https://gutlog-api.example.com" className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm" autoCapitalize="off" />
-        <input value={token} onChange={(e) => setToken(e.target.value)} placeholder="access token" type="password" className="mt-2 w-full rounded-xl border border-slate-300 px-3 py-2 text-sm" />
-        <div className="mt-2 flex items-center gap-2"><Button onClick={save} disabled={busy}>Save and sync</Button><Button kind="ghost" onClick={async () => { setBusy(true); setStatus(await syncNow()); setBusy(false); }} disabled={busy}>Sync now</Button></div>
+        <input value={apiBase} onChange={(e) => setApiBase(e.target.value)} placeholder="https://gutlog-api.example.com" className="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm" autoCapitalize="off" autoCorrect="off" spellCheck={false} inputMode="url" />
+        <input value={token} onChange={(e) => setToken(e.target.value)} placeholder="access token" type="password" autoCapitalize="off" autoCorrect="off" spellCheck={false} className="mt-2 w-full rounded-xl border border-slate-300 px-3 py-2 text-sm" />
+        <div className="mt-2 flex items-center gap-2"><Button onClick={save} disabled={busy}>Save and sync</Button><Button kind="ghost" onClick={runSync} disabled={busy}>Sync now</Button>{busy && <span className="text-xs text-slate-400">syncing…</span>}</div>
         {status && <p className={`mt-2 text-xs ${status.ok ? 'text-emerald-700' : 'text-rose-700'}`}>{status.ok ? `Synced ${new Date(status.at).toLocaleString()} · pushed ${status.pushed}, pulled ${status.pulled}` : `Sync failed: ${status.error}`}</p>}
         <p className="mt-1 text-[11px] text-slate-500">Data lives on this phone first and syncs to your server when configured. Syncing also enables the plain-English readout.</p>
       </Card>

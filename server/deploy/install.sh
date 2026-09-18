@@ -35,9 +35,14 @@ fi
 sed 's#ExecStart=/usr/bin/node#ExecStart=/opt/node24/bin/node#' deploy/gutlog-api.service > /etc/systemd/system/gutlog-api.service
 systemctl daemon-reload && systemctl enable --now gutlog-api >/dev/null 2>&1; systemctl restart gutlog-api; sleep 2
 systemctl is-active gutlog-api; curl -fsS localhost:8787/health; echo
-# 6. nginx (port 80 now; certbot adds 443 once DNS exists)
-sed 's/gutlog-api.EXAMPLE.COM/gutlog-api.jongregorowicz.com/' deploy/nginx-gutlog-api.conf > /etc/nginx/sites-available/gutlog-api
-ln -sf /etc/nginx/sites-available/gutlog-api /etc/nginx/sites-enabled/gutlog-api
-nginx -t 2>&1 | tail -1 && systemctl reload nginx
+# 6. nginx, first run only. Never overwrite an existing site file: certbot edits it in place to add the 443 block,
+#    and rewriting it from the template silently drops HTTPS (nginx then serves the default site's cert).
+if [ ! -f /etc/nginx/sites-available/gutlog-api ]; then
+  sed 's/gutlog-api.EXAMPLE.COM/gutlog-api.jongregorowicz.com/' deploy/nginx-gutlog-api.conf > /etc/nginx/sites-available/gutlog-api
+  ln -sf /etc/nginx/sites-available/gutlog-api /etc/nginx/sites-enabled/gutlog-api
+  nginx -t 2>&1 | tail -1 && systemctl reload nginx
+else
+  echo "nginx site exists, left untouched ($(grep -c 'managed by Certbot' /etc/nginx/sites-available/gutlog-api) certbot lines)"
+fi
 echo "--- foundry untouched:"; sha256sum /etc/nginx/sites-enabled/foundry | cut -c1-16; systemctl is-active nginx
 echo "--- token (enter this in the app):"; grep API_TOKEN /etc/gutlog-api.env

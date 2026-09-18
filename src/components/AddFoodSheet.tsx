@@ -64,7 +64,7 @@ export function AddFoodSheet({ open, onClose, date, slot }: { open: boolean; onC
   };
 
   return (
-    <Sheet open={open} onClose={onClose} title={`Add to ${SLOT_LABEL[slot]}`}>
+    <Sheet open={open} onClose={onClose} title={`Add to ${SLOT_LABEL[slot]}`} anchor="top">
       {ingredientMode && pending ? (
         <DishForm initialName={pending.name} initialParts={pending.ingredients} onCancel={() => setIngredientMode(false)} onSave={saveDish} />
       ) : (

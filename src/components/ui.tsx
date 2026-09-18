@@ -14,11 +14,13 @@ export function Chip({ active, onClick, children, tone = 'teal' }: { active: boo
   const on = tone === 'teal' ? 'bg-teal-700 text-white border-teal-700' : 'bg-rose-600 text-white border-rose-600';
   return <button type="button" onClick={onClick} className={`rounded-full border px-3 py-1 text-xs font-medium ${active ? on : 'border-slate-300 bg-white text-slate-700'}`}>{children}</button>;
 }
-export function Sheet({ open, onClose, title, children }: { open: boolean; onClose: () => void; title: string; children: ReactNode }) {
+/** `anchor="top"` keeps the panel above the on-screen keyboard while typing (bottom sheets get covered on Android). */
+export function Sheet({ open, onClose, title, children, anchor = 'bottom' }: { open: boolean; onClose: () => void; title: string; children: ReactNode; anchor?: 'top' | 'bottom' }) {
   if (!open) return null;
+  const top = anchor === 'top';
   return (
-    <div className="fixed inset-0 z-50 flex items-end bg-black/30" onClick={onClose}>
-      <div className="mx-auto max-h-[92vh] w-full max-w-lg overflow-y-auto rounded-t-3xl bg-white p-4 pb-8" onClick={(e) => e.stopPropagation()}>
+    <div className={`fixed inset-0 z-50 flex ${top ? 'items-start' : 'items-end'} bg-black/30`} onClick={onClose}>
+      <div className={`mx-auto w-full max-w-lg overflow-y-auto bg-white p-4 ${top ? 'max-h-[85dvh] rounded-b-3xl pb-4' : 'max-h-[92dvh] rounded-t-3xl pb-8'}`} style={top ? { paddingTop: 'max(1rem, env(safe-area-inset-top))' } : undefined} onClick={(e) => e.stopPropagation()}>
         <div className="mb-3 flex items-center justify-between">
           <h2 className="text-base font-semibold">{title}</h2>
           <button className="text-slate-500" onClick={onClose}>✕</button>

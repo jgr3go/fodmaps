@@ -10,16 +10,29 @@ import { SYNC_TABLES, type SyncTable } from '../types';
 export interface SyncStatus { at: number; ok: boolean; pushed: number; pulled: number; error?: string }
 type Row = { id: string; updatedAt: number; deleted: 0 | 1 } & Record<string, unknown>;
 
+export function normalizeApiBase(raw: string): string {
+  let s = raw.trim().replace(/\/+$/, '');
+  if (s && !/^https?:\/\//i.test(s)) s = `https://${s}`;
+  return s;
+}
 export async function getSyncConfig(): Promise<{ apiBase: string; token: string } | null> {
-  const apiBase = (await getSetting('apiBase'))?.replace(/\/$/, '') ?? '';
-  const token = (await getSetting('token')) ?? '';
+  const apiBase = normalizeApiBase((await getSetting('apiBase')) ?? '');
+  const token = ((await getSetting('token')) ?? '').trim();
   return apiBase && token ? { apiBase, token } : null;
 }
 
 let inflight: Promise<SyncStatus> | null = null;
+/** Never rejects: every failure becomes a SyncStatus with an error message the UI can show. */
 export function syncNow(): Promise<SyncStatus> {
   if (inflight) return inflight;
-  inflight = doSync().finally(() => { inflight = null; });
+  inflight = doSync()
+    .catch(async (e: unknown) => {
+      const msg = e instanceof Error ? (e.name === 'TimeoutError' ? 'timed out after 20 s' : e.name === 'TypeError' ? `network or CORS error (${e.message})` : e.message) : String(e);
+      const s: SyncStatus = { at: Date.now(), ok: false, pushed: 0, pulled: 0, error: msg };
+      await setSetting('lastSync', JSON.stringify(s)).catch(() => {});
+      return s;
+    })
+    .finally(() => { inflight = null; });
   return inflight;
 }
 
@@ -38,8 +51,13 @@ async function doSync(): Promise<SyncStatus> {
   const res = await fetch(`${cfg.apiBase}/sync`, {
     method: 'POST', headers: { 'content-type': 'application/json', authorization: `Bearer ${cfg.token}` },
     body: JSON.stringify({ since: lastPull, changes }),
+    signal: AbortSignal.timeout(20000),
   });
-  if (!res.ok) { const s = { at: Date.now(), ok: false, pushed: 0, pulled: 0, error: `HTTP ${res.status}` }; await setSetting('lastSync', JSON.stringify(s)); return s; }
+  if (!res.ok) {
+    const detail = await res.json().then((j: { error?: string }) => j.error).catch(() => '');
+    const s: SyncStatus = { at: Date.now(), ok: false, pushed: 0, pulled: 0, error: `HTTP ${res.status}${detail ? `: ${detail}` : ''}` };
+    await setSetting('lastSync', JSON.stringify(s)); return s;
+  }
   const body = (await res.json()) as { now: number; changes: Partial<Record<SyncTable, Row[]>> };
   let pulled = 0;
   await db.transaction('rw', [db.foods, db.entries, db.dayLogs, db.symptomEvents, db.phases], async () => {
