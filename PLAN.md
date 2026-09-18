@@ -10,7 +10,7 @@ and surfacing which foods (and FODMAP groups) correlate with symptoms over 0–3
 | Area | Decision |
 |---|---|
 | Device | Android only (Chrome PWA) |
-| Storage | Local-first in IndexedDB; sync to Linode API in phase 1 (no separate backup screen) |
+| Storage | Local-first in IndexedDB; sync to DigitalOcean API in phase 1 (no separate backup screen) |
 | Frontend host | GitHub Pages |
 | API host | Existing Linode (nginx already proxies a Foundry VTT server; we add a server block, not replace) |
 | Symptoms | Daily 0–10 distress + symptom-type checkboxes |
@@ -120,7 +120,7 @@ Caveats shown in-app: needs ~4–6 weeks of data before results mean much; corre
 4. Symptoms card.
 5. Foods library (basic: view, override rating, add ingredients).
 6. GitHub Actions deploy to Pages.
-7. Linode API: Hono + SQLite, `/sync`, bearer auth, systemd unit, nginx server block + certbot, CORS.
+7. DigitalOcean API: Hono + SQLite, `/sync`, bearer auth, systemd unit, nginx server block + certbot, CORS.
 8. Sync client: push/pull on app open and after edits; status in Settings.
 
 **Phase 2 — insights**
@@ -136,8 +136,8 @@ Caveats shown in-app: needs ~4–6 weeks of data before results mean much; corre
 
 ## Needed from you before phase 1 step 7
 
-- Subdomain for the API (e.g. `fodmap-api.yourdomain`) and DNS pointed at the Linode.
-- Confirm Node is available on the Linode (or OK to install via nvm/apt).
+- Subdomain for the API (e.g. `fodmap-api.yourdomain`) and DNS pointed at the droplet.
+- Confirm Node is available on the droplet (or OK to install via nvm/apt).
 - GitHub repo name (sets the Pages base path).
 - Anthropic API key placed in the server env (phase 2).
 
@@ -158,7 +158,7 @@ Built and verified (typecheck, 7 engine tests, headless-Chrome walkthrough with 
 
 Not done, needs Jon:
 1. Create the GitHub repo, push, enable Pages (Source: GitHub Actions). Base path defaults to `/<repo>/`.
-2. Linode: DNS for the API subdomain, then follow `server/deploy/README.md`. Put `ANTHROPIC_API_KEY` in `/etc/gutlog-api.env`.
+2. Droplet: DNS for the API subdomain, then follow `server/deploy/README.md`. Put `ANTHROPIC_API_KEY` in `/etc/gutlog-api.env`.
 3. In the app's Settings: API URL + token.
 
 Known limits: reminders cannot fire on a schedule without a push server (in-app nudge + periodic background sync where Chrome allows it). Icons are generated placeholders. Moderate/high serving boundaries are conventions, not published values.

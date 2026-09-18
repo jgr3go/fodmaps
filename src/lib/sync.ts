@@ -1,5 +1,5 @@
 /**
- * Local-first sync with the Linode API. Every synced table has id/updatedAt/deleted. Push rows changed since the
+ * Local-first sync with the DigitalOcean API. Every synced table has id/updatedAt/deleted. Push rows changed since the
  * last push, pull rows changed since the last pull, last-writer-wins by updatedAt on both sides.
  */
 import { useEffect } from 'react';
