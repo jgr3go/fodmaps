@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Button, Card, Label } from './ui';
 import { FodmapPills, RatingPill } from './FodmapPills';
 import { useFoodResolver } from '../db/hooks';
@@ -16,6 +16,12 @@ export function FindRatings({ view }: { view: FoodView }) {
   const [baseQ, setBaseQ] = useState('');
   const [look, setLook] = useState<LookupResult | null>(null);
   const [looking, setLooking] = useState<string | null>(null);
+  const [elapsed, setElapsed] = useState(0);
+  const busy = !!looking && !looking.startsWith('Failed');
+  useEffect(() => {
+    if (!busy) return; setElapsed(0);
+    const t = setInterval(() => setElapsed((e) => e + 1), 1000); return () => clearInterval(t);
+  }, [busy]);
   const [scanText, setScanText] = useState('');
   const [showScan, setShowScan] = useState(false);
   const scan = useMemo(() => (scanText.trim() ? scanIngredientText(scanText) : []), [scanText]);
@@ -39,7 +45,7 @@ export function FindRatings({ view }: { view: FoodView }) {
     await saveFood({ ...user, ...patch, source: 'user' }); setBaseQ('');
   }
   async function ask() {
-    setLooking('Searching the web and asking Claude, up to a minute…'); setLook(null);
+    setLooking('Searching the web and asking Claude. This usually takes 20 to 40 seconds.'); setLook(null);
     try { setLook(await lookupFood(view.name)); setLooking(null); } catch (e) { setLooking(`Failed: ${(e as Error).message}`); }
   }
   async function applyLookup() {
@@ -61,13 +67,13 @@ export function FindRatings({ view }: { view: FoodView }) {
         </button>
       )}
       <div className="flex flex-wrap gap-2">
-        <Button kind="ghost" onClick={ask} disabled={!!looking && !looking.startsWith('Failed')}>Ask Claude</Button>
+        <Button kind="ghost" onClick={ask} disabled={busy}>{busy ? `Asking… ${elapsed}s` : 'Ask Claude'}</Button>
         <a href={googleUrl(view.name)} target="_blank" rel="noreferrer" className="rounded-xl bg-slate-100 px-3 py-2 text-sm font-medium text-slate-700">Google</a>
         <a href={monashUrl(view.name)} target="_blank" rel="noreferrer" className="rounded-xl bg-slate-100 px-3 py-2 text-sm font-medium text-slate-700">Monash blog</a>
         <Button kind="ghost" onClick={markLow}>Mark all low</Button>
         <Button kind="ghost" onClick={() => setShowScan(!showScan)}>Scan a label</Button>
       </div>
-      {looking && <p className="mt-2 text-xs text-slate-500">{looking}</p>}
+      {looking && <p className={`mt-2 text-xs ${busy ? 'text-teal-700' : 'text-rose-700'}`}>{busy && <span className="mr-1 inline-block h-2 w-2 animate-pulse rounded-full bg-teal-600" />}{looking}</p>}
       {look && (
         <div className="mt-2 rounded-xl bg-slate-50 p-3">
           <div className="flex items-center justify-between"><span className="text-xs font-semibold">Claude says · confidence {look.confidence}{look.cached ? ' · cached' : ''}</span><FodmapPills profile={look} /></div>
