@@ -38,6 +38,7 @@ app.post('/sync', async (c) => {
 app.post('/analyze', async (c) => {
   const digest = await c.req.json().catch(() => null);
   if (!digest) return c.json({ error: 'bad json' }, 400);
+  if (!process.env.ANTHROPIC_API_KEY) return c.json({ error: 'The server has no ANTHROPIC_API_KEY yet. Add it to /etc/gutlog-api.env and restart gutlog-api.' }, 503);
   try {
     return c.json({ text: await summarize(digest) });
   } catch (e) {

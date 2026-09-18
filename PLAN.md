@@ -1,6 +1,6 @@
 # FODMAP / GI Tracker — Build Plan
 
-> **Status 2026-09-17:** phases 1–3 built and smoke-tested locally (see Status at the end). Remaining work needs Jon: GitHub repo + Pages, droplet deploy, API key.
+> **Status 2026-09-18:** phases 1–3 built, deployed to https://jgr3go.github.io/fodmaps/, API live at https://gutlog-api.jongregorowicz.com with TLS. Only the Anthropic key on the server and entering the URL + token in the app remain.
 
 Personal PWA for logging food by meal slot and daily GI distress, flagging high-FODMAP foods inline,
 and surfacing which foods (and FODMAP groups) correlate with symptoms over 0–3 day lags.
