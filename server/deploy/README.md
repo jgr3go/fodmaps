@@ -2,6 +2,19 @@
 
 Assumes Ubuntu/Debian with nginx already running (the Foundry proxy stays as is). Needs Node 22.13+ (24 recommended).
 
+**Scripted path (what was actually run on 2026-09-17):** `deploy/install.sh` does steps 1–6 below idempotently. It installs
+Node 24 as a tarball under `/opt/node24` so the system Node (v14, used by Foundry) is untouched, and points the systemd unit at
+`/opt/node24/bin/node`. Run it as root after rsyncing `server/` to `/tmp/gutlog-api/`:
+
+```bash
+rsync -az --delete --exclude node_modules --exclude dist --exclude data server/ jggeneric:/tmp/gutlog-api/
+ssh jggeneric 'bash -s' < server/deploy/install.sh
+```
+
+Then, once DNS for the API subdomain resolves: `ssh jggeneric certbot --nginx -d gutlog-api.jongregorowicz.com`.
+
+**Manual path:**
+
 ```bash
 # 1. Node (skip if node --version is >= 22.13)
 curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash - && sudo apt-get install -y nodejs
