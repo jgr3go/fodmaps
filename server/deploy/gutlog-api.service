@@ -1,0 +1,21 @@
+[Unit]
+Description=Gut Log sync + analysis API
+After=network.target
+
+[Service]
+Type=simple
+User=gutlog
+Group=gutlog
+WorkingDirectory=/opt/gutlog-api
+EnvironmentFile=/etc/gutlog-api.env
+ExecStart=/usr/bin/node dist/index.js
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/gutlog-api
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

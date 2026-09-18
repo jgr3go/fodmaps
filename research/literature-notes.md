@@ -1,0 +1,60 @@
+# Literature source family: FODMAP food-composition papers
+
+Accessed 2026-09-17. Companion to `literature.json` (built by a reproducible script that computes every rating from the numbers below).
+
+## Cutoffs used (Varney et al. 2017, J Gastroenterol Hepatol 32 Suppl 1:53-61, Table 1)
+
+Grams per standard serve of a single food, below which the food is low FODMAP:
+
+| FODMAP | Cutoff |
+|---|---|
+| Oligosaccharides (total fructans + GOS) in core grain products, legumes, nuts, seeds | < 0.30 g |
+| Oligosaccharides in vegetables, fruit, all other products | < 0.20 g |
+| Sorbitol or mannitol (each) | < 0.20 g |
+| Total polyols | < 0.40 g |
+| Excess fructose (fructose - glucose), other FODMAPs present | < 0.15 g |
+| Excess fructose, fresh fruit/vegetable where it is the only FODMAP | < 0.40 g |
+| Lactose | < 1.00 g |
+
+Table 1 was read from the Semantic Scholar table extraction of the paper (the Wiley full text is paywalled/Cloudflare-blocked). The same cutoffs are restated in Ispiryan 2022 (section 1) and in Torbica 2025 Table 4 (which also converts them to g/100 g for US, Canadian, EU and Australian pasta serving sizes).
+
+Rating bands applied in the JSON: **low** = below cutoff at the stated typical serving; **moderate** = at/above cutoff but below 2x cutoff; **high** = at/above 2x cutoff. Varney defines only the low cutoff; the moderate band is our operational convention (Monash's app uses its own undisclosed moderate band). `lowServing` / `moderateServing` / `highServing` are computed from the most restrictive FODMAP as 100 x cutoff / concentration and the governing FODMAP is stated in each note. `"any"` means high even at < 5 g.
+
+## Papers found and access level
+
+| Paper | Access obtained | What was used |
+|---|---|---|
+| Muir JG et al. 2007, J Agric Food Chem 55:6619 (fructan + free fructose, 60 veg / 43 fruit, Megazyme assay) | Abstract only (PubMed/Europe PMC). ACS full text paywalled; no Semantic Scholar table images. | Abstract ranges (garlic/artichoke/shallot/leek/onion 1.2-17.4 g/100 g; longan/white peach/persimmon/melon 0.21-0.46). Individual values taken from secondary reproductions: PMC9967297 (garlic 17.4, Jerusalem artichoke 12.2, shallot 8.9) and the foodintolerances.org tabulation (which mixes Muir 2007 with Van Loo 1995 ranges - flagged in notes). |
+| Muir JG et al. 2009, J Agric Food Chem 57:554 (HPLC-ELSD, 45 veg / 41 fruit) | Abstract only. | Abstract ranges (sorbitol/mannitol in 18 veg 0.09-2.96; raffinose/stachyose in 7 veg 0.08-0.68; FOS in 19 veg 0.02-0.71; excess fructose in apple, pear, mango, clingstone peach, watermelon). Its per-food sorbitol/mannitol values are reproduced as the "published data" column of Yao 2014 Table 1 (see below) and were used from there. |
+| Biesiekierski JR et al. 2011, J Hum Nutr Diet 24:154 (55 grains/cereals/pulses) | Abstract only. | Per-portion fructan from the abstract: couscous 1.12 g, rice 0, dark rye bread 0.6, spelt bread 0.07, wheat-free muesli 0.96, oats 0.11, muesli fruit bar 0.81, potato chips 0.05 g/portion. Lima-bean polyols via Yao 2014. |
+| Varney J et al. 2017, J Gastroenterol Hepatol 32(S1):53 (cutoffs) | Tables 1-3 as images via Semantic Scholar; abstract via Europe PMC. | Table 1 cutoffs; Table 2 worked examples with g/serve: pink lady apple 165 g (sorbitol 1.37, excess fructose 10.6), orange 130 g (nd), mushroom 74 g (mannitol 1.95, sorbitol 0.08), onion 36 g (fructan 0.65, GOS 0.07), zucchini 66 g (fructan 0.19), wheat bread 49 g (fructan 0.33, GOS 0.10, excess fructose 0.08), gluten-free bread 52 g (0.10/0.07/0.12), quinoa pasta 155 g (fructan 0.22), haricot beans boiled 88 g (GOS 0.96, fructan 0.23). |
+| Yao CK et al. 2014, J Hum Nutr Diet 27(S2):263 (sorbitol/mannitol in 73 foods) | Table 1 (3 pages) as images via Semantic Scholar. | Complete sorbitol/mannitol g/100 g and g/serve for vegetables, legumes, fruit, dried fruit, grains, nuts, beverages, gum, wasabi; includes Muir 2009 and USDA comparison columns. |
+| Tuck C et al. 2018, J Hum Nutr Diet 31:422 (35 plant-based/vegan foods; cooking, sprouting, pickling, canning) | Abstract (Europe PMC) + the authors' two Monash blog posts + Table 3 (meal plan) image. Data tables not accessible. | g FODMAP/serve for low foods (coconut milk 0.24, dulse 0.02, nutritional yeast 0.01, soy cheese 0.03, tempeh 0.26, wheat gluten 0.13, wheat grass 0.05; ND in agar, egg replacer, vegan egg yolk, kelp noodles, spirulina); high ratings for quinoa milk, soy yoghurt, wheat germ, silken tofu; processing effects: pickling lowered onion/beetroot/garlic FODMAPs 89-97%; >30 min boiling lowered red kidney beans 32% vs lentils 13%; all canned and activated foods lower than unprocessed. |
+| Lomer/Whelan group: Prasad et al. 2016, Int J Food Sci Nutr 67:383 (UK ethnic-minority foods) | Abstract only. | channa dal fructan 0.13 / GOS 0.36; fenugreek seeds 1.11 / 1.27; guava 0.41 / nd; karela nd / 1.12; tamarind 2.35 / 0.02 g/100 g. |
+| Whelan K et al. 2011, Int J Food Sci Nutr 62:498 (UK breads) | Abstract only (figshare record is metadata-only; ResearchGate/Taylor & Francis blocked). | Fructan 0.61-1.94 g/100 g across breads; rye 1.94; gluten-free mean 1.00 (0.36-1.79); granary 0.76-1.09. |
+| Ispiryan L, Zannini E, Arendt EK 2022, Compr Rev Food Sci Food Saf 21:1491 | Full text PDF (Sapienza IRIS repository). | Restated cutoffs (<0.3 g oligos, <0.15 g excess fructose, <0.4 g polyols, <1 g lactose, <0.5 g total FODMAPs excl. lactose); cereal fructan 1-5%, pulse GOS 1->10%; Table 1 mechanisms of FODMAP reduction (cooking leach, sourdough/yeast hydrolysis, alpha-galactosidase, germination). Contrary to the brief, the review has no per-food composition table. |
+| Chumpitazi BP et al. 2018, J Pediatr 199:252 (US foods) | Full text + Table 1 via NCBI efetch (PMC6063767). | Fructose, glucose, excess fructose, lactose, mannitol, sorbitol, FOS, GOS for 38 US products (Udi's GF bread/bun/muffin, HFCS beverages, Lactaid, Kraft cheddar, rice milk, fresh fruit, frozen vegetables, Chex cereals, pretzels, chips, fries, mayonnaise, mustard, peanut butter). |
+| Pejcz E et al. 2024, Molecules 29:282 (fructans in cooked grains) | Full text + tables via Europe PMC XML. | Fructan g/100 g dry mass + moisture of 16 cooked rices/groats; converted to as-eaten in the JSON (value x (1 - moisture)). |
+| Torbica A et al. 2025, Foods (FODMAP profile of wholegrain pasta) | Full text + tables via Europe PMC XML (PMC11853891). | Full FODMAP profile of 13 dry and cooked pastas; cooking losses 31-84%; cutoff/serving-size Table 4. |
+| Pejcz E et al. 2023, Foods (boosted sourdough) | Full text via PMC (PMC10572427). | Wheat flour fructan 1.15; yeast bread 0.22; 72 h sourdough 0.09-0.10 g/100 g (58-62% below control, 92% below flour). |
+| Ziegler JU et al. 2016, J Funct Foods 25:257 (wheat species, proofing) | Abstract/summary only. | Flours 1.24-2.01 g FODMAP/100 g DM; >4 h proofing reduces bread FODMAPs up to 90%; process > variety. |
+| Italian prebiotic survey 2025, Nutrients 17:683 (PMC11858256) | Full text + Table 1. | HPAEC-PAD kestose/nystose/FF-nystose/raffinose/stachyose in 35 foods (legumes, soy products, cereals, nuts, berries). |
+| Spanish GF vs gluten-containing survey 2024, Plant Foods Hum Nutr (PMC11178640) | Full text + Table 1. | Group means (excess fructose, sorbitol, fructan, raffinose) for breakfast cereals, pasta, bread, biscuits, bakery, pastry. |
+| Austrian bakery survey 2021, Foods (PMC8074121) | Full text + Tables 2-3. | FOS DP2-7 and DP>7 (g/kg) and fructose in 10 breads and 20 flours. |
+| Swedish database extension 2020, BMC Nutr (PMC7499970) | Full text. | Methods table documenting the sampling/analysis of Muir 2007/2009, Biesiekierski 2011, Whelan 2011, Yao 2014 (pooled samples from 5 grocers + 5 greengrocers in Melbourne, triplicate analysis, fresh-weight as eaten). No per-food values. |
+| Lenhart & Chey 2017 polyol review (PMC5508768), Fedewa & Rao 2014 (PMC3934501), Moshfegh 1999 J Nutr, Van Loo 1995 | Not usable: tables absent from XML / qualitative only / ScienceDirect blocked. | - |
+| Asian/Turkish composition papers | Searched; only a Turkish sourdough-strain paper and a Korean FODMAP-intake paper surfaced, neither with per-food composition tables. | - |
+| USDA FoodData Central (SR Legacy / Foundation) | API with DEMO_KEY, ~20 items before hourly rate limit. | Lactose: whole milk 5.05 (Foundation 4.81), cheddar 0.16-0.18, cottage 2.67, heavy cream 2.92, butter 0.58, mozzarella 0.0. |
+| Canadian Nutrient File 2015 (Health Canada API) | Full access; 257 items pulled. | Fructose, glucose, sucrose, lactose, and where present sorbitol/mannitol per 100 g for fruit, vegetables, dairy, nuts, legumes, sweeteners, condiments (food codes cited in each note). Used to compute excess fructose where no FODMAP-specific analysis exists. |
+
+## Methodological caveats
+
+1. **Australian cultivars, Melbourne retail sampling.** Muir 2007/2009, Biesiekierski 2011, Yao 2014 and Varney 2017 all analysed pooled samples bought from five supermarkets and five greengrocers in Melbourne; results are fresh-weight "as eaten". Cultivar, ripeness and season shift fructan and sugar levels substantially (onion 0.1-7.5 g/100 g across types; banana fructan rises with ripening).
+2. **Analytical method differences are large.** Total fructan by enzymatic Megazyme assay (Muir 2007, Biesiekierski, Whelan, Lomer) captures all DP; HPLC-ELSD (Muir 2009, Yao) and HPAEC-PAD without DP>7 (Italian 2025) capture only short FOS (kestose, nystose), so the Italian rye/spelt/bran numbers are lower bounds. Conversely the Austrian HPAEC-CAD method including DP>7 gives rye/wheat bread fructans 3-5 g/100 g, several-fold above Whelan's 0.6-1.9. Never mix methods when comparing two foods.
+3. **Polyol values disagree by up to 10x between sources.** Yao 2014 present-study vs Muir 2009 vs USDA: celery mannitol 1.5 vs 0.2; plum sorbitol 2.4 vs 0.6; apple sorbitol 1.2 vs 0.3; cherries 0.7 vs 1.0-2.1. The JSON records the Monash value and lists the alternatives in the note.
+4. **Excess fructose from generic composition databases (CNF/USDA) is not a FODMAP analysis.** Fructose-minus-glucose differences of 0.1-0.5 g/100 g (honeydew, cantaloupe, strawberries, raspberries, pineapple, grapes, zucchini) are within analytical variability and produce moderate/high ratings that disagree with Monash app ratings in several cases (grapes and Chumpitazi's US grapes even disagree on the sign). Treat those fructose ratings as provisional.
+5. **Serving size drives every rating.** Varney cutoffs are per serve; Torbica 2025 shows the same pasta flips between low and high across US (140 g cooked), Canadian (85 g) and EU (180-220 g) serving conventions. We state the serving used for each food; change it and the rating changes.
+6. **Processing effects are directional, mostly not quantified per 100 g.** Tuck 2018's canned/pickled/sprouted comparisons are available only as percent reductions and Monash serve sizes; the pickled onion/garlic/beetroot entries in the JSON are derived (raw value x residual fraction) and marked as such. Cooking pasta removes 31-84% of FOS depending on water ratio, time and shape; sourdough/long proofing removes 60-90% of wheat fructans; canning halves legume GOS (leaches into liquid; drain and rinse).
+7. **US processed foods differ from Australian.** Varney 2017 and Chumpitazi 2018 both note HFCS-sweetened US products (lemonade, cranberry juice cocktail, sweet tea, GF bakery) carry excess fructose that the equivalent Australian/Canadian sucrose-sweetened products (e.g. CNF ketchup) do not.
+8. **Coverage gaps.** Per-food tables of Muir 2007, Muir 2009, Biesiekierski 2011, Whelan 2011 and Tuck 2018 remain behind paywalls; GOS for most nuts, fructans for dates/dried figs/garlic powder, and lactose for ricotta, feta, goat milk and sweetened condensed milk were not retrievable from open sources (USDA rate limit), so those fields are null rather than guessed.
+9. **Moderate band is a convention.** Varney only defines the low threshold; our 1x-2x moderate band and the computed serving thresholds are arithmetic, not clinical findings.

@@ -1,0 +1,1773 @@
+[
+  {
+    "keyword": "inulin",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Concentrated fructan fiber additive; Monash 'definite avoid regardless of position in ingredient list'. Common in bars, yogurt, cereal, plant milk, fiber/gut-health products.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "chicory root",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Concentrated fructan fiber additive; Monash 'definite avoid regardless of position in ingredient list'. Common in bars, yogurt, cereal, plant milk, fiber/gut-health products.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "chicory root fiber",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Concentrated fructan fiber additive; Monash 'definite avoid regardless of position in ingredient list'. Common in bars, yogurt, cereal, plant milk, fiber/gut-health products.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "chicory root fibre",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Concentrated fructan fiber additive; Monash 'definite avoid regardless of position in ingredient list'. Common in bars, yogurt, cereal, plant milk, fiber/gut-health products.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "chicory root extract",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Concentrated fructan fiber additive; Monash 'definite avoid regardless of position in ingredient list'. Common in bars, yogurt, cereal, plant milk, fiber/gut-health products.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "chicory extract",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Concentrated fructan fiber additive; Monash 'definite avoid regardless of position in ingredient list'. Common in bars, yogurt, cereal, plant milk, fiber/gut-health products.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "oligofructose",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Concentrated fructan fiber additive; Monash 'definite avoid regardless of position in ingredient list'. Common in bars, yogurt, cereal, plant milk, fiber/gut-health products.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "fructooligosaccharides",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Concentrated fructan fiber additive; Monash 'definite avoid regardless of position in ingredient list'. Common in bars, yogurt, cereal, plant milk, fiber/gut-health products.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "fructo-oligosaccharides",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Concentrated fructan fiber additive; Monash 'definite avoid regardless of position in ingredient list'. Common in bars, yogurt, cereal, plant milk, fiber/gut-health products.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "fos",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Concentrated fructan fiber additive; Monash 'definite avoid regardless of position in ingredient list'. Common in bars, yogurt, cereal, plant milk, fiber/gut-health products.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "scfos",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Concentrated fructan fiber additive; Monash 'definite avoid regardless of position in ingredient list'. Common in bars, yogurt, cereal, plant milk, fiber/gut-health products.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "jerusalem artichoke",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Concentrated fructan fiber additive; Monash 'definite avoid regardless of position in ingredient list'. Common in bars, yogurt, cereal, plant milk, fiber/gut-health products.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "yacon",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Concentrated fructan fiber additive; Monash 'definite avoid regardless of position in ingredient list'. Common in bars, yogurt, cereal, plant milk, fiber/gut-health products.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "agave inulin",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Concentrated fructan fiber additive; Monash 'definite avoid regardless of position in ingredient list'. Common in bars, yogurt, cereal, plant milk, fiber/gut-health products.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "prebiotic fiber",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Concentrated fructan fiber additive; Monash 'definite avoid regardless of position in ingredient list'. Common in bars, yogurt, cereal, plant milk, fiber/gut-health products.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "galactooligosaccharides",
+    "group": "gos",
+    "rating": "high",
+    "note": "Prebiotic GOS additive; Monash 'definite avoid'. Infant formula, prebiotic supplements.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "galacto-oligosaccharides",
+    "group": "gos",
+    "rating": "high",
+    "note": "Prebiotic GOS additive; Monash 'definite avoid'. Infant formula, prebiotic supplements.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "gos",
+    "group": "gos",
+    "rating": "high",
+    "note": "Prebiotic GOS additive; Monash 'definite avoid'. Infant formula, prebiotic supplements.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "garlic",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Any garlic form except infused oil; definite avoid. Exception: 'garlic infused oil' / 'garlic oil' is low - exclude that phrase.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "garlic powder",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Any garlic form except infused oil; definite avoid. Exception: 'garlic infused oil' / 'garlic oil' is low - exclude that phrase.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "granulated garlic",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Any garlic form except infused oil; definite avoid. Exception: 'garlic infused oil' / 'garlic oil' is low - exclude that phrase.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "dried garlic",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Any garlic form except infused oil; definite avoid. Exception: 'garlic infused oil' / 'garlic oil' is low - exclude that phrase.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "garlic salt",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Any garlic form except infused oil; definite avoid. Exception: 'garlic infused oil' / 'garlic oil' is low - exclude that phrase.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "garlic extract",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Any garlic form except infused oil; definite avoid. Exception: 'garlic infused oil' / 'garlic oil' is low - exclude that phrase.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "roasted garlic",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Any garlic form except infused oil; definite avoid. Exception: 'garlic infused oil' / 'garlic oil' is low - exclude that phrase.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "garlic puree",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Any garlic form except infused oil; definite avoid. Exception: 'garlic infused oil' / 'garlic oil' is low - exclude that phrase.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "onion",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Any onion/shallot/leek-bulb form; definite avoid. Exceptions: 'onion infused oil', 'green onion tops', 'spring onion greens', 'leek leaves'.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "onion powder",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Any onion/shallot/leek-bulb form; definite avoid. Exceptions: 'onion infused oil', 'green onion tops', 'spring onion greens', 'leek leaves'.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "dried onion",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Any onion/shallot/leek-bulb form; definite avoid. Exceptions: 'onion infused oil', 'green onion tops', 'spring onion greens', 'leek leaves'.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "granulated onion",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Any onion/shallot/leek-bulb form; definite avoid. Exceptions: 'onion infused oil', 'green onion tops', 'spring onion greens', 'leek leaves'.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "dried minced onion",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Any onion/shallot/leek-bulb form; definite avoid. Exceptions: 'onion infused oil', 'green onion tops', 'spring onion greens', 'leek leaves'.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "onion flakes",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Any onion/shallot/leek-bulb form; definite avoid. Exceptions: 'onion infused oil', 'green onion tops', 'spring onion greens', 'leek leaves'.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "onion extract",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Any onion/shallot/leek-bulb form; definite avoid. Exceptions: 'onion infused oil', 'green onion tops', 'spring onion greens', 'leek leaves'.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "onion salt",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Any onion/shallot/leek-bulb form; definite avoid. Exceptions: 'onion infused oil', 'green onion tops', 'spring onion greens', 'leek leaves'.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "shallot",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Any onion/shallot/leek-bulb form; definite avoid. Exceptions: 'onion infused oil', 'green onion tops', 'spring onion greens', 'leek leaves'.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "shallots",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Any onion/shallot/leek-bulb form; definite avoid. Exceptions: 'onion infused oil', 'green onion tops', 'spring onion greens', 'leek leaves'.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "leek",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Any onion/shallot/leek-bulb form; definite avoid. Exceptions: 'onion infused oil', 'green onion tops', 'spring onion greens', 'leek leaves'.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "vegetable powder",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Monash label blog: dehydrated vegetable powders usually contain onion/garlic.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "dehydrated vegetables",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Same as vegetable powder.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "vegetable stock",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Stock/broth/bouillon almost always onion+garlic+celery unless certified.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "stock",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Chicken/beef/vegetable stock, bouillon, broth - flag unless labeled onion/garlic-free.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "bouillon",
+    "group": "fructans",
+    "rating": "high",
+    "note": "See stock.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "natural flavors",
+    "group": "fructans",
+    "rating": null,
+    "note": "Unclassified; in savory products may hide garlic/onion (Spoonful). Flag only in savory items; under 2% unlikely to matter.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "spices",
+    "group": "fructans",
+    "rating": null,
+    "note": "Undeclared 'spices' in savory products may include garlic/onion; flag for review in savory items.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "wheat",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "wheat flour",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "whole wheat",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "wholemeal",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "durum",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "semolina",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "spelt",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "farro",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "emmer",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "kamut",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "einkorn",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "bulgur",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "couscous",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "wheat bran",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "wheat germ",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "graham flour",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "enriched flour",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "flour (unspecified)",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "bread crumbs",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "breadcrumbs",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "rusk",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Wheat fructans: position-dependent; small amounts (e.g. thickener late in list) usually fine, main ingredient moderate-high. Sourdough and spelt sourdough are exceptions.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "rye",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Rye/barley fructans; malt extract flag is position-dependent (fodzyme: barley malt syrup low only at 1/3 tbsp).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "rye flour",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Rye/barley fructans; malt extract flag is position-dependent (fodzyme: barley malt syrup low only at 1/3 tbsp).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "barley",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Rye/barley fructans; malt extract flag is position-dependent (fodzyme: barley malt syrup low only at 1/3 tbsp).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "barley flour",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Rye/barley fructans; malt extract flag is position-dependent (fodzyme: barley malt syrup low only at 1/3 tbsp).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "pearl barley",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Rye/barley fructans; malt extract flag is position-dependent (fodzyme: barley malt syrup low only at 1/3 tbsp).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "barley malt",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Rye/barley fructans; malt extract flag is position-dependent (fodzyme: barley malt syrup low only at 1/3 tbsp).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "barley malt extract",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Rye/barley fructans; malt extract flag is position-dependent (fodzyme: barley malt syrup low only at 1/3 tbsp).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "malt extract",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Rye/barley fructans; malt extract flag is position-dependent (fodzyme: barley malt syrup low only at 1/3 tbsp).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "malt syrup",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Rye/barley fructans; malt extract flag is position-dependent (fodzyme: barley malt syrup low only at 1/3 tbsp).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "malted barley",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Rye/barley fructans; malt extract flag is position-dependent (fodzyme: barley malt syrup low only at 1/3 tbsp).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "wheat starch",
+    "group": "fructans",
+    "rating": "low",
+    "note": "Refined starch, little fructan; usually acceptable unless a major ingredient (gautham50050 'moderate').",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "soy flour",
+    "group": "gos",
+    "rating": "high",
+    "note": "Monash label blog avoid. Also 'soya flour'.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "lupin flour",
+    "group": "gos",
+    "rating": "high",
+    "note": "Monash label blog avoid; also 'lupin', 'lupini'.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "chickpea flour",
+    "group": "gos",
+    "rating": "high",
+    "note": "Besan/gram flour; legume GOS.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "lentil flour",
+    "group": "gos",
+    "rating": "high",
+    "note": "Legume pasta/snacks.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "pea flour",
+    "group": "gos",
+    "rating": "moderate",
+    "note": "Whole pea flour GOS; pea protein isolate is a different, generally acceptable ingredient.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "textured vegetable protein",
+    "group": "gos",
+    "rating": "high",
+    "note": "TVP/soy protein (textured); gautham50050 high.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "soybeans",
+    "group": "gos",
+    "rating": "high",
+    "note": "'Whole soybeans' in soy milk = high; 'soy protein' soy milk = low (A Little Bit Yummy).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "soy protein isolate",
+    "group": "gos",
+    "rating": "low",
+    "note": "GOS removed in processing; low.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "soy lecithin",
+    "group": "gos",
+    "rating": "low",
+    "note": "Emulsifier; not a FODMAP source.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "cashew",
+    "group": "gos",
+    "rating": "high",
+    "note": "Cashew pieces/butter/milk high GOS-fructans (Spoonful).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "pistachio",
+    "group": "gos",
+    "rating": "high",
+    "note": "High GOS/fructans.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "almond",
+    "group": "gos",
+    "rating": "moderate",
+    "note": "Almonds moderate GOS; almond milk is dilute enough to be low (Spoonful).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "beans",
+    "group": "gos",
+    "rating": "high",
+    "note": "Kidney/black/navy/pinto/baked beans; canned rinsed chickpeas & lentils have small low serves.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "high fructose corn syrup",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess fructose; Monash label blog high but position-dependent for tiny amounts. Note EU 'glucose-fructose syrup' wording and OFF synonym 'isoglucose'. Plain 'corn syrup' and 'glucose syrup' are low - do not match those.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "hfcs",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess fructose; Monash label blog high but position-dependent for tiny amounts. Note EU 'glucose-fructose syrup' wording and OFF synonym 'isoglucose'. Plain 'corn syrup' and 'glucose syrup' are low - do not match those.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "glucose-fructose syrup",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess fructose; Monash label blog high but position-dependent for tiny amounts. Note EU 'glucose-fructose syrup' wording and OFF synonym 'isoglucose'. Plain 'corn syrup' and 'glucose syrup' are low - do not match those.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "fructose-glucose syrup",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess fructose; Monash label blog high but position-dependent for tiny amounts. Note EU 'glucose-fructose syrup' wording and OFF synonym 'isoglucose'. Plain 'corn syrup' and 'glucose syrup' are low - do not match those.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "glucose/fructose",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess fructose; Monash label blog high but position-dependent for tiny amounts. Note EU 'glucose-fructose syrup' wording and OFF synonym 'isoglucose'. Plain 'corn syrup' and 'glucose syrup' are low - do not match those.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "isoglucose",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess fructose; Monash label blog high but position-dependent for tiny amounts. Note EU 'glucose-fructose syrup' wording and OFF synonym 'isoglucose'. Plain 'corn syrup' and 'glucose syrup' are low - do not match those.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "corn sugar",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess fructose; Monash label blog high but position-dependent for tiny amounts. Note EU 'glucose-fructose syrup' wording and OFF synonym 'isoglucose'. Plain 'corn syrup' and 'glucose syrup' are low - do not match those.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "fructose",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess fructose; Monash label blog high but position-dependent for tiny amounts. Note EU 'glucose-fructose syrup' wording and OFF synonym 'isoglucose'. Plain 'corn syrup' and 'glucose syrup' are low - do not match those.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "crystalline fructose",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess fructose; Monash label blog high but position-dependent for tiny amounts. Note EU 'glucose-fructose syrup' wording and OFF synonym 'isoglucose'. Plain 'corn syrup' and 'glucose syrup' are low - do not match those.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "fruit sugar",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess fructose; Monash label blog high but position-dependent for tiny amounts. Note EU 'glucose-fructose syrup' wording and OFF synonym 'isoglucose'. Plain 'corn syrup' and 'glucose syrup' are low - do not match those.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "levulose",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess fructose; Monash label blog high but position-dependent for tiny amounts. Note EU 'glucose-fructose syrup' wording and OFF synonym 'isoglucose'. Plain 'corn syrup' and 'glucose syrup' are low - do not match those.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "honey",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "agave",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "agave nectar",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "agave syrup",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "molasses",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "treacle",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "golden syrup",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "date syrup",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "date paste",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "dates",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "coconut sugar",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "coconut nectar",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "sorghum syrup",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "yacon syrup",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "apple juice concentrate",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "pear juice concentrate",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "fruit juice concentrate",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "concentrated fruit juice",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "apple puree",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "pear puree",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "apple syrup",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "mango puree",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Excess-fructose (some also fructan) sweeteners; low only at ~1 tsp (honey 7 g, agave 1 tsp, molasses 1 tsp, golden/coconut sugar 1 tsp). Position-dependent per Monash label blog.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "apple",
+    "group": "fructose",
+    "rating": "high",
+    "note": "High FODMAP fruits (fructose and/or sorbitol) as ingredients - purees, juices, dried fruit, fillings.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "pear",
+    "group": "fructose",
+    "rating": "high",
+    "note": "High FODMAP fruits (fructose and/or sorbitol) as ingredients - purees, juices, dried fruit, fillings.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "mango",
+    "group": "fructose",
+    "rating": "high",
+    "note": "High FODMAP fruits (fructose and/or sorbitol) as ingredients - purees, juices, dried fruit, fillings.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "watermelon",
+    "group": "fructose",
+    "rating": "high",
+    "note": "High FODMAP fruits (fructose and/or sorbitol) as ingredients - purees, juices, dried fruit, fillings.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "cherry",
+    "group": "fructose",
+    "rating": "high",
+    "note": "High FODMAP fruits (fructose and/or sorbitol) as ingredients - purees, juices, dried fruit, fillings.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "peach",
+    "group": "fructose",
+    "rating": "high",
+    "note": "High FODMAP fruits (fructose and/or sorbitol) as ingredients - purees, juices, dried fruit, fillings.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "nectarine",
+    "group": "fructose",
+    "rating": "high",
+    "note": "High FODMAP fruits (fructose and/or sorbitol) as ingredients - purees, juices, dried fruit, fillings.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "apricot",
+    "group": "fructose",
+    "rating": "high",
+    "note": "High FODMAP fruits (fructose and/or sorbitol) as ingredients - purees, juices, dried fruit, fillings.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "plum",
+    "group": "fructose",
+    "rating": "high",
+    "note": "High FODMAP fruits (fructose and/or sorbitol) as ingredients - purees, juices, dried fruit, fillings.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "prune",
+    "group": "fructose",
+    "rating": "high",
+    "note": "High FODMAP fruits (fructose and/or sorbitol) as ingredients - purees, juices, dried fruit, fillings.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "fig",
+    "group": "fructose",
+    "rating": "high",
+    "note": "High FODMAP fruits (fructose and/or sorbitol) as ingredients - purees, juices, dried fruit, fillings.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "blackberry",
+    "group": "fructose",
+    "rating": "high",
+    "note": "High FODMAP fruits (fructose and/or sorbitol) as ingredients - purees, juices, dried fruit, fillings.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "lychee",
+    "group": "fructose",
+    "rating": "high",
+    "note": "High FODMAP fruits (fructose and/or sorbitol) as ingredients - purees, juices, dried fruit, fillings.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "raisins",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Dried grapes; low only at 1 tbsp.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "sultanas",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "See raisins.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "dried fruit",
+    "group": "fructose",
+    "rating": "moderate",
+    "note": "Concentrated fructose/fructans; low only in small amounts (Spoonful).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "sorbitol",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Polyol (sorbitol); high. Monash label blog: position-dependent but sugar-free confectionery/gum is usually mostly polyol. OFF additive tags en:e420/e421/e953/e965/e966/e967.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "e420",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Polyol (sorbitol); high. Monash label blog: position-dependent but sugar-free confectionery/gum is usually mostly polyol. OFF additive tags en:e420/e421/e953/e965/e966/e967.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "glucitol",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Polyol (sorbitol); high. Monash label blog: position-dependent but sugar-free confectionery/gum is usually mostly polyol. OFF additive tags en:e420/e421/e953/e965/e966/e967.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "mannitol",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Polyol (mannitol); high. Monash label blog: position-dependent but sugar-free confectionery/gum is usually mostly polyol. OFF additive tags en:e420/e421/e953/e965/e966/e967.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "e421",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Polyol (mannitol); high. Monash label blog: position-dependent but sugar-free confectionery/gum is usually mostly polyol. OFF additive tags en:e420/e421/e953/e965/e966/e967.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "xylitol",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Polyol (xylitol); high. Monash label blog: position-dependent but sugar-free confectionery/gum is usually mostly polyol. OFF additive tags en:e420/e421/e953/e965/e966/e967.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "e967",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Polyol (xylitol); high. Monash label blog: position-dependent but sugar-free confectionery/gum is usually mostly polyol. OFF additive tags en:e420/e421/e953/e965/e966/e967.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "birch sugar",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Polyol (xylitol); high. Monash label blog: position-dependent but sugar-free confectionery/gum is usually mostly polyol. OFF additive tags en:e420/e421/e953/e965/e966/e967.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "maltitol",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Polyol (maltitol); high. Monash label blog: position-dependent but sugar-free confectionery/gum is usually mostly polyol. OFF additive tags en:e420/e421/e953/e965/e966/e967.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "e965",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Polyol (maltitol); high. Monash label blog: position-dependent but sugar-free confectionery/gum is usually mostly polyol. OFF additive tags en:e420/e421/e953/e965/e966/e967.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "maltitol syrup",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Polyol (maltitol); high. Monash label blog: position-dependent but sugar-free confectionery/gum is usually mostly polyol. OFF additive tags en:e420/e421/e953/e965/e966/e967.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "hydrogenated glucose syrup",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Polyol (maltitol); high. Monash label blog: position-dependent but sugar-free confectionery/gum is usually mostly polyol. OFF additive tags en:e420/e421/e953/e965/e966/e967.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "isomalt",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Polyol (isomalt); high. Monash label blog: position-dependent but sugar-free confectionery/gum is usually mostly polyol. OFF additive tags en:e420/e421/e953/e965/e966/e967.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "e953",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Polyol (isomalt); high. Monash label blog: position-dependent but sugar-free confectionery/gum is usually mostly polyol. OFF additive tags en:e420/e421/e953/e965/e966/e967.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "lactitol",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Polyol (lactitol); high. Monash label blog: position-dependent but sugar-free confectionery/gum is usually mostly polyol. OFF additive tags en:e420/e421/e953/e965/e966/e967.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "e966",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Polyol (lactitol); high. Monash label blog: position-dependent but sugar-free confectionery/gum is usually mostly polyol. OFF additive tags en:e420/e421/e953/e965/e966/e967.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "hydrogenated starch hydrolysate",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Polyol (maltitol); high. Monash label blog: position-dependent but sugar-free confectionery/gum is usually mostly polyol. OFF additive tags en:e420/e421/e953/e965/e966/e967.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "sugar alcohol",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Polyol (polyol); high. Monash label blog: position-dependent but sugar-free confectionery/gum is usually mostly polyol. OFF additive tags en:e420/e421/e953/e965/e966/e967.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "polyol",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Polyol (polyol); high. Monash label blog: position-dependent but sugar-free confectionery/gum is usually mostly polyol. OFF additive tags en:e420/e421/e953/e965/e966/e967.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "erythritol",
+    "group": "polyols",
+    "rating": null,
+    "note": "E968; untested/better absorbed; base of many stevia/monk-fruit blends. Flag as caution, not high.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "e968",
+    "group": "polyols",
+    "rating": null,
+    "note": "Erythritol; see above.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "glycerol",
+    "group": "polyols",
+    "rating": null,
+    "note": "E422 glycerin; well absorbed, not classed as FODMAP in sources reviewed. Low priority flag.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "polydextrose",
+    "group": "fructans",
+    "rating": null,
+    "note": "E1200 synthetic fiber; not FODMAP-classified in public sources; fermentable, common in 'high fiber' bars. Caution flag.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "e1200",
+    "group": "fructans",
+    "rating": null,
+    "note": "Polydextrose; see above.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "soluble corn fiber",
+    "group": "fructans",
+    "rating": null,
+    "note": "Resistant dextrin; unrated - caution flag.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "resistant dextrin",
+    "group": "fructans",
+    "rating": null,
+    "note": "Unrated fiber additive; caution flag.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "resistant maltodextrin",
+    "group": "fructans",
+    "rating": null,
+    "note": "Fibersol-2; unrated; caution flag.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "milk",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "whole milk",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "skim milk",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "milk solids",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "milk solids non-fat",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "nonfat dry milk",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "skim milk powder",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "whole milk powder",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "milk powder",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "buttermilk",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "buttermilk powder",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "condensed milk",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "sweetened condensed milk",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "evaporated milk",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "lactose",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "whey",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "sweet whey",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "whey powder",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "whey protein concentrate",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "milk protein concentrate",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "cream",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "sour cream",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "yogurt",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "yoghurt",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "ice cream",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "custard",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "dulce de leche",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "ricotta",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "cottage cheese",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "mascarpone",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "cream cheese",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "kefir",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "goat milk",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "sheep milk",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Lactose sources (Monash label blog: milk, yogurt, cream, ice cream, milk powders, milk solids). Rating depends on amount and position; 'lactose-free' variants negate. Hard/aged cheese, butter, whey protein isolate and casein are low - exclude 'cheese' except soft fresh types.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "lactose-free",
+    "group": "lactose",
+    "rating": "low",
+    "note": "Negation keyword: presence overrides milk/whey matches.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "whey protein isolate",
+    "group": "lactose",
+    "rating": "low",
+    "note": "Filtered; negligible lactose.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "casein",
+    "group": "lactose",
+    "rating": "low",
+    "note": "Caseinate/milk protein isolate - negligible lactose.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "cheese",
+    "group": "lactose",
+    "rating": "low",
+    "note": "Aged/hard cheese low; only flag if 'cheese powder' or 'cheese sauce' (usually with milk solids + onion/garlic).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "cheese powder",
+    "group": "lactose",
+    "rating": "moderate",
+    "note": "Flavoring powder often with milk solids, whey and onion/garlic.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "coconut flour",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Spoonful: coconut flour high.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "coconut",
+    "group": "polyols",
+    "rating": "moderate",
+    "note": "Desiccated coconut/coconut milk sorbitol - low at 1/4 cup; coconut oil and coconut water differ (water high).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "celery",
+    "group": "polyols",
+    "rating": "moderate",
+    "note": "Celery/celery seed/celery powder mannitol - small amounts fine (Spoonful).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "mushroom",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Mushroom powder/extract mannitol; oyster/shimeji exempt.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "cauliflower",
+    "group": "polyols",
+    "rating": "high",
+    "note": "Cauliflower rice/powder mannitol.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "artichoke",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Globe/Jerusalem artichoke; canned hearts have a small low serve.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "asparagus",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Fructans/fructose.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "beet",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Beet powder/juice color moderate; trace coloring fine (Spoonful).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "carob",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Carob powder moderate (Spoonful); locust bean gum thickener is fine.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "chicory",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Chicory coffee/leaf/root - all inulin-bearing.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "dandelion",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Dandelion root coffee/tea fructans.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "chamomile",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Chamomile in tea blends.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "fennel",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Fennel seed/tea fructans; bulb has 75 g low serve.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "oolong",
+    "group": "fructans",
+    "rating": "high",
+    "note": "Oolong tea fructans.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "kombucha",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Low only at 180 ml.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "rum",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Rum and rum flavoring high fructose per Monash-derived sources.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "cider",
+    "group": "fructose",
+    "rating": "high",
+    "note": "Apple/pear cider - fructose + sorbitol.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "sourdough",
+    "group": "fructans",
+    "rating": "low",
+    "note": "Negation: genuine long-fermented sourdough lowers wheat fructans (only if no yeast and 'sourdough culture' listed).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "garlic infused oil",
+    "group": "fructans",
+    "rating": "low",
+    "note": "Negation: infused oil is low; exclude from garlic match.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "garlic oil",
+    "group": "fructans",
+    "rating": "low",
+    "note": "Negation: see garlic infused oil.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "green onion tops",
+    "group": "fructans",
+    "rating": "low",
+    "note": "Negation for onion match.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "spring onion greens",
+    "group": "fructans",
+    "rating": "low",
+    "note": "Negation for onion match.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "chives",
+    "group": "fructans",
+    "rating": "low",
+    "note": "Low; often mistaken for onion.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "asafoetida",
+    "group": "fructans",
+    "rating": "low",
+    "note": "Low onion/garlic substitute.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "maple syrup",
+    "group": "fructose",
+    "rating": "low",
+    "note": "Negation: low sweetener; often flagged wrongly.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "rice malt syrup",
+    "group": "fructose",
+    "rating": "low",
+    "note": "Low sweetener.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "brown rice syrup",
+    "group": "fructose",
+    "rating": "low",
+    "note": "Low sweetener.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "glucose syrup",
+    "group": "fructose",
+    "rating": "low",
+    "note": "Low - must not match HFCS rule.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "corn syrup",
+    "group": "fructose",
+    "rating": "low",
+    "note": "Regular corn syrup is glucose; low. Only 'high fructose corn syrup' is high.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "dextrose",
+    "group": "fructose",
+    "rating": "low",
+    "note": "Low.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "maltodextrin",
+    "group": "fructans",
+    "rating": "low",
+    "note": "Glucose polymer; low.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "stevia",
+    "group": "polyols",
+    "rating": "low",
+    "note": "Low itself; check for erythritol/inulin bulking (they will match separately).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "sucralose",
+    "group": "polyols",
+    "rating": "low",
+    "note": "Low.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "aspartame",
+    "group": "polyols",
+    "rating": "low",
+    "note": "Low.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "acesulfame",
+    "group": "polyols",
+    "rating": "low",
+    "note": "Low.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "saccharin",
+    "group": "polyols",
+    "rating": "low",
+    "note": "Low.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "monk fruit",
+    "group": "polyols",
+    "rating": "low",
+    "note": "Low; blends usually erythritol.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "allulose",
+    "group": "fructose",
+    "rating": null,
+    "note": "Untested; generally considered low.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "oat",
+    "group": "fructans",
+    "rating": "low",
+    "note": "Oats/oat flour low at 1/2 cup; oat milk is the exception (low only at 30 ml).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "oat milk",
+    "group": "fructans",
+    "rating": "moderate",
+    "note": "Low at 30 ml, high at 125 ml unless enzyme-treated/certified.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "almond milk",
+    "group": "gos",
+    "rating": "low",
+    "note": "Low at 250 ml.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "soy sauce",
+    "group": "fructans",
+    "rating": "low",
+    "note": "Low at 2 tbsp; fermented.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "tamari",
+    "group": "fructans",
+    "rating": "low",
+    "note": "Low.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "miso",
+    "group": "gos",
+    "rating": "low",
+    "note": "Low at 2 tsp.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "yeast extract",
+    "group": "fructans",
+    "rating": "low",
+    "note": "Low itself; co-occurs with onion in stocks.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "xanthan gum",
+    "group": "fructans",
+    "rating": "low",
+    "note": "Low.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "guar gum",
+    "group": "gos",
+    "rating": null,
+    "note": "Unrated; likely low (PHGG used therapeutically).",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "pectin",
+    "group": "fructans",
+    "rating": "low",
+    "note": "Low.",
+    "family": "open-datasets"
+  },
+  {
+    "keyword": "citric acid",
+    "group": "fructose",
+    "rating": "low",
+    "note": "Low.",
+    "family": "open-datasets"
+  }
+]

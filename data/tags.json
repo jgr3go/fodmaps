@@ -1,0 +1,1623 @@
+{
+  "tags": {
+    "milk": "Milk (dairy protein)",
+    "egg": "Egg",
+    "peanut": "Peanut",
+    "tree-nut": "Tree nut",
+    "soy": "Soy",
+    "wheat": "Wheat",
+    "gluten": "Gluten",
+    "fish": "Fish",
+    "shellfish": "Shellfish",
+    "sesame": "Sesame",
+    "histamine": "High histamine",
+    "caffeine": "Caffeine",
+    "high-fat": "High fat",
+    "alcohol": "Alcohol",
+    "spicy": "Spicy / capsaicin",
+    "nightshade": "Nightshade",
+    "sugar-alcohol": "Sugar alcohol",
+    "artificial-sweetener": "Artificial sweetener"
+  },
+  "foods": {
+    "casein": [
+      "milk"
+    ],
+    "milk-solid": [
+      "milk"
+    ],
+    "soy-lecithin": [
+      "soy"
+    ],
+    "wheat-starch": [
+      "gluten",
+      "wheat"
+    ],
+    "whey": [
+      "milk"
+    ],
+    "yeast-extract": [
+      "histamine"
+    ],
+    "beer": [
+      "alcohol",
+      "gluten",
+      "histamine"
+    ],
+    "brandy": [
+      "alcohol"
+    ],
+    "cocktail": [
+      "alcohol"
+    ],
+    "cream-liqueur": [
+      "alcohol",
+      "high-fat",
+      "milk"
+    ],
+    "dessert-wine": [
+      "alcohol",
+      "histamine"
+    ],
+    "dry-sherry": [
+      "alcohol"
+    ],
+    "fruit-liqueur": [
+      "alcohol"
+    ],
+    "gin": [
+      "alcohol"
+    ],
+    "gluten-free-beer": [
+      "alcohol",
+      "histamine"
+    ],
+    "hard-cider": [
+      "alcohol",
+      "histamine"
+    ],
+    "hard-seltzer": [
+      "alcohol"
+    ],
+    "ice-wine": [
+      "alcohol",
+      "histamine"
+    ],
+    "marsala": [
+      "alcohol",
+      "histamine"
+    ],
+    "mead": [
+      "alcohol",
+      "histamine"
+    ],
+    "mulled-wine": [
+      "alcohol",
+      "histamine"
+    ],
+    "non-alcoholic-beer": [
+      "gluten",
+      "histamine"
+    ],
+    "pear-cider": [
+      "alcohol",
+      "histamine"
+    ],
+    "port": [
+      "alcohol",
+      "histamine"
+    ],
+    "premixed-alcoholic-drink": [
+      "alcohol",
+      "histamine"
+    ],
+    "red-wine": [
+      "alcohol",
+      "histamine"
+    ],
+    "rose-wine": [
+      "alcohol",
+      "histamine"
+    ],
+    "rum": [
+      "alcohol"
+    ],
+    "sake": [
+      "alcohol",
+      "histamine"
+    ],
+    "sherry": [
+      "alcohol",
+      "high-fat",
+      "milk"
+    ],
+    "soju": [
+      "alcohol"
+    ],
+    "sparkling-wine": [
+      "alcohol",
+      "histamine"
+    ],
+    "spirit": [
+      "alcohol",
+      "histamine"
+    ],
+    "stout": [
+      "alcohol",
+      "gluten"
+    ],
+    "sweet-wine": [
+      "alcohol",
+      "histamine"
+    ],
+    "tequila": [
+      "alcohol"
+    ],
+    "vodka": [
+      "alcohol",
+      "histamine"
+    ],
+    "wheat-beer": [
+      "alcohol",
+      "gluten",
+      "histamine",
+      "wheat"
+    ],
+    "whiskey": [
+      "alcohol",
+      "gluten"
+    ],
+    "white-wine": [
+      "alcohol",
+      "histamine"
+    ],
+    "wine": [
+      "alcohol",
+      "histamine"
+    ],
+    "wine-red": [
+      "alcohol",
+      "histamine"
+    ],
+    "wine-white": [
+      "alcohol",
+      "histamine"
+    ],
+    "almond-milk": [
+      "high-fat",
+      "tree-nut"
+    ],
+    "black-tea": [
+      "caffeine"
+    ],
+    "cashew-milk": [
+      "high-fat",
+      "histamine",
+      "tree-nut"
+    ],
+    "chai-tea": [
+      "caffeine"
+    ],
+    "chicory-coffee": [
+      "caffeine"
+    ],
+    "coconut-milk-canned": [
+      "high-fat"
+    ],
+    "coconut-milk-beverage": [
+      "high-fat"
+    ],
+    "coconut-water": [
+      "high-fat"
+    ],
+    "coffee": [
+      "caffeine"
+    ],
+    "cola-cane-sugar": [
+      "caffeine"
+    ],
+    "cola-high-fructose-corn-syrup": [
+      "caffeine"
+    ],
+    "cranberry-juice": [
+      "alcohol"
+    ],
+    "cranberry-juice-cocktail": [
+      "alcohol"
+    ],
+    "dandelion-tea": [
+      "caffeine"
+    ],
+    "decaf-coffee": [
+      "caffeine"
+    ],
+    "diet-cola": [
+      "artificial-sweetener",
+      "caffeine"
+    ],
+    "diet-soda": [
+      "artificial-sweetener"
+    ],
+    "energy-drink": [
+      "caffeine"
+    ],
+    "espresso": [
+      "caffeine"
+    ],
+    "ginger-ale": [
+      "gluten"
+    ],
+    "ginger-beer": [
+      "alcohol",
+      "gluten",
+      "histamine"
+    ],
+    "grapefruit-juice": [
+      "histamine"
+    ],
+    "green-tea": [
+      "caffeine"
+    ],
+    "hot-chocolate": [
+      "caffeine",
+      "high-fat",
+      "histamine"
+    ],
+    "instant-coffee": [
+      "caffeine"
+    ],
+    "kombucha": [
+      "alcohol",
+      "caffeine",
+      "histamine"
+    ],
+    "kvass": [
+      "gluten"
+    ],
+    "lemon-juice": [
+      "histamine"
+    ],
+    "lemon-lime-soda": [
+      "histamine"
+    ],
+    "macadamia-milk": [
+      "high-fat",
+      "tree-nut"
+    ],
+    "matcha": [
+      "caffeine"
+    ],
+    "oolong-tea": [
+      "caffeine"
+    ],
+    "orange-juice": [
+      "histamine"
+    ],
+    "root-beer": [
+      "alcohol",
+      "gluten",
+      "histamine"
+    ],
+    "soda": [
+      "caffeine"
+    ],
+    "soy-milk": [
+      "soy"
+    ],
+    "soy-milk-soy-protein": [
+      "soy"
+    ],
+    "soy-milk-whole-bean": [
+      "soy"
+    ],
+    "soy-milk-whole-soybeans": [
+      "soy"
+    ],
+    "sparkling-water": [
+      "alcohol"
+    ],
+    "tomato-juice": [
+      "histamine",
+      "nightshade"
+    ],
+    "yerba-mate": [
+      "caffeine"
+    ],
+    "almond-butter": [
+      "high-fat",
+      "milk",
+      "tree-nut"
+    ],
+    "apple-cider-vinegar": [
+      "alcohol",
+      "histamine"
+    ],
+    "avocado-oil": [
+      "high-fat",
+      "histamine"
+    ],
+    "balsamic-vinegar": [
+      "histamine"
+    ],
+    "canola-oil": [
+      "high-fat"
+    ],
+    "chili-oil": [
+      "high-fat",
+      "nightshade",
+      "spicy"
+    ],
+    "chili-sauce-with-garlic": [
+      "nightshade",
+      "spicy"
+    ],
+    "cider-vinegar": [
+      "alcohol",
+      "histamine"
+    ],
+    "cocktail-sauce": [
+      "alcohol"
+    ],
+    "coconut-aminos": [
+      "high-fat"
+    ],
+    "coconut-chutney": [
+      "high-fat"
+    ],
+    "cream-based-pasta-sauce": [
+      "egg",
+      "gluten",
+      "high-fat",
+      "milk",
+      "wheat"
+    ],
+    "curry-paste": [
+      "spicy"
+    ],
+    "fish-sauce": [
+      "fish",
+      "histamine"
+    ],
+    "garlic-infused-oil": [
+      "high-fat"
+    ],
+    "gravy": [
+      "gluten",
+      "histamine",
+      "wheat"
+    ],
+    "gravy-packet": [
+      "gluten",
+      "wheat"
+    ],
+    "hazelnut-chocolate-spread": [
+      "high-fat",
+      "histamine",
+      "tree-nut"
+    ],
+    "hoisin-sauce": [
+      "gluten",
+      "soy",
+      "wheat"
+    ],
+    "horseradish": [
+      "spicy"
+    ],
+    "horseradish-sauce": [
+      "spicy"
+    ],
+    "hot-sauce": [
+      "nightshade",
+      "spicy"
+    ],
+    "hummus": [
+      "high-fat",
+      "sesame"
+    ],
+    "jam": [
+      "histamine"
+    ],
+    "ketchup": [
+      "histamine",
+      "nightshade"
+    ],
+    "kimchi": [
+      "histamine",
+      "spicy"
+    ],
+    "mayonnaise": [
+      "egg",
+      "high-fat"
+    ],
+    "mirin": [
+      "alcohol",
+      "histamine"
+    ],
+    "miso": [
+      "histamine",
+      "soy"
+    ],
+    "miso-paste": [
+      "histamine",
+      "soy"
+    ],
+    "olive-oil": [
+      "high-fat",
+      "histamine",
+      "peanut",
+      "sesame"
+    ],
+    "oyster-sauce": [
+      "shellfish",
+      "soy"
+    ],
+    "pasta-sauce": [
+      "gluten",
+      "histamine",
+      "nightshade",
+      "wheat"
+    ],
+    "pasta-sauce-jarred": [
+      "gluten",
+      "histamine",
+      "nightshade",
+      "wheat"
+    ],
+    "peanut-butter": [
+      "high-fat",
+      "histamine",
+      "milk",
+      "peanut"
+    ],
+    "pickle": [
+      "histamine"
+    ],
+    "pickled-gherkin": [
+      "histamine"
+    ],
+    "ranch-dressing": [
+      "fish"
+    ],
+    "salad-dressing": [
+      "fish"
+    ],
+    "salsa": [
+      "histamine",
+      "nightshade"
+    ],
+    "satay-sauce": [
+      "peanut"
+    ],
+    "sesame-oil": [
+      "high-fat",
+      "sesame"
+    ],
+    "shrimp-paste": [
+      "histamine",
+      "shellfish"
+    ],
+    "soy-sauce": [
+      "histamine",
+      "soy"
+    ],
+    "sriracha": [
+      "nightshade",
+      "spicy"
+    ],
+    "stock": [
+      "histamine"
+    ],
+    "stock-cube": [
+      "histamine"
+    ],
+    "strawberry-jam": [
+      "histamine"
+    ],
+    "sweet-chili-sauce": [
+      "nightshade",
+      "spicy"
+    ],
+    "tahini": [
+      "high-fat",
+      "sesame"
+    ],
+    "tamari": [
+      "histamine",
+      "soy"
+    ],
+    "teriyaki-sauce": [
+      "soy"
+    ],
+    "tomato-passata": [
+      "histamine",
+      "nightshade"
+    ],
+    "tomato-paste": [
+      "histamine",
+      "nightshade"
+    ],
+    "vegemite": [
+      "histamine"
+    ],
+    "vinaigrette": [
+      "high-fat",
+      "histamine"
+    ],
+    "vinegar": [
+      "alcohol",
+      "gluten",
+      "histamine",
+      "wheat"
+    ],
+    "wasabi": [
+      "spicy"
+    ],
+    "worcestershire-sauce": [
+      "fish"
+    ],
+    "yeast-spread": [
+      "histamine"
+    ],
+    "american-cheese": [
+      "high-fat",
+      "milk"
+    ],
+    "blue-cheese": [
+      "high-fat",
+      "histamine",
+      "milk"
+    ],
+    "brie": [
+      "high-fat",
+      "histamine",
+      "milk"
+    ],
+    "butter": [
+      "high-fat"
+    ],
+    "buttermilk": [
+      "milk"
+    ],
+    "camembert": [
+      "histamine",
+      "milk"
+    ],
+    "cheddar": [
+      "high-fat",
+      "histamine",
+      "milk"
+    ],
+    "cheddar-cheese": [
+      "high-fat",
+      "histamine",
+      "milk"
+    ],
+    "cheese-processed-slice": [
+      "high-fat",
+      "milk"
+    ],
+    "chocolate-milk": [
+      "high-fat",
+      "histamine",
+      "milk"
+    ],
+    "coconut-milk": [
+      "high-fat"
+    ],
+    "coconut-yogurt": [
+      "high-fat",
+      "histamine"
+    ],
+    "cottage-cheese": [
+      "high-fat",
+      "milk"
+    ],
+    "cow-milk": [
+      "high-fat",
+      "milk"
+    ],
+    "cream": [
+      "high-fat",
+      "milk"
+    ],
+    "cream-cheese": [
+      "high-fat",
+      "milk"
+    ],
+    "creme-fraiche": [
+      "milk"
+    ],
+    "custard": [
+      "egg",
+      "milk"
+    ],
+    "dairy-free-ice-cream": [
+      "high-fat",
+      "soy"
+    ],
+    "evaporated-milk": [
+      "milk"
+    ],
+    "feta": [
+      "histamine",
+      "milk"
+    ],
+    "ghee": [
+      "high-fat"
+    ],
+    "goat-cheese": [
+      "high-fat",
+      "milk"
+    ],
+    "goat-yogurt": [
+      "histamine",
+      "milk"
+    ],
+    "gouda": [
+      "histamine",
+      "milk"
+    ],
+    "greek-yogurt": [
+      "histamine",
+      "milk"
+    ],
+    "half-and-half": [
+      "caffeine",
+      "high-fat",
+      "milk"
+    ],
+    "halloumi": [
+      "milk"
+    ],
+    "haloumi": [
+      "milk"
+    ],
+    "hard-cheese": [
+      "high-fat",
+      "histamine",
+      "milk"
+    ],
+    "heavy-cream": [
+      "high-fat",
+      "milk"
+    ],
+    "ice-cream": [
+      "high-fat",
+      "histamine",
+      "milk"
+    ],
+    "ice-cream-regular": [
+      "high-fat",
+      "milk"
+    ],
+    "kefir": [
+      "histamine",
+      "milk"
+    ],
+    "lactose-free-ice-cream": [
+      "high-fat"
+    ],
+    "lactose-free-yogurt": [
+      "histamine"
+    ],
+    "margarine": [
+      "milk"
+    ],
+    "mascarpone": [
+      "high-fat",
+      "milk"
+    ],
+    "milk": [
+      "milk"
+    ],
+    "milk-cow": [
+      "milk"
+    ],
+    "milk-powder": [
+      "milk"
+    ],
+    "milk-2": [
+      "milk"
+    ],
+    "milk-skim": [
+      "milk"
+    ],
+    "milk-whole": [
+      "milk"
+    ],
+    "mozzarella": [
+      "milk"
+    ],
+    "mozzarella-cheese": [
+      "high-fat",
+      "milk"
+    ],
+    "paneer": [
+      "milk"
+    ],
+    "parmesan": [
+      "histamine",
+      "milk"
+    ],
+    "parmesan-cheese": [
+      "high-fat",
+      "histamine",
+      "milk"
+    ],
+    "quark": [
+      "high-fat",
+      "milk"
+    ],
+    "ricotta": [
+      "milk"
+    ],
+    "soft-cheese": [
+      "high-fat",
+      "histamine",
+      "milk"
+    ],
+    "sour-cream": [
+      "high-fat",
+      "milk"
+    ],
+    "sour-cream-light": [
+      "high-fat",
+      "milk"
+    ],
+    "soy-yogurt": [
+      "histamine",
+      "milk",
+      "soy"
+    ],
+    "string-cheese": [
+      "high-fat",
+      "milk"
+    ],
+    "sweetened-condensed-milk": [
+      "milk"
+    ],
+    "swiss-cheese": [
+      "high-fat",
+      "histamine",
+      "milk"
+    ],
+    "whipped-cream": [
+      "high-fat",
+      "milk"
+    ],
+    "yogurt": [
+      "histamine",
+      "milk"
+    ],
+    "yogurt-regular": [
+      "histamine",
+      "milk"
+    ],
+    "yogurt-greek-plain": [
+      "histamine",
+      "milk"
+    ],
+    "yogurt-lactose-free": [
+      "histamine"
+    ],
+    "yogurt-plain": [
+      "histamine",
+      "milk"
+    ],
+    "avocado": [
+      "high-fat",
+      "histamine"
+    ],
+    "banana": [
+      "histamine"
+    ],
+    "banana-ripe": [
+      "histamine"
+    ],
+    "banana-unripe": [
+      "histamine"
+    ],
+    "banana-chip": [
+      "histamine"
+    ],
+    "coconut": [
+      "high-fat"
+    ],
+    "coconut-dried": [
+      "high-fat"
+    ],
+    "custard-apple": [
+      "egg",
+      "milk"
+    ],
+    "goji-berry": [
+      "nightshade"
+    ],
+    "grapefruit": [
+      "histamine"
+    ],
+    "lemon": [
+      "histamine"
+    ],
+    "lime": [
+      "histamine"
+    ],
+    "orange": [
+      "histamine"
+    ],
+    "papaya": [
+      "histamine"
+    ],
+    "pineapple": [
+      "histamine"
+    ],
+    "ripe-banana": [
+      "histamine"
+    ],
+    "strawberry": [
+      "histamine"
+    ],
+    "unripe-banana": [
+      "histamine"
+    ],
+    "barley": [
+      "gluten"
+    ],
+    "barley-pearl-cooked": [
+      "gluten"
+    ],
+    "bread-roll-white-austria-hard-roll": [
+      "gluten",
+      "wheat"
+    ],
+    "bread-dark-rye": [
+      "gluten",
+      "wheat"
+    ],
+    "bread-granary-multigrain-uk": [
+      "gluten",
+      "wheat"
+    ],
+    "bread-mixed-wheat-rye-austria": [
+      "gluten",
+      "wheat"
+    ],
+    "bread-rye": [
+      "gluten",
+      "wheat"
+    ],
+    "bread-spelt": [
+      "gluten",
+      "wheat"
+    ],
+    "bread-wheat-spain-market-mean": [
+      "gluten",
+      "wheat"
+    ],
+    "bread-wheat-sourdough-72-h": [
+      "gluten",
+      "wheat"
+    ],
+    "bread-wheat-long-proofed-4-h": [
+      "gluten",
+      "wheat"
+    ],
+    "bread-wheat-yeast-leavened-pejcz-2023-control": [
+      "gluten",
+      "wheat"
+    ],
+    "bread-white-wheat": [
+      "gluten",
+      "wheat"
+    ],
+    "breakfast-cereal-wheat-based-spain-market-mean": [
+      "gluten",
+      "wheat"
+    ],
+    "bulgur": [
+      "gluten",
+      "wheat"
+    ],
+    "bulgur-cooked": [
+      "gluten",
+      "wheat"
+    ],
+    "coconut-flour": [
+      "high-fat"
+    ],
+    "couscous-cooked": [
+      "gluten",
+      "wheat"
+    ],
+    "cracker": [
+      "gluten",
+      "high-fat",
+      "milk",
+      "wheat"
+    ],
+    "einkorn": [
+      "gluten",
+      "wheat"
+    ],
+    "flour-tortilla": [
+      "gluten",
+      "wheat"
+    ],
+    "freekeh": [
+      "gluten",
+      "wheat"
+    ],
+    "gnocchi": [
+      "gluten",
+      "wheat"
+    ],
+    "millet": [
+      "gluten",
+      "wheat"
+    ],
+    "muesli-wheat-free": [
+      "gluten",
+      "wheat"
+    ],
+    "naan": [
+      "gluten",
+      "high-fat",
+      "wheat"
+    ],
+    "pasta-wheat-cooked": [
+      "gluten",
+      "wheat"
+    ],
+    "pasta-wheat-dry": [
+      "gluten",
+      "wheat"
+    ],
+    "pasta-whole-grain-rye-cooked": [
+      "gluten",
+      "wheat"
+    ],
+    "pasta-whole-grain-spelt-cooked": [
+      "gluten",
+      "wheat"
+    ],
+    "rice-chex-cereal": [
+      "gluten",
+      "wheat"
+    ],
+    "rice-krispy": [
+      "gluten",
+      "wheat"
+    ],
+    "rye": [
+      "gluten",
+      "wheat"
+    ],
+    "rye-bread": [
+      "gluten",
+      "wheat"
+    ],
+    "rye-flour-light": [
+      "gluten"
+    ],
+    "rye-flour-whole-meal-italy": [
+      "gluten"
+    ],
+    "saltine-cracker": [
+      "gluten",
+      "wheat"
+    ],
+    "semolina": [
+      "gluten",
+      "wheat"
+    ],
+    "sourdough-bread": [
+      "gluten",
+      "histamine",
+      "wheat"
+    ],
+    "sourdough-bread-wheat": [
+      "gluten",
+      "wheat"
+    ],
+    "spelt": [
+      "gluten",
+      "wheat"
+    ],
+    "spelt-bread": [
+      "gluten",
+      "wheat"
+    ],
+    "spelt-flour-white": [
+      "gluten",
+      "wheat"
+    ],
+    "spelt-pasta": [
+      "gluten",
+      "wheat"
+    ],
+    "spelt-sourdough-bread": [
+      "gluten",
+      "wheat"
+    ],
+    "spelt-whole-grain": [
+      "gluten",
+      "wheat"
+    ],
+    "tapioca": [
+      "nightshade"
+    ],
+    "udon-noodle": [
+      "gluten",
+      "wheat"
+    ],
+    "wheat-biscuit": [
+      "gluten",
+      "wheat"
+    ],
+    "wheat-bran": [
+      "gluten",
+      "wheat"
+    ],
+    "wheat-bread": [
+      "gluten",
+      "wheat"
+    ],
+    "wheat-flour-white": [
+      "gluten",
+      "wheat"
+    ],
+    "wheat-flour-whole-grain": [
+      "gluten",
+      "wheat"
+    ],
+    "wheat-germ": [
+      "gluten",
+      "wheat"
+    ],
+    "wheat-muesli": [
+      "gluten",
+      "wheat"
+    ],
+    "wheat-noodle": [
+      "egg",
+      "gluten",
+      "wheat"
+    ],
+    "wheat-pasta": [
+      "egg",
+      "gluten",
+      "wheat"
+    ],
+    "white-wheat-bread": [
+      "gluten",
+      "wheat"
+    ],
+    "wonton-wrapper": [
+      "gluten",
+      "wheat"
+    ],
+    "chili-powder": [
+      "histamine",
+      "nightshade",
+      "spicy"
+    ],
+    "cumin": [
+      "histamine",
+      "nightshade",
+      "spicy"
+    ],
+    "curry-leaf": [
+      "spicy"
+    ],
+    "curry-powder": [
+      "spicy"
+    ],
+    "kaffir-lime-leaf": [
+      "histamine"
+    ],
+    "paprika": [
+      "nightshade",
+      "spicy"
+    ],
+    "sage": [
+      "histamine",
+      "spicy"
+    ],
+    "seasoning-blend": [
+      "histamine"
+    ],
+    "spice-blend": [
+      "nightshade",
+      "spicy"
+    ],
+    "vanilla": [
+      "high-fat",
+      "tree-nut"
+    ],
+    "baked-bean": [
+      "histamine",
+      "nightshade"
+    ],
+    "butter-bean": [
+      "high-fat",
+      "milk"
+    ],
+    "edamame": [
+      "soy"
+    ],
+    "edamame-frozen": [
+      "soy"
+    ],
+    "kidney-bean": [
+      "high-fat",
+      "milk"
+    ],
+    "lima-bean": [
+      "high-fat",
+      "milk"
+    ],
+    "lima-bean-boiled": [
+      "high-fat",
+      "milk"
+    ],
+    "soy-flour": [
+      "soy"
+    ],
+    "soybean": [
+      "soy"
+    ],
+    "soybean-sprout": [
+      "soy"
+    ],
+    "soybean-dried": [
+      "soy"
+    ],
+    "textured-vegetable-protein-dry": [
+      "soy"
+    ],
+    "tofu-firm": [
+      "soy"
+    ],
+    "tofu-silken": [
+      "soy"
+    ],
+    "almond": [
+      "high-fat",
+      "tree-nut"
+    ],
+    "almond-flour": [
+      "high-fat",
+      "tree-nut"
+    ],
+    "almond-meal": [
+      "high-fat",
+      "tree-nut"
+    ],
+    "brazil-nut": [
+      "high-fat",
+      "tree-nut"
+    ],
+    "cashew": [
+      "high-fat",
+      "histamine",
+      "milk",
+      "tree-nut"
+    ],
+    "chestnut": [
+      "high-fat",
+      "tree-nut"
+    ],
+    "chestnut-steamed": [
+      "high-fat",
+      "tree-nut"
+    ],
+    "desiccated-coconut": [
+      "high-fat"
+    ],
+    "hazelnut": [
+      "high-fat",
+      "tree-nut"
+    ],
+    "hemp-seed": [
+      "high-fat"
+    ],
+    "macadamia": [
+      "high-fat",
+      "tree-nut"
+    ],
+    "mixed-nut": [
+      "high-fat",
+      "tree-nut"
+    ],
+    "peanut": [
+      "high-fat",
+      "histamine",
+      "peanut"
+    ],
+    "pecan": [
+      "high-fat",
+      "tree-nut"
+    ],
+    "pine-nut": [
+      "high-fat",
+      "tree-nut"
+    ],
+    "pistachio": [
+      "high-fat",
+      "tree-nut"
+    ],
+    "poppy-seed": [
+      "high-fat"
+    ],
+    "pumpkin-seed": [
+      "high-fat",
+      "sesame"
+    ],
+    "sesame-seed": [
+      "high-fat",
+      "sesame"
+    ],
+    "sunflower-seed": [
+      "high-fat"
+    ],
+    "walnut": [
+      "high-fat",
+      "histamine",
+      "peanut",
+      "tree-nut"
+    ],
+    "baking-powder": [
+      "high-fat",
+      "milk"
+    ],
+    "egg-replacer": [
+      "egg"
+    ],
+    "wheat-grass": [
+      "gluten",
+      "wheat"
+    ],
+    "beet-pickled": [
+      "histamine"
+    ],
+    "biscuit-wheat-spain-market-mean": [
+      "gluten",
+      "wheat"
+    ],
+    "corn-chip": [
+      "high-fat"
+    ],
+    "crackers-wheat": [
+      "gluten",
+      "wheat"
+    ],
+    "french-fry": [
+      "high-fat"
+    ],
+    "french-fries-frozen": [
+      "high-fat"
+    ],
+    "garlic-pickled": [
+      "histamine"
+    ],
+    "granola": [
+      "gluten",
+      "wheat"
+    ],
+    "instant-noodle": [
+      "gluten",
+      "wheat"
+    ],
+    "muffin-gluten-free-banana-us-udi-s": [
+      "histamine"
+    ],
+    "onion-pickled": [
+      "histamine"
+    ],
+    "pastry": [
+      "gluten",
+      "high-fat",
+      "wheat"
+    ],
+    "pea-protein-powder": [
+      "egg"
+    ],
+    "pickled-onion": [
+      "histamine"
+    ],
+    "pickled-vegetable": [
+      "histamine"
+    ],
+    "pizza": [
+      "gluten",
+      "high-fat",
+      "milk",
+      "wheat"
+    ],
+    "plain-sweet-biscuit": [
+      "gluten",
+      "wheat"
+    ],
+    "potato-chip": [
+      "high-fat",
+      "nightshade"
+    ],
+    "potato-chips-plain-salted": [
+      "high-fat",
+      "nightshade"
+    ],
+    "protein-bar": [
+      "gluten",
+      "wheat"
+    ],
+    "soy-cheese": [
+      "high-fat",
+      "milk",
+      "soy"
+    ],
+    "sugar-free-chocolate": [
+      "high-fat",
+      "histamine"
+    ],
+    "sugar-free-gum": [
+      "high-fat",
+      "histamine",
+      "sugar-alcohol"
+    ],
+    "sushi": [
+      "gluten",
+      "wheat"
+    ],
+    "whey-protein-isolate": [
+      "milk"
+    ],
+    "wholemeal-cracker": [
+      "gluten",
+      "wheat"
+    ],
+    "bacon": [
+      "high-fat",
+      "histamine"
+    ],
+    "breaded-meat": [
+      "fish",
+      "gluten",
+      "high-fat",
+      "wheat"
+    ],
+    "deli-meat": [
+      "histamine"
+    ],
+    "deli-meat-plain": [
+      "histamine"
+    ],
+    "dried-anchovy": [
+      "fish",
+      "histamine"
+    ],
+    "egg": [
+      "egg"
+    ],
+    "firm-tofu": [
+      "soy"
+    ],
+    "fish": [
+      "fish",
+      "histamine"
+    ],
+    "fish-sauce-marinated-crumbed-protein": [
+      "fish",
+      "histamine"
+    ],
+    "ham": [
+      "histamine"
+    ],
+    "meat-plain": [
+      "fish",
+      "histamine",
+      "shellfish"
+    ],
+    "pork": [
+      "high-fat",
+      "histamine"
+    ],
+    "salami": [
+      "high-fat",
+      "histamine"
+    ],
+    "sausage": [
+      "high-fat",
+      "histamine"
+    ],
+    "shellfish": [
+      "histamine",
+      "shellfish"
+    ],
+    "shrimp": [
+      "histamine",
+      "shellfish"
+    ],
+    "silken-tofu": [
+      "soy"
+    ],
+    "smoked-salmon": [
+      "fish",
+      "histamine"
+    ],
+    "tempeh": [
+      "histamine",
+      "soy"
+    ],
+    "textured-vegetable-protein": [
+      "soy"
+    ],
+    "tofu": [
+      "soy"
+    ],
+    "veggie-burger": [
+      "gluten",
+      "high-fat",
+      "wheat"
+    ],
+    "wheat-gluten": [
+      "gluten",
+      "wheat"
+    ],
+    "whey-protein": [
+      "milk"
+    ],
+    "whey-protein-concentrate": [
+      "milk"
+    ],
+    "acesulfame-potassium": [
+      "artificial-sweetener"
+    ],
+    "aspartame": [
+      "artificial-sweetener"
+    ],
+    "barley-malt-syrup": [
+      "gluten",
+      "wheat"
+    ],
+    "cocoa-powder": [
+      "caffeine",
+      "histamine"
+    ],
+    "coconut-sugar": [
+      "high-fat"
+    ],
+    "dark-chocolate": [
+      "caffeine",
+      "high-fat",
+      "histamine"
+    ],
+    "erythritol": [
+      "sugar-alcohol"
+    ],
+    "isomalt": [
+      "sugar-alcohol"
+    ],
+    "lactitol": [
+      "sugar-alcohol"
+    ],
+    "maltitol": [
+      "sugar-alcohol"
+    ],
+    "mannitol": [
+      "sugar-alcohol"
+    ],
+    "milk-chocolate": [
+      "high-fat",
+      "histamine",
+      "milk"
+    ],
+    "rice-malt-syrup": [
+      "gluten",
+      "wheat"
+    ],
+    "saccharin": [
+      "artificial-sweetener"
+    ],
+    "sorbitol": [
+      "sugar-alcohol"
+    ],
+    "sucralose": [
+      "artificial-sweetener"
+    ],
+    "sugar-free-confectionery": [
+      "sugar-alcohol"
+    ],
+    "white-chocolate": [
+      "high-fat",
+      "histamine",
+      "milk"
+    ],
+    "xylitol": [
+      "sugar-alcohol"
+    ],
+    "bell-pepper": [
+      "histamine",
+      "nightshade"
+    ],
+    "bell-pepper-green": [
+      "nightshade"
+    ],
+    "bell-pepper-red": [
+      "nightshade"
+    ],
+    "canned-tomato": [
+      "histamine",
+      "nightshade"
+    ],
+    "carrot": [
+      "histamine",
+      "nightshade"
+    ],
+    "cherry-tomato": [
+      "histamine",
+      "nightshade"
+    ],
+    "chili-pepper": [
+      "nightshade",
+      "spicy"
+    ],
+    "eggplant": [
+      "histamine",
+      "nightshade"
+    ],
+    "green-bell-pepper": [
+      "nightshade"
+    ],
+    "lettuce": [
+      "high-fat",
+      "milk"
+    ],
+    "mushroom-oyster": [
+      "shellfish"
+    ],
+    "oyster-mushroom": [
+      "shellfish"
+    ],
+    "pickled-beet": [
+      "histamine"
+    ],
+    "potato": [
+      "nightshade"
+    ],
+    "red-bell-pepper": [
+      "nightshade"
+    ],
+    "sauerkraut": [
+      "histamine"
+    ],
+    "spaghetti-squash": [
+      "gluten",
+      "wheat"
+    ],
+    "spinach": [
+      "histamine"
+    ],
+    "sun-dried-tomato": [
+      "histamine",
+      "nightshade"
+    ],
+    "sweet-potato": [
+      "nightshade"
+    ],
+    "swiss-chard": [
+      "histamine",
+      "milk"
+    ],
+    "tomato": [
+      "histamine",
+      "nightshade"
+    ],
+    "tomato-sun-dried": [
+      "histamine",
+      "nightshade"
+    ],
+    "water-chestnut": [
+      "tree-nut"
+    ]
+  }
+}
