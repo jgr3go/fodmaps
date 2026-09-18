@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { FodmapPills, RatingPill } from '../components/FodmapPills';
 import { DishForm } from '../components/AddFoodSheet';
+import { FindRatings } from '../components/FindRatings';
 import { Button, Card, Label } from '../components/ui';
 import { useFoodResolver } from '../db/hooks';
 import { clearOverrideProfile, deleteFood, foodFromFreeText, saveFood, setOverrideProfile, toggleFavorite } from '../db/repo';
@@ -89,6 +90,7 @@ export default function FoodDetail() {
             : (<><Button kind="ghost" onClick={() => setEditing(true)}>Override ratings</Button>{view.confidence === 'user' && <Button kind="ghost" onClick={resetOverride}>Reset to reference</Button>}</>)}
         </div>
         {view.confidence === 'user' && <p className="mt-1 text-xs text-teal-700">Using your override.</p>}
+        {view.user?.notes && <p className="mt-2 text-xs text-slate-600">{view.user.notes}</p>}
         {(view.servings.low || view.servings.high) && (
           <dl className="mt-3 space-y-1 text-xs text-slate-600">
             {view.servings.low && <div><dt className="inline font-semibold text-emerald-700">Low serve: </dt><dd className="inline">{view.servings.low}</dd></div>}
@@ -120,15 +122,18 @@ export default function FoodDetail() {
         </Card>
       )}
 
-      <Card>
-        <Label>Scan a label</Label>
-        <textarea value={scanText} onChange={(e) => setScanText(e.target.value)} rows={2} placeholder="Paste an ingredient list to flag FODMAP keywords" className="w-full rounded-xl border border-slate-200 px-3 py-1.5 text-sm" />
-        {scan.length > 0 && (
-          <ul className="mt-2 space-y-1">{scan.map((s) => (
-            <li key={s.keyword} className="flex items-start gap-2 text-xs"><RatingPill rating={s.rating ?? 'unknown'} label={`${s.keyword}${s.group ? ` · ${s.group}` : ''}`} small />{s.note && <span className="text-slate-500">{s.note}</span>}</li>
-          ))}</ul>
-        )}
-      </Card>
+      {view.user && view.user.source !== 'override' && !view.ref && (view.overall === null || view.confidence === 'low') && view.kind !== 'dish' && <FindRatings view={view} />}
+      {view.ref && (
+        <Card>
+          <Label>Scan a label</Label>
+          <textarea value={scanText} onChange={(e) => setScanText(e.target.value)} rows={2} placeholder="Paste an ingredient list to flag FODMAP keywords" className="w-full rounded-xl border border-slate-200 px-3 py-1.5 text-sm" />
+          {scan.length > 0 && (
+            <ul className="mt-2 space-y-1">{scan.map((s) => (
+              <li key={s.keyword} className="flex items-start gap-2 text-xs"><RatingPill rating={s.rating ?? 'unknown'} label={`${s.keyword}${s.group ? ` · ${s.group}` : ''}`} small />{s.note && <span className="text-slate-500">{s.note}</span>}</li>
+            ))}</ul>
+          )}
+        </Card>
+      )}
 
       {details && (
         <Card>
@@ -142,9 +147,6 @@ export default function FoodDetail() {
           <ul className="space-y-1 text-xs text-slate-600">{details.notes.map((n, i) => <li key={i}>{n}</li>)}</ul>
           <ul className="mt-2 space-y-0.5 text-xs">{details.sources.map((s, i) => <li key={i}><a href={s.url} target="_blank" rel="noreferrer" className="break-all text-teal-700 underline">{s.family}: {s.url.replace(/^https?:\/\//, '').slice(0, 60)}</a></li>)}</ul>
         </Card>
-      )}
-      {!view.ref && !view.user?.overrideFodmap && view.kind !== 'dish' && (
-        <p className="px-1 text-xs text-slate-500">This food isn't in the reference table. Override the ratings above if you know them, or add ingredients so they can be derived.</p>
       )}
     </div>
   );

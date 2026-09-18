@@ -6,6 +6,8 @@ import { useFoodResolver } from '../db/hooks';
 import { addEntry, foodFromFreeText, newFood, recentFoodIds, saveFood } from '../db/repo';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { defaultSlotTime } from '../lib/dates';
+import { applyModifiers, applyTags, decompose } from '../lib/modifiers';
+import { isRefKey, stripRef } from '../lib/fodmap';
 import { SLOT_LABEL, type Portion, type Slot } from '../types';
 
 export function AddFoodSheet({ open, onClose, date, slot }: { open: boolean; onClose: () => void; date: string; slot: Slot }) {
@@ -23,6 +25,28 @@ export function AddFoodSheet({ open, onClose, date, slot }: { open: boolean; onC
 
   const hits = useMemo(() => searchFoods(q, foods), [q, foods]);
   const isCommaList = q.includes(',');
+  // "lactaid cream cheese" -> base "cream cheese" + lactose-free. Offered when the base matches well.
+  const derived = useMemo(() => {
+    if (isCommaList || q.trim().length < 3) return null;
+    const d = decompose(q); if (!d.changed || !d.base) return null;
+    const hit = searchFoods(d.base, foods, 1)[0]; if (!hit || hit.score > 0.2) return null;
+    const v = resolve(hit.id); if (!v) return null;
+    const fodmap = applyModifiers(v.fodmap, d.modifiers);
+    return { base: v, fodmap, tags: applyTags(v.tags, d.modifiers), modifiers: d.modifiers, exactBase: hits.some((h) => h.id === hit.id && h.score < 0) };
+  }, [q, foods, isCommaList, hits, resolve]);
+
+  async function addDerived() {
+    if (!derived) return;
+    const base = derived.base;
+    const f = await saveFood(newFood({
+      name: q.trim().toLowerCase(), category: base.category, kind: 'ingredient',
+      refId: isRefKey(base.id) ? stripRef(base.id) : null,
+      ingredients: isRefKey(base.id) ? [] : [{ foodId: base.id }],
+      fodmap: derived.fodmap, overrideFodmap: true, tags: derived.tags, source: 'user',
+      notes: `Based on ${base.name}${derived.modifiers.length ? ` (${derived.modifiers.map((m) => m.label).join(', ')})` : ''}. ${derived.modifiers.map((m) => m.note).join(' ')}`.trim(),
+    }));
+    await commit(f.id);
+  }
 
   async function commit(foodId: string) {
     await addEntry({ date, slot, foodId, portion, time: withTime ? time : null });
@@ -70,7 +94,7 @@ export function AddFoodSheet({ open, onClose, date, slot }: { open: boolean; onC
       ) : (
         <>
           <input autoFocus value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search food, or type ingredients separated by commas"
-            className="w-full rounded-xl border border-slate-300 px-3 py-2 text-base" onKeyDown={(e) => { if (e.key === 'Enter' && q.trim()) { hits[0] && !isCommaList && hits[0].score < 0 ? commit(hits[0].id) : addFreeText(); } }} />
+            className="w-full rounded-xl border border-slate-300 px-3 py-2 text-base" onKeyDown={(e) => { if (e.key === 'Enter' && q.trim()) { hits[0] && !isCommaList && hits[0].score < 0 ? commit(hits[0].id) : derived ? addDerived() : addFreeText(); } }} />
           <div className="mt-2 flex items-center gap-2">
             <Label>Portion</Label>
             {(['S', 'M', 'L'] as Portion[]).map((p) => <Chip key={p} active={portion === p} onClick={() => setPortion(p)}>{p}</Chip>)}
@@ -78,6 +102,13 @@ export function AddFoodSheet({ open, onClose, date, slot }: { open: boolean; onC
             <Chip active={withTime} onClick={() => setWithTime(!withTime)}>time</Chip>
             {withTime && <input type="time" value={time} onChange={(e) => setTime(e.target.value)} className="rounded-lg border border-slate-300 px-2 py-0.5 text-sm" />}
           </div>
+          {derived && !derived.exactBase && (
+            <button onClick={addDerived} className="mt-3 flex w-full items-center justify-between gap-2 rounded-xl border border-teal-200 bg-teal-50 px-3 py-2 text-left">
+              <span className="min-w-0"><span className="text-sm">{q.trim().toLowerCase()}</span>
+                <span className="block text-[11px] text-teal-800">as <b>{derived.base.name}</b>{derived.modifiers.length ? `, ${derived.modifiers.map((m) => m.label).join(', ')}` : ''}</span></span>
+              <FodmapPills profile={derived.fodmap} />
+            </button>
+          )}
           {q.trim().length >= 2 && (
             <ul className="mt-3 divide-y divide-slate-100">
               {hits.map((h: SearchHit) => { const v = resolve(h.id); return (

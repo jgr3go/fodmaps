@@ -1,6 +1,6 @@
 import { useLiveQuery } from 'dexie-react-hooks';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { AddFoodSheet } from '../components/AddFoodSheet';
 import { FodmapPills } from '../components/FodmapPills';
 import { SymptomCard } from '../components/SymptomCard';
@@ -12,7 +12,9 @@ import { adjustProfile, worst } from '../lib/fodmap';
 import { SLOTS, SLOT_LABEL, type Entry, type Portion, type Slot } from '../types';
 
 export default function Today() {
-  const [date, setDate] = useState(today());
+  const [params] = useSearchParams();
+  const wanted = params.get('d');
+  const [date, setDate] = useState(wanted && /^\d{4}-\d{2}-\d{2}$/.test(wanted) && wanted <= today() ? wanted : today());
   const [adding, setAdding] = useState<Slot | null>(null);
   const entries = useLiveQuery(() => entriesForDate(date), [date], [] as Entry[]);
   const { resolve } = useFoodResolver();

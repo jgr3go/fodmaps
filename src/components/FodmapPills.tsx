@@ -1,5 +1,5 @@
 import { GROUPS, GROUP_LABEL, type FodmapProfile, type Rating } from '../types';
-import { RATING_STYLE } from '../lib/fodmap';
+import { RATING_STYLE, worst } from '../lib/fodmap';
 
 const SHORT: Record<string, string> = { fructans: 'Fru', gos: 'GOS', lactose: 'Lac', fructose: 'Fro', polyols: 'Pol' };
 
@@ -9,9 +9,10 @@ export function RatingPill({ rating, label, small }: { rating: Rating | 'unknown
 }
 
 /** Inline flags for a row: shows moderate/high groups; green Low when all known groups are low; grey ? when untested. */
-export function FodmapPills({ profile, overall, groupUnknown, conflictCount, compact = true }: {
-  profile: FodmapProfile; overall: Rating; groupUnknown?: boolean; conflictCount?: number; compact?: boolean;
+export function FodmapPills({ profile, overall: overallIn, groupUnknown, conflictCount, compact = true }: {
+  profile: FodmapProfile; overall?: Rating; groupUnknown?: boolean; conflictCount?: number; compact?: boolean;
 }) {
+  const overall = overallIn === undefined ? worst(profile) : overallIn;
   const flagged = GROUPS.filter((g) => profile[g] === 'high' || profile[g] === 'moderate');
   return (
     <span className="inline-flex flex-wrap items-center gap-1">

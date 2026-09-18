@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Bar, BarChart, CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { Button, Card, Chip, Empty, Label } from '../components/ui';
+import { Calendar } from '../components/Calendar';
 import { useFoodResolver } from '../db/hooks';
 import { getSetting, setSetting } from '../db/repo';
 import { avoidCandidates, daysUntilUseful, isFastReactor, type Analysis, type FeatureResult } from '../lib/analysis/engine';
@@ -30,7 +31,7 @@ export default function Insights() {
   useEffect(() => { getSetting('llmSummary').then((s) => s && setSummary(JSON.parse(s))); }, []);
   useEffect(() => {
     if (!ready) return; let alive = true; setBusy(true);
-    runAnalysis(addDays(today(), -(range - 1)), today(), resolve).then((r) => { if (alive) { setA(r); setBusy(false); } }).catch(() => setBusy(false));
+    runAnalysis(addDays(today(), -(Math.max(range, 92) - 1)), today(), resolve).then((r) => { if (alive) { setA(r); setBusy(false); } }).catch(() => setBusy(false));
     return () => { alive = false; };
   }, [ready, range, resolve]);
 
@@ -67,6 +68,7 @@ export default function Insights() {
         <Stat label="avg distress" value={Number.isFinite(a.meanDistress) ? a.meanDistress.toFixed(1) : '–'} />
         <Stat label="bad days (6+)" value={a.badDays} />
       </div>
+      <Calendar days={a.days} months={range >= 90 ? 3 : 2} />
       {need > 0 && <Card className="border-amber-200 bg-amber-50 text-xs text-amber-900">About {need} more logged days before per-food results mean much. Log 0 on good days too. FODMAP flags and the load chart work now.</Card>}
 
       <Card>
