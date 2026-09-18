@@ -1,6 +1,6 @@
 # FODMAP / GI Tracker — Build Plan
 
-> **Status 2026-09-17:** phases 1–3 built and smoke-tested locally (see Status at the end). Remaining work needs Jon: GitHub repo + Pages, Linode deploy, API key.
+> **Status 2026-09-17:** phases 1–3 built and smoke-tested locally (see Status at the end). Remaining work needs Jon: GitHub repo + Pages, droplet deploy, API key.
 
 Personal PWA for logging food by meal slot and daily GI distress, flagging high-FODMAP foods inline,
 and surfacing which foods (and FODMAP groups) correlate with symptoms over 0–3 day lags.
@@ -12,13 +12,13 @@ and surfacing which foods (and FODMAP groups) correlate with symptoms over 0–3
 | Device | Android only (Chrome PWA) |
 | Storage | Local-first in IndexedDB; sync to DigitalOcean API in phase 1 (no separate backup screen) |
 | Frontend host | GitHub Pages |
-| API host | Existing Linode (nginx already proxies a Foundry VTT server; we add a server block, not replace) |
+| API host | Existing DigitalOcean droplet (nginx already proxies a Foundry VTT server; we add a server block, not replace) |
 | Symptoms | Daily 0–10 distress + symptom-type checkboxes |
 | Food entry | Structured foods with ingredients, but free-text entries allowed when nothing matches |
 | Portions | Small / Medium / Large |
 | Confounders | Exercise (daily) |
 | FODMAP data | Hand-curated JSON table, ~200–300 ingredients, user overrides |
-| Analysis | Deterministic on-device stats + on-demand LLM summary via Linode (API key stays on server) |
+| Analysis | Deterministic on-device stats + on-demand LLM summary via the droplet (API key stays on server) |
 | Protocol phases | Schema only, no UI yet |
 | Stack | React + Vite + TypeScript + Tailwind |
 
