@@ -497,8 +497,10 @@
       "shellfish"
     ],
     "soy-sauce": [
+      "gluten",
       "histamine",
-      "soy"
+      "soy",
+      "wheat"
     ],
     "sriracha": [
       "nightshade",
@@ -910,6 +912,10 @@
       "gluten",
       "wheat"
     ],
+    "breadcrumb": [
+      "gluten",
+      "wheat"
+    ],
     "breakfast-cereal-wheat-based-spain-market-mean": [
       "gluten",
       "wheat"
@@ -922,8 +928,20 @@
       "gluten",
       "wheat"
     ],
+    "cheerios": [
+      "gluten",
+      "wheat"
+    ],
     "coconut-flour": [
       "high-fat"
+    ],
+    "corn-chex-cereal": [
+      "gluten",
+      "wheat"
+    ],
+    "couscous": [
+      "gluten",
+      "wheat"
     ],
     "couscous-cooked": [
       "gluten",
@@ -962,6 +980,10 @@
     "naan": [
       "gluten",
       "high-fat",
+      "wheat"
+    ],
+    "pasta-quinoa-cooked": [
+      "gluten",
       "wheat"
     ],
     "pasta-wheat-cooked": [
@@ -1285,7 +1307,9 @@
       "wheat"
     ],
     "corn-chip": [
-      "high-fat"
+      "gluten",
+      "high-fat",
+      "wheat"
     ],
     "crackers-wheat": [
       "gluten",
@@ -1345,6 +1369,10 @@
     "potato-chips-plain-salted": [
       "high-fat",
       "nightshade"
+    ],
+    "pretzel": [
+      "gluten",
+      "wheat"
     ],
     "protein-bar": [
       "gluten",

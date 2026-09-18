@@ -14,6 +14,7 @@ export const TAGS = {
 };
 
 const R = (re) => (f) => re.test(f.name) || f.aliases.some((a) => re.test(a));
+const N = (re) => (f) => re.test(f.name); // name-only, for negations (an alias like 'gluten-free couscous' must not clear couscous)
 const CAT = (...c) => (f) => c.includes(f.category);
 const NOT = (fn) => (f) => !fn(f);
 const ALL = (...fns) => (f) => fns.every((fn) => fn(f));
@@ -26,15 +27,15 @@ const rules = {
   peanut: R(/\bpeanut|satay\b/),
   'tree-nut': ALL(ANY(R(/\b(almond|cashew|pistachio|walnut|pecan|hazelnut|macadamia|brazil nut|pine nut|chestnut|marzipan|praline|nutella|mixed nuts?)\b/), ALL(CAT('nut-seed'), NOT(R(/seed|peanut|pepita|pumpkin|sunflower|chia|flax|linseed|hemp|sesame|tahini|poppy/)))), NOT(R(/\bcoconut\b/))),
   soy: R(/\b(soy|soya|tofu|tempeh|edamame|miso|natto|shoyu|tamari|teriyaki|hoisin|oyster sauce|yakitori)\b/),
-  wheat: ALL(R(/\b(wheat|bread|bun|roll|bagel|pita|naan|tortilla|pasta|spaghetti|penne|macaroni|noodle|couscous|bulgur|semolina|farro|freekeh|spelt|kamut|durum|seitan|gnocchi|dumpling|wonton|croissant|pastry|pie|cake|cookie|biscuit|cracker|pretzel|muffin|pancake|waffle|crumpet|scone|breadcrumb|batter|breaded|pizza|lasagna|ravioli|udon|ramen|cereal|wheat beer|malt|soy sauce|hoisin|gravy)\b/), NOT(R(/gluten-free|rice noodle|rice pasta|corn tortilla|buckwheat|soba|rice cake|rice cracker|corn flake|corn cake|quinoa pasta|chickpea pasta|lentil pasta|oat|tamari|almond flour/))),
-  gluten: (f) => rules.wheat(f) || (R(/\b(rye|barley|malt|beer|stout|ale|lager|kvass)\b/)(f) && !R(/gluten-free/)(f)),
+  wheat: ALL(R(/\b(wheat|bread|bun|roll|bagel|pita|naan|tortilla|pasta|spaghetti|penne|macaroni|noodle|couscous|bulgur|semolina|farro|freekeh|spelt|kamut|durum|seitan|gnocchi|dumpling|wonton|croissant|pastry|pie|cake|cookie|biscuit|cracker|pretzel|muffin|pancake|waffle|crumpet|scone|breadcrumb|batter|breaded|pizza|lasagna|ravioli|udon|ramen|cereal|wheat beer|malt|soy sauce|hoisin|gravy)\b/), NOT(N(/gluten-free|rice noodle|rice pasta|corn tortilla|buckwheat|soba|rice cake|rice cracker|corn flake|corn cake|quinoa pasta|chickpea pasta|lentil pasta|\boat|tamari|almond flour/))),
+  gluten: (f) => rules.wheat(f) || (R(/\b(rye|barley|malt|beer|stout|ale|lager|kvass)\b/)(f) && !N(/gluten-free/)(f)),
   fish: R(/\b(fish|salmon|tuna|cod|haddock|sardine|anchovy|mackerel|trout|tilapia|halibut|snapper|barramundi|herring|kipper|fish sauce|worcestershire|caesar)\b/),
   shellfish: R(/\b(shrimp|prawn|crab|lobster|crayfish|scallop|mussel|clam|oyster|squid|calamari|octopus|shellfish|oyster sauce)\b/),
   sesame: R(/\b(sesame|tahini|hummus|halva|za'?atar|gomashio)\b/),
   histamine: R(/\b(aged|cured|smoked|fermented|pickled|sauerkraut|kimchi|kombucha|kefir|miso|natto|tempeh|soy sauce|tamari|fish sauce|vinegar|wine|champagne|beer|cider|spirits?|sausage|salami|pepperoni|prosciutto|bacon|ham|jerky|deli|canned fish|tuna|sardine|anchovy|mackerel|shellfish|shrimp|prawn|crab|lobster|tomato|ketchup|passata|spinach|eggplant|avocado|banana|citrus|orange|lemon|lime|grapefruit|pineapple|papaya|strawberry|chocolate|cocoa|cacao|parmesan|cheddar|blue cheese|gouda|swiss|camembert|brie|feta|pecorino|gruyere|provolone|yogurt|yeast extract|vegemite|marmite|bouillon|stock cube|walnut|cashew|peanut|leftover)\b/),
   caffeine: R(/\b(coffee|espresso|latte|cappuccino|americano|mocha|cold brew|black tea|green tea|oolong|matcha|chai|yerba mate|guarana|energy drink|cola|coke|pepsi|dark chocolate|cocoa|cacao|kombucha)\b/),
   'high-fat': ANY(R(/\b(fried|deep-fried|chips|fries|crisps|butter|ghee|lard|tallow|cream|ice cream|cheese|cheddar|brie|mascarpone|bacon|sausage|salami|pepperoni|pork belly|ribs|wings|burger|pizza|nut|almond|cashew|walnut|pecan|macadamia|peanut|coconut|avocado|oil|mayonnaise|aioli|alfredo|carbonara|croissant|pastry|donut|doughnut|chocolate|tahini|hummus)\b/), ALL(CAT('nut-seed'), NOT(R(/chia|flax|psyllium/)))),
-  alcohol: ALL(ANY(CAT('alcohol'), R(/\b(beer|wine|cider|vodka|gin|rum|whisk(e)?y|bourbon|tequila|brandy|cognac|liqueur|sake|soju|champagne|prosecco|sherry|port|vermouth|cocktail|seltzer|kombucha)\b/)), NOT(R(/non-alcoholic|alcohol-free|0\.0/))),
+  alcohol: ALL(ANY(CAT('alcohol'), R(/\b(beer|wine|cider|vodka|gin|rum|whisk(e)?y|bourbon|tequila|brandy|cognac|liqueur|sake|soju|champagne|prosecco|sherry|port|vermouth|cocktail|seltzer|kombucha)\b/)), NOT(N(/non-alcoholic|alcohol-free|0\.0/))),
   spicy: R(/\b(chili|chilli|chile|jalape[nñ]o|habanero|cayenne|sriracha|hot sauce|tabasco|harissa|sambal|gochujang|curry|wasabi|horseradish|pepper flakes|paprika|kimchi|buffalo)\b/),
   nightshade: R(/\b(tomato|passata|ketchup|salsa|marinara|potato|eggplant|aubergine|bell pepper|capsicum|chili|chilli|paprika|cayenne|goji|tomatillo|pimento)\b/),
   'sugar-alcohol': R(/\b(sorbitol|mannitol|xylitol|maltitol|isomalt|erythritol|lactitol|polyol|sugar-free gum|sugar-free mint|sugar-free candy)\b/),
