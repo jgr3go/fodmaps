@@ -154,6 +154,7 @@ Built and verified (typecheck, 7 engine tests, headless-Chrome walkthrough with 
 
 - **Phase 1:** PWA scaffold, Dexie schema, Today screen with five slots, fuzzy add with inline FODMAP pills, portions, optional times, recents/favorites, free text (auto-promoted to a counted food), comma-separated ad-hoc dishes, symptom card (0–10, symptom chips, exercise, notes, timed flare-ups), Foods library with reference browser, override, favorites, ingredient editor, label scanner, source/conflict view. GitHub Actions workflow for Pages. Sync client. API server (Hono + SQLite) with bearer auth, `/sync`, `/analyze`, `/health`, systemd unit, nginx block, deploy README.
 - **Phase 2:** analysis engine in a Web Worker (lagged lift with permutation p-values, cumulative 72 h load correlation, fast-reaction detection, symptom-type split, exercise as pseudo-feature, dish→ingredient→tag attribution), Insights screen with validated palette, table view, suspects, avoid list, LLM readout button. Server-side Claude summary with a constrained prompt.
+- **Phase 3b (2026-09-18):** modifier-aware matching for unknown foods (lactose-free, gluten-free, canned, sourdough, infused, sugar-free, brands), Find Ratings panel (base on a known food, Ask Claude via server `/lookup` with web search and cache, Google, Monash, mark low, label scan), calendar heatmap of daily distress.
 - **Phase 3:** dish builder, ingredient prompt on free-text foods, allergen/sensitivity tag table (18 tags), Phases screen, evening reminder (best-effort), JSON export/import.
 
 Not done, needs Jon:

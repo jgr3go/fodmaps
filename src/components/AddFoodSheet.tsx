@@ -29,6 +29,7 @@ export function AddFoodSheet({ open, onClose, date, slot }: { open: boolean; onC
   const derived = useMemo(() => {
     if (isCommaList || q.trim().length < 3) return null;
     const d = decompose(q); if (!d.changed || !d.base) return null;
+    if (hits[0] && hits[0].score < 0.05) return null; // the full name already matches a known food (e.g. "gluten-free bread")
     const hit = searchFoods(d.base, foods, 1)[0]; if (!hit || hit.score > 0.2) return null;
     const v = resolve(hit.id); if (!v) return null;
     const fodmap = applyModifiers(v.fodmap, d.modifiers);
