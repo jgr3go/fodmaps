@@ -35,7 +35,7 @@ export default function Insights() {
     return () => { alive = false; };
   }, [ready, range, resolve]);
 
-  const shown = useMemo(() => (a ? a.features.filter((f) => (kind === 'food' ? f.kind === 'food' || f.kind === 'ingredient' : f.kind === kind) && f.confidence !== 'hidden').slice(0, 15) : []), [a, kind]);
+  const shown = useMemo(() => (a ? a.features.filter((f) => (kind === 'food' ? f.kind === 'food' || f.kind === 'ingredient' : kind === 'tag' ? f.kind === 'tag' || f.kind === 'exercise' || f.kind === 'context' : f.kind === kind) && f.confidence !== 'hidden').slice(0, 15) : []), [a, kind]);
   const fast = useMemo(() => (a ? a.features.filter(isFastReactor).slice(0, 5) : []), [a]);
   const chartDays = useMemo(() => (a ? a.days.slice(-Math.min(range, 90)).map((d) => ({ ...d, label: d.date.slice(5) })) : []), [a, range]);
 
@@ -125,7 +125,7 @@ export default function Insights() {
 
       <Card>
         <div className="flex items-center gap-2"><Label>Suspects</Label><span className="flex-1" />
-          <Chip active={kind === 'food'} onClick={() => setKind('food')}>foods</Chip><Chip active={kind === 'group'} onClick={() => setKind('group')}>FODMAP groups</Chip><Chip active={kind === 'tag'} onClick={() => setKind('tag')}>other</Chip></div>
+          <Chip active={kind === 'food'} onClick={() => setKind('food')}>foods</Chip><Chip active={kind === 'group'} onClick={() => setKind('group')}>FODMAP groups</Chip><Chip active={kind === 'tag'} onClick={() => setKind('tag')}>other & context</Chip></div>
         {shown.length === 0 ? <Empty>Nothing with enough exposures yet.</Empty> : (
           <>
             <div style={{ height: 24 * shown.length + 24 }}>
@@ -142,10 +142,11 @@ export default function Insights() {
             <ul className="mt-2 divide-y divide-slate-100 text-xs">{shown.map((f) => (
               <li key={f.key} className="flex items-center justify-between py-1.5">
                 <span className="min-w-0">{f.foodId ? <Link to={`/foods/${encodeURIComponent(f.foodId)}`} className="underline">{labelOf(f)}</Link> : labelOf(f)}
-                  <span className="ml-1 text-slate-400">{f.kind === 'ingredient' ? 'ingredient · ' : ''}{f.exposureDays}d · lag {f.bestLag}{Number.isFinite(f.bestP) ? ` · p ${f.bestP.toFixed(2)}` : ''}</span></span>
+                  <span className="ml-1 text-slate-400">{f.kind === 'ingredient' ? 'ingredient · ' : f.kind === 'context' ? 'day context · ' : f.kind === 'exercise' ? 'exercise · ' : ''}{f.exposureDays}d · lag {f.bestLag}{Number.isFinite(f.bestP) ? ` · p ${f.bestP.toFixed(2)}` : ''}</span></span>
                 <Conf c={f.confidence} />
               </li>
             ))}</ul>
+            {a.adjustments.length > 0 && <p className="mt-2 text-[11px] text-teal-800">Food results are adjusted for {a.adjustments.map((x) => `${labelOf({ kind: 'context', label: x.label } as FeatureResult)} (−${x.lift.toFixed(1)} on ${x.days} days)`).join(', ')}, so those days don't get blamed on food.</p>}
             <p className="mt-2 text-[11px] text-slate-500">Lift = how much worse (0-10) days after eating it were than days without it. Lag is the delay in days with the strongest signal. Green = 8+ exposures and unlikely to be chance.</p>
           </>
         )}

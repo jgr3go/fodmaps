@@ -119,3 +119,17 @@ describe('analysis engine', () => {
     expect(a.loggedDays).toBe(5);
   });
 });
+
+describe('day context flags', () => {
+  it('ranks a planted early-travel flag as a strong non-food cause', () => {
+    const w = world({});
+    const rand = rng(99);
+    for (const d of w.dayLogs) if (rand() < 0.15) { d.flags = ['early-travel']; d.distress = Math.min(10, d.distress! + 4); }
+    const a = analyze({ ...w, seed: 9 });
+    const f = a.features.find((x) => x.key === 'flag:early-travel')!;
+    expect(f.kind).toBe('context');
+    expect(f.bestLag).toBe(0);
+    expect(f.confidence).toBe('strong');
+    expect(a.features.filter((x) => x.kind === 'food' && x.confidence === 'strong').length).toBeLessThanOrEqual(3);
+  });
+});

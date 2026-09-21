@@ -9,7 +9,7 @@
  *     which separates allergy-like from FODMAP-like timing.
  *  4. Symptom-type split: same lift on the presence of each symptom type.
  */
-import { GROUPS, PORTION_WEIGHT, SYMPTOMS, type DayLog, type Entry, type FoodView, type Group, type Symptom, type SymptomEvent } from '../../types';
+import { DAY_FLAG_LABEL, GROUPS, PORTION_WEIGHT, SYMPTOMS, type DayLog, type Entry, type FoodView, type Group, type Symptom, type SymptomEvent } from '../../types';
 import { absMinutes, addDays, dateRange, defaultSlotTime, diffDays } from '../dates';
 import { adjustProfile, loadOf } from '../fodmap';
 import { mean, median, rng, sd, shuffle, spearman } from './stats';
@@ -17,10 +17,10 @@ import { mean, median, rng, sd, shuffle, spearman } from './stats';
 export const MAX_LAG = 3;
 export const MIN_EXPOSURES = 4;
 export const STRONG_EXPOSURES = 8;
-const PERMUTATIONS = 200;
+const PERMUTATIONS = 300;
 const FAST_WINDOW_MIN = 4 * 60;
 
-export type FeatureKind = 'food' | 'ingredient' | 'group' | 'tag' | 'exercise';
+export type FeatureKind = 'food' | 'ingredient' | 'group' | 'tag' | 'exercise' | 'context';
 export interface LagStat { lag: number; n: number; nBaseline: number; meanExposed: number; meanBaseline: number; lift: number; p: number }
 export interface FastStat { exposuresTimed: number; eventsWithin4h: number; expected: number; ratio: number; medianDelayH: number | null }
 export interface SymptomLift { symptom: Symptom; n: number; rateExposed: number; rateBaseline: number; lift: number }
@@ -32,9 +32,12 @@ export interface FeatureResult {
 }
 export interface DaySeries { date: string; distress: number | null; symptoms: Symptom[]; load: Record<Group, number>; total: number; trailing72: number; trailingByGroup: Record<Group, number>; entries: number }
 export interface LoadCorrelation { group: Group | 'total'; rhoSameDay: number; rhoNextDay: number; n: number }
+export interface Adjustment { key: string; label: string; lift: number; days: number }
 export interface Analysis {
   from: string; to: string; loggedDays: number; entryCount: number; meanDistress: number; badDays: number;
   days: DaySeries[]; features: FeatureResult[]; loadCorrelation: LoadCorrelation[];
+  /** Non-food effects (context flags, exercise) subtracted from those days' scores before foods were scored. */
+  adjustments: Adjustment[];
 }
 export interface AnalysisInput {
   entries: Entry[]; dayLogs: DayLog[]; events: SymptomEvent[]; resolve: (id: string) => FoodView | null; from: string; to: string; seed?: number;
@@ -72,7 +75,10 @@ export function buildFeatures(entries: Entry[], dayLogs: DayLog[], resolve: (id:
     const tags = new Set([...v.tags, ...parts.flatMap((p) => p.tags)]);
     for (const t of tags) add(`tag:${t}`, 'tag', t, { date: e.date, minutes, dose: w });
   }
-  for (const d of dayLogs) if (d.exercise && d.exercise !== 'none') add(`exercise:${d.exercise}`, 'exercise', `exercise (${d.exercise})`, { date: d.id, minutes: absMinutes(d.id, '12:00'), dose: 1 });
+  for (const d of dayLogs) {
+    if (d.exercise && d.exercise !== 'none') add(`exercise:${d.exercise}`, 'exercise', `exercise (${d.exercise})`, { date: d.id, minutes: absMinutes(d.id, '12:00'), dose: 1 });
+    for (const f of d.flags ?? []) add(`flag:${f}`, 'context', DAY_FLAG_LABEL[f] ?? f, { date: d.id, minutes: absMinutes(d.id, '06:00'), dose: 1 });
+  }
   return [...map.values()];
 }
 
@@ -83,38 +89,47 @@ function dayScoreMap(dayLogs: DayLog[], events: SymptomEvent[]): Map<string, num
   return m;
 }
 
-/** Lift at each lag for one feature. exposureDates: distinct dates; scores: date->value; allDates: dates with scores. */
-export function lagStats(exposureDates: Set<string>, scores: Map<string, number>, scoredDates: string[], rand: () => number, perms = PERMUTATIONS): LagStat[] {
-  // A scored day is "clean" if no exposure fell on it or the MAX_LAG days before it.
-  const contaminated = new Set<string>();
-  for (const d of exposureDates) for (let l = 0; l <= MAX_LAG; l++) contaminated.add(addDays(d, l));
-  const baselineVals = scoredDates.filter((d) => !contaminated.has(d)).map((d) => scores.get(d)!);
-  const mb = mean(baselineVals);
-  const statFor = (dates: Set<string>, lag: number) => {
-    const vals: number[] = []; for (const d of dates) { const s = scores.get(addDays(d, lag)); if (s != null) vals.push(s); }
-    return { vals, m: mean(vals) };
-  };
-  const out: LagStat[] = [];
-  for (let lag = 0; lag <= MAX_LAG; lag++) {
-    const { vals, m } = statFor(exposureDates, lag);
-    const lift = vals.length && baselineVals.length ? m - mb : NaN;
-    let p = NaN;
-    if (vals.length >= MIN_EXPOSURES && baselineVals.length >= MIN_EXPOSURES && Number.isFinite(lift)) {
-      // Permutation: reassign the same number of exposure dates at random among days that could have been exposed.
-      const pool = scoredDates;
-      let ge = 0; const k = exposureDates.size;
-      for (let i = 0; i < perms; i++) {
-        const fake = new Set(shuffle(pool, rand).slice(0, k));
-        const cont = new Set<string>(); for (const d of fake) for (let l = 0; l <= MAX_LAG; l++) cont.add(addDays(d, l));
-        const fb = mean(scoredDates.filter((d) => !cont.has(d)).map((d) => scores.get(d)!));
-        const { vals: fv, m: fm } = statFor(fake, lag);
-        if (fv.length && Number.isFinite(fb) && fm - fb >= lift) ge++;
-      }
-      p = (ge + 1) / (perms + 1);
+/**
+ * Lift at each lag for one feature. exposureDates: distinct dates; scores: date->value; scoredDates: dates with scores.
+ * One permutation loop serves every lag, and also yields a selection-corrected p for the best lag (the statistic
+ * under permutation is the max lift across lags), so picking "the lag with the strongest signal" is not free.
+ */
+export function lagStats(exposureDates: Set<string>, scores: Map<string, number>, scoredDates: string[], rand: () => number, perms = PERMUTATIONS): { lags: LagStat[]; pBest: number } {
+  const contaminate = (dates: Set<string>) => { const c = new Set<string>(); for (const d of dates) for (let l = 0; l <= MAX_LAG; l++) c.add(addDays(d, l)); return c; };
+  const liftsFor = (dates: Set<string>): { lifts: number[]; ns: number[]; means: number[]; mb: number; nb: number } => {
+    const cont = contaminate(dates);
+    const base = scoredDates.filter((d) => !cont.has(d)).map((d) => scores.get(d)!);
+    const mb = mean(base);
+    const lifts: number[] = [], ns: number[] = [], means: number[] = [];
+    for (let lag = 0; lag <= MAX_LAG; lag++) {
+      const vals: number[] = []; for (const d of dates) { const v = scores.get(addDays(d, lag)); if (v != null) vals.push(v); }
+      const m = mean(vals); means.push(m); ns.push(vals.length); lifts.push(vals.length && base.length ? m - mb : NaN);
     }
-    out.push({ lag, n: vals.length, nBaseline: baselineVals.length, meanExposed: m, meanBaseline: mb, lift, p });
+    return { lifts, ns, means, mb, nb: base.length };
+  };
+  const obs = liftsFor(exposureDates);
+  const testable = obs.ns.map((n, i) => n >= MIN_EXPOSURES && obs.nb >= MIN_EXPOSURES && Number.isFinite(obs.lifts[i]));
+  const obsBest = Math.max(...obs.lifts.filter((_, i) => testable[i]).concat(-Infinity));
+  const ge = new Array(MAX_LAG + 1).fill(0); let geBest = 0;
+  if (testable.some(Boolean)) {
+    const k = exposureDates.size;
+    for (let i = 0; i < perms; i++) {
+      const fake = new Set(shuffle(scoredDates, rand).slice(0, k));
+      const f = liftsFor(fake);
+      let fBest = -Infinity;
+      for (let lag = 0; lag <= MAX_LAG; lag++) {
+        if (!testable[lag] || !Number.isFinite(f.lifts[lag])) continue;
+        if (f.lifts[lag] >= obs.lifts[lag]) ge[lag]++;
+        if (f.lifts[lag] > fBest) fBest = f.lifts[lag];
+      }
+      if (fBest >= obsBest) geBest++;
+    }
   }
-  return out;
+  const lags: LagStat[] = obs.lifts.map((lift, lag) => ({
+    lag, n: obs.ns[lag], nBaseline: obs.nb, meanExposed: obs.means[lag], meanBaseline: obs.mb, lift,
+    p: testable[lag] ? (ge[lag] + 1) / (perms + 1) : NaN,
+  }));
+  return { lags, pBest: testable.some(Boolean) ? (geBest + 1) / (perms + 1) : NaN };
 }
 
 function fastHits(exposures: Exposure[], evMin: number[]): { hits: number; delays: number[] } {
@@ -193,9 +208,25 @@ export function analyze(input: AnalysisInput): Analysis {
   const evMin = events.map((e) => absMinutes(e.date, e.time));
   const allFoodExposures = built.filter((f) => f.kind === 'food').flatMap((f) => f.exposures);
   const baseFast = allFoodExposures.length ? fastHits(allFoodExposures, evMin).hits / allFoodExposures.length : 0;
+
+  // Confounder control: score non-food context first on the raw series. Any flag with a strong same-day effect has
+  // that effect subtracted from its days before foods are scored, so "early travel" cannot masquerade as breakfast.
+  const isContext = (f: Feature) => f.kind === 'context' || f.kind === 'exercise';
+  const adjustments: Adjustment[] = [];
+  const adjusted = new Map(scores);
+  for (const f of built.filter(isContext)) {
+    const dates = new Set(f.exposures.map((e) => e.date));
+    const l0 = lagStats(dates, scores, scoredDates, rand).lags[0];
+    if (l0.n >= STRONG_EXPOSURES && l0.p < 0.05 && l0.lift >= 0.5) {
+      for (const d of dates) if (adjusted.has(d)) adjusted.set(d, Math.max(0, adjusted.get(d)! - l0.lift));
+      adjustments.push({ key: f.key, label: f.label, lift: l0.lift, days: l0.n });
+    }
+  }
+
   const features: FeatureResult[] = built.map((f) => {
     const exposureDates = new Set(f.exposures.map((e) => e.date));
-    const lags = lagStats(exposureDates, scores, scoredDates, rand);
+    const series = isContext(f) ? scores : adjusted; // context is judged on raw scores, food on adjusted
+    const { lags, pBest } = lagStats(exposureDates, series, scoredDates, rand);
     const usable = lags.filter((l) => l.n >= MIN_EXPOSURES && Number.isFinite(l.lift));
     const best = usable.length ? usable.reduce((a, b) => (b.lift > a.lift ? b : a)) : null;
     const baseVals = scoredDates.map((d) => scores.get(d)!);
@@ -203,13 +234,14 @@ export function analyze(input: AnalysisInput): Analysis {
     const effect = best ? best.lift / s : 0;
     let confidence: Confidence = 'hidden';
     if (best) {
-      if (best.n >= STRONG_EXPOSURES && best.p < 0.05 && best.lift > 0) confidence = 'strong';
-      else if (best.n >= MIN_EXPOSURES && best.p < 0.1 && best.lift > 0) confidence = 'emerging';
+      // pBest is corrected for choosing the best of four lags; per-lag p stays available for display.
+      if (best.n >= STRONG_EXPOSURES && pBest < 0.05 && best.lift > 0) confidence = 'strong';
+      else if (best.n >= MIN_EXPOSURES && pBest < 0.1 && best.lift > 0) confidence = 'emerging';
       else confidence = 'weak';
     }
     return {
       key: f.key, kind: f.kind, label: f.label, foodId: f.foodId, exposures: f.exposures.length, exposureDays: exposureDates.size,
-      lags, bestLag: best?.lag ?? -1, bestLift: best?.lift ?? NaN, bestP: best?.p ?? NaN, effect, confidence,
+      lags, bestLag: best?.lag ?? -1, bestLift: best?.lift ?? NaN, bestP: pBest, effect, confidence,
       fast: fastStats(f, evMin, baseFast), bySymptom: symptomLifts(exposureDates, dayLogs, events),
     };
   });
@@ -218,7 +250,7 @@ export function analyze(input: AnalysisInput): Analysis {
   const distressVals = scoredDates.map((d) => scores.get(d)!);
   return {
     from, to, loggedDays, entryCount: entries.length, meanDistress: mean(distressVals), badDays: distressVals.filter((v) => v >= 6).length,
-    days, features, loadCorrelation,
+    days, features, loadCorrelation, adjustments,
   };
 }
 

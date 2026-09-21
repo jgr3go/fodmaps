@@ -1,6 +1,6 @@
 # FODMAP reference table: sources and provenance
 
-Generated 2026-09-18 by scripts/merge-fodmap.mjs from research/*.json.
+Generated 2026-09-21 by scripts/merge-fodmap.mjs from research/*.json.
 
 Ratings are compiled from public sources only (no Monash app data). Every food carries its source URLs.
 When sources disagree, priority is: Monash public statements > quantitative literature > clinical handouts > open datasets, tie-breaking toward the more cautious rating. Serving text prefers Monash public, then handouts, with literature-derived servings last. Conflicts are kept on the record.

@@ -75,7 +75,7 @@ export async function getDayLog(date: string): Promise<DayLog | undefined> {
   const d = await db.dayLogs.get(date); return d && !d.deleted ? d : undefined;
 }
 export async function upsertDayLog(date: string, patch: Partial<DayLog>): Promise<DayLog> {
-  const cur = (await db.dayLogs.get(date)) ?? { id: date, distress: null, symptoms: [], exercise: null, notes: '', updatedAt: 0, deleted: 0 as const };
+  const cur = (await db.dayLogs.get(date)) ?? { id: date, distress: null, symptoms: [], exercise: null, flags: [], notes: '', updatedAt: 0, deleted: 0 as const };
   const next: DayLog = { ...cur, ...patch, id: date, deleted: 0, updatedAt: now() };
   await db.dayLogs.put(next); return next;
 }

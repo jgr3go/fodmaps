@@ -97,11 +97,24 @@ export type Symptom = (typeof SYMPTOMS)[number];
 export type Exercise = 'none' | 'light' | 'moderate' | 'hard';
 export const EXERCISE: Exercise[] = ['none', 'light', 'moderate', 'hard'];
 
+/** Non-food context for a day. Each becomes its own analysis feature so it competes with foods for blame. */
+export const DAY_FLAGS = [
+  { key: 'early-travel', label: 'early travel' },
+  { key: 'travel', label: 'travel / away' },
+  { key: 'poor-sleep', label: 'poor sleep' },
+  { key: 'stress', label: 'high stress' },
+  { key: 'sick', label: 'sick' },
+  { key: 'medication', label: 'new meds' },
+] as const;
+export type DayFlag = (typeof DAY_FLAGS)[number]['key'];
+export const DAY_FLAG_LABEL: Record<string, string> = Object.fromEntries(DAY_FLAGS.map((f) => [f.key, f.label]));
+
 export interface DayLog {
   id: string;                 // date YYYY-MM-DD
   distress: number | null;    // 0-10
   symptoms: Symptom[];
   exercise: Exercise | null;
+  flags?: DayFlag[];          // day context, optional for rows written before this field existed
   notes: string;
   updatedAt: number;
   deleted: 0 | 1;

@@ -12,7 +12,7 @@ Write a plain-English readout for the person. Rules:
 - Distinguish clearly between "strong" findings (8+ exposures, p < 0.05) and everything else.
 - Explain what the lag pattern suggests: same-day or next-day lifts and fast reactions look intolerance- or allergy-like;
   1-3 day lifts and cumulative-load correlations look FODMAP-like. Say when the data cannot tell these apart.
-- Watch for confounding: shared meals, exercise, foods that always appear together, a bad week skewing everything.
+- Watch for confounding: shared meals, exercise, day-context flags (early travel, poor sleep, stress, illness, new meds), foods that always appear together, a bad week skewing everything. If a context flag carries a stronger lift than any food, say that plainly.
 - Be concrete about what to try next: at most three actions, each testable within two weeks (e.g. drop one food, run a
   single-group challenge, add timestamps to entries). Prefer removing one variable at a time.
 - Keep it under 350 words. Short paragraphs, no headers, no bullet symbols other than simple dashes. Neutral, direct tone.

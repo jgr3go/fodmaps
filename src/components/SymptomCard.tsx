@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Button, Card, Chip, Label } from './ui';
 import { addEvent, deleteEvent, eventsForDate, getDayLog, upsertDayLog } from '../db/repo';
 import { nowTime } from '../lib/dates';
-import { EXERCISE, SYMPTOMS, type Exercise, type Symptom } from '../types';
+import { DAY_FLAGS, EXERCISE, SYMPTOMS, type DayFlag, type Exercise, type Symptom } from '../types';
 
 export function SymptomCard({ date }: { date: string }) {
   const log = useLiveQuery(() => getDayLog(date), [date]);
@@ -16,6 +16,8 @@ export function SymptomCard({ date }: { date: string }) {
   const symptoms = log?.symptoms ?? [];
 
   const toggle = (s: Symptom) => upsertDayLog(date, { symptoms: symptoms.includes(s) ? symptoms.filter((x) => x !== s) : [...symptoms, s] });
+  const flags = log?.flags ?? [];
+  const toggleFlag = (f: DayFlag) => upsertDayLog(date, { flags: flags.includes(f) ? flags.filter((x) => x !== f) : [...flags, f] });
 
   return (
     <Card>
@@ -32,6 +34,10 @@ export function SymptomCard({ date }: { date: string }) {
       </div>
       <div className="mt-3"><Label>Exercise</Label>
         <div className="flex flex-wrap gap-1.5">{EXERCISE.map((e: Exercise) => <Chip key={e} active={log?.exercise === e} onClick={() => upsertDayLog(date, { exercise: e })}>{e}</Chip>)}</div>
+      </div>
+      <div className="mt-3"><Label>Day context</Label>
+        <div className="flex flex-wrap gap-1.5">{DAY_FLAGS.map((f) => <Chip key={f.key} active={flags.includes(f.key)} onClick={() => toggleFlag(f.key)}>{f.label}</Chip>)}</div>
+        <p className="mt-1 text-[10px] text-slate-400">Things that upset a gut without food. Each is ranked against foods in Insights so they don't get blamed on breakfast.</p>
       </div>
       <div className="mt-3">
         <textarea value={log?.notes ?? ''} onChange={(e) => upsertDayLog(date, { notes: e.target.value })} placeholder="Notes (stress, travel, meds, anything unusual)" rows={1}

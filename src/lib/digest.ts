@@ -14,11 +14,12 @@ export function buildDigest(a: Analysis) {
     foods: feat(['food', 'ingredient'], 25),
     groups: feat(['group'], 5),
     tags: feat(['tag'], 10),
-    exercise: feat(['exercise'], 3),
+    context: feat(['exercise', 'context'], 8),
     loadCorrelation: a.loadCorrelation.map((c) => ({ group: c.group, rhoSameDay: r2(c.rhoSameDay), rhoNextDay: r2(c.rhoNextDay), n: c.n })),
     avoidCandidates: avoidCandidates(a).map((f) => f.label),
+    adjustedFor: a.adjustments.map((x) => ({ label: x.label, lift: r2(x.lift), days: x.days })),
     recentDays: a.days.slice(-28).map((d) => ({ date: d.date, distress: d.distress, symptoms: d.symptoms, load: Object.fromEntries(GROUPS.map((g) => [g, r2(d.load[g])])), entries: d.entries })),
-    method: 'Lift = mean distress (0-10) on day+lag after exposure minus mean on unexposed days; p from permutation of exposure dates; strong = 8+ exposures and p<0.05; fast = flare-ups within 4h at 2x+ the rate of all exposures.',
+    method: 'context = non-food day flags (travel, sleep, stress, illness, meds) and exercise, ranked with the same lift so they can absorb blame. Lift = mean distress (0-10) on day+lag after exposure minus mean on unexposed days; p from permutation of exposure dates; strong = 8+ exposures and p<0.05; fast = flare-ups within 4h at 2x+ the rate of all exposures.',
   };
 }
 export type Digest = ReturnType<typeof buildDigest>;
