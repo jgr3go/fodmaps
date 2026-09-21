@@ -130,7 +130,7 @@ const out = [...merged.values()].map((r) => {
     groupUnknown = !!overall;
   }
   const families = new Set(r.sources.map((s) => s.family));
-  const tier = families.has('monash-public') || families.has('clinical-handouts') || families.has('open-datasets') ? 'primary' : 'variant';
+  const tier = families.has('monash-public') || families.has('clinical-handouts') || families.has('open-datasets') || families.has('label-supplement') ? 'primary' : 'variant';
   return {
     id: r.id,
     name: r.name,

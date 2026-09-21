@@ -24,8 +24,10 @@ export function searchFoods(q: string, userFoods: Food[], limit = 12): SearchHit
     id: refKey(r.item.id), name: r.item.name, sub: r.item.category + (overriddenRefs.has(r.item.id) ? ' · overridden' : ''),
     score: (r.score ?? 1) + (r.item.tier === 'variant' ? 0.25 : 0), isRef: true, tier: r.item.tier,
   }));
-  // exact-name match always first
-  const all = [...user, ...ref].map((h) => ({ ...h, score: h.name === query ? -1 : h.score }));
+  // exact name first, exact alias next (e.g. "flour" -> wheat flour, "niacin" -> vitamins and minerals)
+  const aliasExact = new Set(REFERENCE.filter((r) => r.aliases.includes(query)).map((r) => refKey(r.id)));
+  for (const f of userFoods) if (f.aliases.includes(query)) aliasExact.add(f.id);
+  const all = [...user, ...ref].map((h) => ({ ...h, score: h.name === query ? -1 : aliasExact.has(h.id) ? -0.9 : h.score }));
   return all.sort((a, b) => a.score - b.score).slice(0, limit);
 }
 
