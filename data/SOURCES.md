@@ -10,39 +10,40 @@ When sources disagree, priority is: Monash public statements > quantitative lite
 | Family | File | Foods | Notes |
 |---|---|---|---|
 | clinical-handouts | clinical-handouts.json | 377 | Compiled from hospital/clinic patient handouts (Stanford 2012, Kaiser Permanente SF 2023, MNGI Digestive Health 2026, GastroClinic (Stanford derivative), Cleveland Clinic, Johns Hopkins (via Wayback), |
+| label-supplement | label-supplement.json | 64 | Generic ingredients that appear on packaged-food labels (flours, sugars, dairy derivatives, additives, sweeteners, fibers). Added so pasted or photographed labels match; lowest priority when a real so |
 | literature | literature.json | 264 | cutoffs used: Varney et al. 2017 (J Gastroenterol Hepatol 32 Suppl 1:53-61) Table 1, grams per standard serve of a single food: oligosaccharides (total fructans + GOS) <0.30 g for core grain products, |
 | monash-public | monash-public.json | 367 | Compiled from Monash University public web pages (blog + about-FODMAP pages, NOT the paid app database), Wikipedia FODMAP / Low-FODMAP diet pages, and secondary citations of Varney et al. 2017 for cut |
 | open-datasets | open-datasets.json | 361 | Synthesis of open GitHub datasets, FODMAP Friendly's public checklist, Open Food Facts taxonomy/ingredient tags, Wikipedia (CC BY-SA), Monash's public label-reading rules and registered-dietitian blog |
 
 ## Coverage
 
-Total foods: **811** (25 untested/unrated, kept so the app can flag them as unknown rather than silently "low")
+Total foods: **832** (25 untested/unrated, kept so the app can flag them as unknown rather than silently "low")
 
 | Category | Count |
 |---|---|
-| additive | 23 |
+| additive | 26 |
 | alcohol | 37 |
-| beverage | 77 |
-| condiment | 76 |
-| dairy | 66 |
-| fruit | 80 |
-| grain | 104 |
+| beverage | 76 |
+| condiment | 78 |
+| dairy | 71 |
+| fruit | 81 |
+| grain | 113 |
 | herb-spice | 45 |
-| legume | 40 |
+| legume | 42 |
 | nut-seed | 23 |
-| other | 7 |
-| processed | 47 |
+| other | 9 |
+| processed | 46 |
 | protein | 34 |
-| sweetener | 53 |
-| vegetable | 99 |
+| sweetener | 51 |
+| vegetable | 100 |
 
 | Confidence (source families agreeing) | Count |
 |---|---|
-| low | 480 |
-| medium | 159 |
-| high | 172 |
+| low | 487 |
+| medium | 160 |
+| high | 185 |
 
-## Foods with conflicting ratings (124)
+## Foods with conflicting ratings (126)
 
 - **carob powder**: fructans: monash-public=high, open-datasets=moderate
 - **beer**: fructans: clinical-handouts=moderate, open-datasets=low
@@ -58,6 +59,7 @@ Total foods: **811** (25 untested/unrated, kept so the app can flag them as unkn
 - **quinoa milk**: fructans: literature=high, open-datasets=low
 - **soy milk**: [clinical-handouts] Kaiser/MNGI/ACG/CDHF: soy milk high; [clinical-handouts] IBS Diets/Kate/FE/GastroClinic: low if made from soy protein; [clinical-handouts] CUH/Glos: 50-60 ml
 - **tomato juice**: fructose: clinical-handouts=moderate, open-datasets=low; [clinical-handouts] CDHF: tomato juice high; [clinical-handouts] IBS Diets/MNGI/CUH: 1/2 cup-200 ml low
+- **balsamic vinegar**: fructose: clinical-handouts=low, label-supplement=moderate, literature=low, open-datasets=low
 - **barbecue sauce**: fructans: clinical-handouts=high, open-datasets=moderate; fructose: clinical-handouts=high, open-datasets=moderate
 - **chutney**: fructans: clinical-handouts=high, open-datasets=low; fructose: clinical-handouts=high, open-datasets=low
 - **gravy**: [clinical-handouts] FODMAP Everyday: soup concentrate cubes low; [clinical-handouts] IBS Diets/UHS/CUH/Glos/Kaiser: stock cubes and gravy high
@@ -67,14 +69,14 @@ Total foods: **811** (25 untested/unrated, kept so the app can flag them as unkn
 - **pesto**: [clinical-handouts] IBS Diets page: <1 tbsp low; [clinical-handouts] IBS Diets chart/UHS: standard pesto high (garlic); [clinical-handouts] FE/Stanford: low
 - **pickle**: [clinical-handouts] Stanford: pickle limit; [clinical-handouts] MNGI/IBS Diets/FE: plain dill pickles low
 - **sriracha**: fructans: clinical-handouts=moderate, open-datasets=high
-- **tomato paste**: fructose: clinical-handouts=moderate, open-datasets=low; [clinical-handouts] IBS Diets: 2 tbsp low; [clinical-handouts] Kaiser/MNGI: avoid
+- **tomato paste**: fructose: clinical-handouts=moderate, label-supplement=moderate, open-datasets=low; [clinical-handouts] IBS Diets: 2 tbsp low; [clinical-handouts] Kaiser/MNGI: avoid
 - **tzatziki**: lactose: clinical-handouts=high, open-datasets=moderate
 - **wasabi**: [clinical-handouts] IBS Diets: high; [clinical-handouts] CUH/FE/Kate: low
 - **american cheese**: [clinical-handouts] IBS Diets/MNGI: 1 slice low; [clinical-handouts] CUH/Glos/UHS: avoid
 - **brie**: [clinical-handouts] Stanford: brie limit; [clinical-handouts] Kate/Kaiser/MNGI/CUH/Glos/JH/IBS Diets/FE: low
 - **coconut milk**: polyols: clinical-handouts=moderate, monash-public=low; [clinical-handouts] Stanford: limit; [clinical-handouts] ACG: carton high; [clinical-handouts] Kaiser: low unlimited; [clinical-handouts] IBS Diets/CUH/MNGI: 125 ml
 - **cottage cheese**: lactose: clinical-handouts=moderate, literature=high, monash-public=low, open-datasets=low; [clinical-handouts] ACG/FE: low; [clinical-handouts] IBS Diets/CUH/Glos: 2 tbsp; [clinical-handouts] Kate/Kaiser/MNGI/Stanford/CDHF: avoid unless lactose-free
-- **cream**: lactose: clinical-handouts=moderate, monash-public=moderate, open-datasets=low
+- **cream**: lactose: clinical-handouts=moderate, label-supplement=moderate, monash-public=moderate, open-datasets=low
 - **cream cheese**: lactose: clinical-handouts=moderate, literature=low, monash-public=moderate, open-datasets=low; [clinical-handouts] Kaiser/IBS Diets/CUH/Glos: 2 tbsp; [clinical-handouts] Kate/MNGI/CDHF/FE: avoid
 - **half and half**: lactose: clinical-handouts=moderate, open-datasets=low; [clinical-handouts] Kaiser: 2 tbsp low; [clinical-handouts] Stanford/GastroClinic/FE: high
 - **kefir**: [clinical-handouts] IBS Diets/Kaiser: high; [clinical-handouts] MNGI: allowed; [clinical-handouts] Kate grocery: plain Lifeway kefir low; [clinical-handouts] CUH: 1 tbsp
@@ -82,6 +84,7 @@ Total foods: **811** (25 untested/unrated, kept so the app can flag them as unkn
 - **ricotta**: lactose: clinical-handouts=moderate, monash-public=moderate, open-datasets=low; [clinical-handouts] Kaiser: 1/3 cup allowed AND ricotta in avoid list; [clinical-handouts] IBS Diets/CUH: 2 tbsp; [clinical-handouts] Kate/MNGI/Stanford/CDHF/FE: avoid
 - **sour cream**: lactose: clinical-handouts=moderate, monash-public=moderate, open-datasets=low; [clinical-handouts] IBS Diets/Kaiser: 2 tbsp; [clinical-handouts] Stanford/MNGI/FE/CUH: avoid
 - **soy yogurt**: gos: clinical-handouts=moderate, literature=low, monash-public=high
+- **whey**: lactose: label-supplement=high, open-datasets=moderate
 - **whipped cream**: [clinical-handouts] Stanford: limit; [clinical-handouts] CDHF/Kaiser/CUH/IBS Diets/Kate/FE: low
 - **yogurt**: [clinical-handouts] GastroClinic: Greek yogurt low-moderate; [clinical-handouts] MNGI: Greek 4 oz limit; [clinical-handouts] IBS Diets: Greek 23 g; [clinical-handouts] Others: avoid
 - **avocado**: polyols: clinical-handouts=moderate, monash-public=high, open-datasets=moderate; [clinical-handouts] Stanford/GastroClinic: avocado listed as a stone fruit to avoid; [clinical-handouts] Kaiser: 1/8 allowed but 'avocado' also appears in the vegetables-to-avoid list; [clinical-handouts] MNGI: 1/8; [clinical-handouts] IBS Diets: 60 g; [clinical-handouts] Kate: 3 slices; [clinical-handouts] CUH/Glos: <1/4; [clinical-handouts] FODMAP Everyday 2017 & Kate grocery list: listed low without limit
@@ -119,7 +122,7 @@ Total foods: **811** (25 untested/unrated, kept so the app can flag them as unkn
 - **wheat bread**: [clinical-handouts] IBS Diets: 1 slice low; [clinical-handouts] All hospital handouts: avoid; [clinical-handouts] FODMAP Everyday 2017: 'white bread' listed low (Monash small serve)
 - **wheat pasta**: fructans: clinical-handouts=high, monash-public=high, open-datasets=moderate; [clinical-handouts] IBS Diets/FE: 1/2 cup cooked low; [clinical-handouts] Stanford/Kaiser/MNGI/CUH/Glos/UHS/Mayo: avoid
 - **chili powder**: [clinical-handouts] MNGI: chipotle chili dried avoid; [clinical-handouts] IBS Diets: chipotle chili powder low
-- **onion powder**: fructans: literature=low, monash-public=high, open-datasets=high
+- **onion powder**: fructans: label-supplement=high, literature=low, monash-public=high, open-datasets=high
 - **black bean**: [clinical-handouts] IBS Diets/CDHF: canned 1/4 cup low; [clinical-handouts] Kate/MNGI/FE/Mayo: avoid
 - **chickpea**: [clinical-handouts] Kaiser/Stanford/Glos/UHS: avoid; [clinical-handouts] IBS Diets/Kate/CDHF/MNGI/CUH/ACG: canned 1/4 cup low
 - **edamame**: gos: clinical-handouts=moderate, open-datasets=low; [clinical-handouts] IBS Diets/MNGI: high; [clinical-handouts] Kate/CUH/CDHF/ACG/FE: low at ~1/2 cup
@@ -139,7 +142,7 @@ Total foods: **811** (25 untested/unrated, kept so the app can flag them as unkn
 - **coconut sugar**: fructans: clinical-handouts=moderate, monash-public=moderate, open-datasets=high
 - **corn syrup**: [clinical-handouts] Kaiser/MNGI: allowed; [clinical-handouts] CDHF: high
 - **erythritol**: [clinical-handouts] IBS Diets: low; [clinical-handouts] Kaiser/MNGI/CUH: avoid
-- **molasses**: fructose: clinical-handouts=high, literature=moderate, open-datasets=high; [clinical-handouts] Glos NHS: treacle suitable; [clinical-handouts] CUH NHS: treacle avoid; [clinical-handouts] Kate: small amounts in a product OK; [clinical-handouts] Kaiser/MNGI/IBS Diets: avoid
+- **molasses**: fructose: clinical-handouts=high, label-supplement=moderate, literature=moderate, open-datasets=high; [clinical-handouts] Glos NHS: treacle suitable; [clinical-handouts] CUH NHS: treacle avoid; [clinical-handouts] Kate: small amounts in a product OK; [clinical-handouts] Kaiser/MNGI/IBS Diets: avoid
 - **asparagus**: fructans: clinical-handouts=high, monash-public=moderate, open-datasets=high; fructose: clinical-handouts=high, literature=moderate, monash-public=high, open-datasets=high; [clinical-handouts] Glos NHS: tolerated in very small quantities (<3 tbsp/day); all others: avoid
 - **beet**: fructans: clinical-handouts=high, literature=moderate, monash-public=high; [clinical-handouts] FODMAP Everyday: beets low; [clinical-handouts] MNGI/Kate/Kaiser/Stanford: fresh beet avoid; [clinical-handouts] IBS Diets/CDHF: canned/pickled only
 - **bell pepper**: fructose: clinical-handouts=moderate, open-datasets=low; [clinical-handouts] CDHF: red/yellow/orange high, green 1/4 medium; [clinical-handouts] Kaiser/Stanford/Kate/CUH/FE: all colors low unlimited; [clinical-handouts] IBS Diets/ALBY: red capped at 1/3-1/2 cup
@@ -233,6 +236,7 @@ Total foods: **811** (25 untested/unrated, kept so the app can flag them as unkn
 - https://gi.org/topics/low-fodmap-diet/
 - https://alittlebityummy.com/blog/10-low-fodmap-foods-that-need-portion-control-the-foods-might-surprise-you/
 - https://alittlebityummy.com/blog/low-fodmap-foods-you-can-enjoy-in-large-servings/
+- https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/
 - https://fdc.nal.usda.gov/
 - https://figshare.com/articles/journal_contribution/Fructan_content_of_commonly_consumed_wheat_rye_and_gluten-free_breads/20774788
 - https://food-nutrition.canada.ca/api/canadian-nutrient-file/

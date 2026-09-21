@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Button, Card, Label } from './ui';
-import { FodmapPills, RatingPill } from './FodmapPills';
+import { FodmapPills } from './FodmapPills';
 import { useFoodResolver } from '../db/hooks';
 import { saveFood } from '../db/repo';
-import { scanIngredientText, isRefKey, stripRef } from '../lib/fodmap';
+import { isRefKey, stripRef } from '../lib/fodmap';
 import { googleUrl, lookupFood, monashUrl, type LookupResult } from '../lib/lookup';
 import { applyModifiers, applyTags, decompose } from '../lib/modifiers';
 import { searchFoods } from '../lib/search';
@@ -22,9 +22,6 @@ export function FindRatings({ view }: { view: FoodView }) {
     if (!busy) return; setElapsed(0);
     const t = setInterval(() => setElapsed((e) => e + 1), 1000); return () => clearInterval(t);
   }, [busy]);
-  const [scanText, setScanText] = useState('');
-  const [showScan, setShowScan] = useState(false);
-  const scan = useMemo(() => (scanText.trim() ? scanIngredientText(scanText) : []), [scanText]);
   const decomposed = useMemo(() => decompose(view.name), [view.name]);
   const baseHits = useMemo(() => (baseQ.trim().length >= 2 ? searchFoods(baseQ, foods.filter((f) => f.id !== user.id), 6) : []), [baseQ, foods, user.id]);
   const suggested = useMemo(() => {
@@ -71,7 +68,6 @@ export function FindRatings({ view }: { view: FoodView }) {
         <a href={googleUrl(view.name)} target="_blank" rel="noreferrer" className="rounded-xl bg-slate-100 px-3 py-2 text-sm font-medium text-slate-700">Google</a>
         <a href={monashUrl(view.name)} target="_blank" rel="noreferrer" className="rounded-xl bg-slate-100 px-3 py-2 text-sm font-medium text-slate-700">Monash blog</a>
         <Button kind="ghost" onClick={markLow}>Mark all low</Button>
-        <Button kind="ghost" onClick={() => setShowScan(!showScan)}>Scan a label</Button>
       </div>
       {looking && <p className={`mt-2 text-xs ${busy ? 'text-teal-700' : 'text-rose-700'}`}>{busy && <span className="mr-1 inline-block h-2 w-2 animate-pulse rounded-full bg-teal-600" />}{looking}</p>}
       {look && (
@@ -93,12 +89,7 @@ export function FindRatings({ view }: { view: FoodView }) {
         )}
         {decomposed.modifiers.length > 0 && <p className="mt-1 text-[11px] text-slate-500">Detected: {decomposed.modifiers.map((m) => m.label).join(', ')}. Those adjustments are applied to whatever you pick.</p>}
       </div>
-      {showScan && (
-        <div className="mt-3">
-          <textarea value={scanText} onChange={(e) => setScanText(e.target.value)} rows={2} placeholder="Paste the ingredient list from the package" className="w-full rounded-xl border border-slate-200 px-3 py-1.5 text-sm" />
-          {scan.length > 0 && <ul className="mt-2 space-y-1">{scan.map((s) => <li key={s.keyword} className="flex items-start gap-2 text-xs"><RatingPill rating={s.rating ?? 'unknown'} label={`${s.keyword}${s.group ? ` · ${s.group}` : ''}`} small />{s.note && <span className="text-slate-500">{s.note}</span>}</li>)}</ul>}
-        </div>
-      )}
+      <p className="mt-3 text-[11px] text-slate-500">Packaged product? Use <b>From the package</b> in the Ingredients card below to photograph or paste the label; the ratings then derive from the ingredients.</p>
     </Card>
   );
 }

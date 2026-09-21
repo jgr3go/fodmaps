@@ -20,8 +20,12 @@
     "artificial-sweetener": "Artificial sweetener"
   },
   "foods": {
-    "casein": [
+    "baking-soda": [
+      "high-fat",
       "milk"
+    ],
+    "lactitol": [
+      "sugar-alcohol"
     ],
     "milk-solid": [
       "milk"
@@ -29,12 +33,16 @@
     "soy-lecithin": [
       "soy"
     ],
+    "sucralose": [
+      "artificial-sweetener"
+    ],
+    "vitamins-and-mineral": [
+      "nightshade",
+      "spicy"
+    ],
     "wheat-starch": [
       "gluten",
       "wheat"
-    ],
-    "whey": [
-      "milk"
     ],
     "yeast-extract": [
       "histamine"
@@ -274,9 +282,6 @@
     "kvass": [
       "gluten"
     ],
-    "lemon-juice": [
-      "histamine"
-    ],
     "lemon-lime-soda": [
       "histamine"
     ],
@@ -425,6 +430,9 @@
       "histamine",
       "spicy"
     ],
+    "lemon-juice": [
+      "histamine"
+    ],
     "mayonnaise": [
       "egg",
       "high-fat"
@@ -541,6 +549,13 @@
     "vegemite": [
       "histamine"
     ],
+    "vegetable-oil": [
+      "high-fat",
+      "histamine",
+      "peanut",
+      "sesame",
+      "soy"
+    ],
     "vinaigrette": [
       "high-fat",
       "histamine"
@@ -584,12 +599,20 @@
       "histamine",
       "milk"
     ],
+    "casein": [
+      "milk"
+    ],
     "cheddar": [
       "high-fat",
       "histamine",
       "milk"
     ],
     "cheddar-cheese": [
+      "high-fat",
+      "histamine",
+      "milk"
+    ],
+    "cheese-as-ingredient": [
       "high-fat",
       "histamine",
       "milk"
@@ -783,11 +806,22 @@
       "histamine",
       "milk"
     ],
+    "whey": [
+      "milk"
+    ],
+    "whey-protein-isolate": [
+      "milk"
+    ],
     "whipped-cream": [
       "high-fat",
       "milk"
     ],
     "yogurt": [
+      "histamine",
+      "milk"
+    ],
+    "yogurt-as-ingredient": [
+      "high-fat",
       "histamine",
       "milk"
     ],
@@ -865,6 +899,10 @@
     "barley": [
       "gluten"
     ],
+    "barley-malt": [
+      "gluten",
+      "wheat"
+    ],
     "barley-pearl-cooked": [
       "gluten"
     ],
@@ -938,6 +976,9 @@
     "corn-chex-cereal": [
       "gluten",
       "wheat"
+    ],
+    "corn-starch": [
+      "nightshade"
     ],
     "couscous": [
       "gluten",
@@ -1018,6 +1059,9 @@
       "gluten",
       "wheat"
     ],
+    "rye-flour": [
+      "gluten"
+    ],
     "rye-flour-light": [
       "gluten"
     ],
@@ -1046,6 +1090,10 @@
       "wheat"
     ],
     "spelt-bread": [
+      "gluten",
+      "wheat"
+    ],
+    "spelt-flour": [
       "gluten",
       "wheat"
     ],
@@ -1084,6 +1132,10 @@
       "gluten",
       "wheat"
     ],
+    "wheat-flour": [
+      "gluten",
+      "wheat"
+    ],
     "wheat-flour-white": [
       "gluten",
       "wheat"
@@ -1111,6 +1163,10 @@
       "wheat"
     ],
     "white-wheat-bread": [
+      "gluten",
+      "wheat"
+    ],
+    "whole-wheat-flour": [
       "gluten",
       "wheat"
     ],
@@ -1183,6 +1239,9 @@
       "milk"
     ],
     "soy-flour": [
+      "soy"
+    ],
+    "soy-protein-isolate": [
       "soy"
     ],
     "soybean": [
@@ -1292,6 +1351,12 @@
       "high-fat",
       "milk"
     ],
+    "cocoa": [
+      "caffeine",
+      "high-fat",
+      "histamine",
+      "milk"
+    ],
     "egg-replacer": [
       "egg"
     ],
@@ -1395,9 +1460,6 @@
     "sushi": [
       "gluten",
       "wheat"
-    ],
-    "whey-protein-isolate": [
-      "milk"
     ],
     "wholemeal-cracker": [
       "gluten",
@@ -1525,9 +1587,6 @@
     "isomalt": [
       "sugar-alcohol"
     ],
-    "lactitol": [
-      "sugar-alcohol"
-    ],
     "maltitol": [
       "sugar-alcohol"
     ],
@@ -1549,8 +1608,8 @@
     "sorbitol": [
       "sugar-alcohol"
     ],
-    "sucralose": [
-      "artificial-sweetener"
+    "sugar": [
+      "milk"
     ],
     "sugar-free-confectionery": [
       "sugar-alcohol"
@@ -1637,6 +1696,10 @@
       "milk"
     ],
     "tomato": [
+      "histamine",
+      "nightshade"
+    ],
+    "tomato-puree": [
       "histamine",
       "nightshade"
     ],

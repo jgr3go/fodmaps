@@ -6,7 +6,7 @@ sensitivities (allergens, histamine, caffeine, fat) precede bad days, at 0 to 3 
 
 - **Frontend:** React + Vite + TypeScript + Tailwind, Dexie (IndexedDB), installable PWA, works offline. Deploys to GitHub Pages.
 - **API (optional):** `server/`, Node + Hono + SQLite on your own box. Sync between devices and a Claude-written plain-English readout. See `server/deploy/README.md`.
-- **Data:** `data/fodmap.json`, 811 foods compiled from public FODMAP sources with per-food citations and disagreements. See `data/README.md` and `data/SOURCES.md`.
+- **Data:** `data/fodmap.json`, 832 foods compiled from public FODMAP sources with per-food citations and disagreements. See `data/README.md` and `data/SOURCES.md`.
 - **Plan and decisions:** `PLAN.md`.
 
 ## Develop

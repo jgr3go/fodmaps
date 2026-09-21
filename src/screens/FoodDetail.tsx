@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { FodmapPills, RatingPill } from '../components/FodmapPills';
 import { DishForm } from '../components/AddFoodSheet';
 import { FindRatings } from '../components/FindRatings';
+import { LabelImport } from '../components/LabelImport';
 import { Button, Card, Label } from '../components/ui';
 import { useFoodResolver } from '../db/hooks';
 import { clearOverrideProfile, deleteFood, foodFromFreeText, saveFood, setOverrideProfile, toggleFavorite } from '../db/repo';
@@ -90,6 +91,7 @@ export default function FoodDetail() {
             : (<><Button kind="ghost" onClick={() => setEditing(true)}>Override ratings</Button>{view.confidence === 'user' && <Button kind="ghost" onClick={resetOverride}>Reset to reference</Button>}</>)}
         </div>
         {view.confidence === 'user' && <p className="mt-1 text-xs text-teal-700">Using your override.</p>}
+        {view.kind === 'dish' && view.ingredients.length > 0 && !view.user?.overrideFodmap && <p className="mt-1 text-xs text-slate-500">Derived from the ingredients below: worst rating per group, with later-listed ingredients stepped down one level.</p>}
         {view.user?.notes && <p className="mt-2 text-xs text-slate-600">{view.user.notes}</p>}
         {(view.servings.low || view.servings.high) && (
           <dl className="mt-3 space-y-1 text-xs text-slate-600">
@@ -118,6 +120,7 @@ export default function FoodDetail() {
               ) : null; })}
             </ul>
           ) : <p className="text-xs text-slate-500">No ingredients yet. The analysis can only blame this food as a whole until you add them.</p>}
+          {!ingredientEdit && <LabelImport food={view.user} />}
           <div className="mt-3 flex justify-end"><Button kind="danger" onClick={async () => { await deleteFood(view.user!.id); nav('/foods'); }}>Delete food</Button></div>
         </Card>
       )}

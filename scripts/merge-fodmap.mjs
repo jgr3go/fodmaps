@@ -9,9 +9,9 @@ const GROUPS = ['fructans', 'gos', 'lactose', 'fructose', 'polyols'];
 const RANK = { high: 3, moderate: 2, low: 1 };
 // Rating priority: Monash's own public statements first (they are the reference lab), then
 // literature-derived values, then clinical handouts (often older Monash data), then community sets.
-const PRIORITY = ['monash-public', 'literature', 'clinical-handouts', 'open-datasets'];
+const PRIORITY = ['monash-public', 'literature', 'clinical-handouts', 'open-datasets', 'label-supplement'];
 // Serving priority: literature servings are computed from sparse/abstract data and are least reliable.
-const SERVING_PRIORITY = ['monash-public', 'clinical-handouts', 'open-datasets', 'literature'];
+const SERVING_PRIORITY = ['monash-public', 'clinical-handouts', 'open-datasets', 'literature', 'label-supplement'];
 const BAD_SERVING = /^any \(no FODMAP detected/i;
 
 const norm = (s) => String(s ?? '').toLowerCase().trim().replace(/\s+/g, ' ').replace(/[’']/g, "'");

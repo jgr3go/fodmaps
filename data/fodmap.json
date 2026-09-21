@@ -1,7 +1,48 @@
 {
   "generated": "2026-09-21",
-  "count": 811,
+  "count": 832,
   "foods": [
+    {
+      "id": "baking-soda",
+      "name": "baking soda",
+      "aliases": [
+        "ammonium bicarbonate",
+        "baking powder",
+        "calcium phosphate",
+        "cream of tartar",
+        "leavening",
+        "sodium acid pyrophosphate",
+        "sodium bicarbonate"
+      ],
+      "category": "additive",
+      "fructans": null,
+      "gos": null,
+      "lactose": null,
+      "fructose": null,
+      "polyols": null,
+      "overall": "low",
+      "groupUnknown": true,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": "any",
+      "moderateServing": null,
+      "highServing": null,
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] No FODMAPs. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        }
+      ]
+    },
     {
       "id": "beet-powder",
       "name": "beet powder",
@@ -75,44 +116,6 @@
           "family": "monash-public",
           "url": "https://www.monashfodmap.com/blog/happy-easter-low-fodmappers/"
         },
-        {
-          "family": "open-datasets",
-          "url": "https://blog.spoonfulapp.com/top-fodmap-ingredients/"
-        }
-      ]
-    },
-    {
-      "id": "casein",
-      "name": "casein",
-      "aliases": [
-        "calcium caseinate",
-        "caseinate",
-        "milk protein isolate",
-        "sodium caseinate"
-      ],
-      "category": "additive",
-      "fructans": null,
-      "gos": null,
-      "lactose": "low",
-      "fructose": null,
-      "polyols": null,
-      "overall": "low",
-      "groupUnknown": false,
-      "tier": "primary",
-      "polyolType": null,
-      "lowServing": null,
-      "moderateServing": null,
-      "highServing": null,
-      "quantitative": null,
-      "confidence": "low",
-      "sourceFamilies": [
-        "open-datasets"
-      ],
-      "conflicts": [],
-      "notes": [
-        "[open-datasets] Protein fraction with negligible lactose; not flagged by any FODMAP source. Note: not lactose-free strictly but practically low."
-      ],
-      "sources": [
         {
           "family": "open-datasets",
           "url": "https://blog.spoonfulapp.com/top-fodmap-ingredients/"
@@ -278,7 +281,8 @@
       "name": "galactooligosaccharides",
       "aliases": [
         "galacto-oligosaccharides",
-        "gos"
+        "gos",
+        "prebiotic gos"
       ],
       "category": "additive",
       "fructans": null,
@@ -290,19 +294,25 @@
       "groupUnknown": false,
       "tier": "primary",
       "polyolType": null,
-      "lowServing": null,
+      "lowServing": "none (avoid)",
       "moderateServing": null,
-      "highServing": null,
+      "highServing": "any",
       "quantitative": null,
-      "confidence": "low",
+      "confidence": "medium",
       "sourceFamilies": [
+        "label-supplement",
         "open-datasets"
       ],
       "conflicts": [],
       "notes": [
+        "[label-supplement] Added prebiotic GOS. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[open-datasets] Monash 'definite avoid regardless of quantity'. Added to prebiotic products and some infant formula."
       ],
       "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        },
         {
           "family": "open-datasets",
           "url": "https://www.monashfodmap.com/blog/update-label-reading/"
@@ -380,15 +390,74 @@
       ]
     },
     {
+      "id": "gums-and-thickener",
+      "name": "gums and thickeners",
+      "aliases": [
+        "agar",
+        "carboxymethylcellulose",
+        "carob bean gum",
+        "carrageenan",
+        "cellulose",
+        "cellulose gum",
+        "cmc",
+        "gelatin",
+        "gellan gum",
+        "guar gum",
+        "locust bean gum",
+        "methylcellulose",
+        "pectin",
+        "psyllium",
+        "psyllium husk",
+        "xanthan gum"
+      ],
+      "category": "additive",
+      "fructans": null,
+      "gos": "low",
+      "lactose": null,
+      "fructose": null,
+      "polyols": null,
+      "overall": "low",
+      "groupUnknown": false,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": "any typical amount",
+      "moderateServing": null,
+      "highServing": null,
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Thickeners are not FODMAPs at label amounts (guar and carob gum are GOS-like only in large doses). (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        }
+      ]
+    },
+    {
       "id": "inulin",
       "name": "inulin",
       "aliases": [
         "agave inulin",
+        "chicory fiber",
         "chicory inulin",
+        "chicory root",
         "chicory root extract",
+        "chicory root fiber",
         "chicory root fibre",
+        "fos",
+        "fructo-oligosaccharides",
+        "fructooligosaccharides",
         "inulin fiber",
-        "jerusalem artichoke inulin"
+        "jerusalem artichoke flour",
+        "jerusalem artichoke inulin",
+        "oligofructose",
+        "prebiotic fiber"
       ],
       "category": "additive",
       "fructans": "high",
@@ -400,24 +469,77 @@
       "groupUnknown": false,
       "tier": "primary",
       "polyolType": null,
-      "lowServing": null,
+      "lowServing": "none (avoid)",
       "moderateServing": null,
       "highServing": "any amount as ingredient",
       "quantitative": null,
-      "confidence": "medium",
+      "confidence": "high",
       "sourceFamilies": [
+        "label-supplement",
         "monash-public",
         "open-datasets"
       ],
       "conflicts": [],
       "notes": [
+        "[label-supplement] Pure fructan; common in high-fiber bars, yogurts and protein products. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[monash-public] Purified fructan; even very small amounts contribute significantly.",
         "[open-datasets] Pure fructan; high in every source and a Monash 'definite avoid regardless of position in ingredient list'. Added to yogurts, protein/granola bars, cereals, plant milks, fiber supplements, low-sugar chocolate. Even 2 g FOS/day provoked symptoms in IBS (Wikipedia FOS article). OFF ingredient tag en:inulin."
       ],
       "sources": [
         {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        },
+        {
           "family": "monash-public",
           "url": "https://www.monashfodmap.com/blog/update-label-reading/"
+        },
+        {
+          "family": "open-datasets",
+          "url": "https://www.monashfodmap.com/blog/update-label-reading/"
+        }
+      ]
+    },
+    {
+      "id": "lactitol",
+      "name": "lactitol",
+      "aliases": [
+        "966",
+        "e966"
+      ],
+      "category": "additive",
+      "fructans": null,
+      "gos": null,
+      "lactose": null,
+      "fructose": null,
+      "polyols": "high",
+      "overall": "high",
+      "groupUnknown": false,
+      "tier": "primary",
+      "polyolType": "lactitol",
+      "lowServing": "none (avoid)",
+      "moderateServing": null,
+      "highServing": "as sweetener",
+      "quantitative": null,
+      "confidence": "high",
+      "sourceFamilies": [
+        "label-supplement",
+        "monash-public",
+        "open-datasets"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Polyol sweetener. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
+        "[open-datasets] Polyol listed in Monash label-reading blog and Casa de Sante; sugar-free chocolate, some laxatives."
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        },
+        {
+          "family": "monash-public",
+          "url": "https://www.monashfodmap.com/blog/food-additives-and-fodmaps/"
         },
         {
           "family": "open-datasets",
@@ -505,8 +627,16 @@
       "id": "natural-flavor",
       "name": "natural flavors",
       "aliases": [
+        "artificial flavor",
+        "artificial flavour",
         "flavoring",
-        "natural flavouring"
+        "flavorings",
+        "flavourings",
+        "natural flavour",
+        "natural flavouring",
+        "seasoning",
+        "spice",
+        "spices"
       ],
       "category": "additive",
       "fructans": null,
@@ -522,15 +652,21 @@
       "moderateServing": null,
       "highServing": null,
       "quantitative": null,
-      "confidence": "low",
+      "confidence": "medium",
       "sourceFamilies": [
+        "label-supplement",
         "open-datasets"
       ],
       "conflicts": [],
       "notes": [
+        "[label-supplement] Untested. Savory \"natural flavors\" and \"spices\" can hide onion or garlic; sweet ones usually do not. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[open-datasets] Unclassified; Spoonful notes savory products may hide garlic/onion under 'natural flavors', though amounts under 2% are unlikely to matter. Flag in savory snacks, not sweet ones."
       ],
       "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        },
         {
           "family": "open-datasets",
           "url": "https://blog.spoonfulapp.com/top-fodmap-ingredients/"
@@ -576,7 +712,15 @@
       "id": "polydextrose",
       "name": "polydextrose",
       "aliases": [
-        "e1200"
+        "e1200",
+        "fibersol",
+        "imo",
+        "isomalto-oligosaccharides",
+        "resistant dextrin",
+        "resistant maltodextrin",
+        "soluble corn fiber",
+        "soluble corn fibre",
+        "vitafiber"
       ],
       "category": "additive",
       "fructans": null,
@@ -592,15 +736,21 @@
       "moderateServing": null,
       "highServing": null,
       "quantitative": null,
-      "confidence": "low",
+      "confidence": "medium",
       "sourceFamilies": [
+        "label-supplement",
         "open-datasets"
       ],
       "conflicts": [],
       "notes": [
+        "[label-supplement] Untested by public FODMAP sources; fermentable fibers used in protein bars, may cause gas in sensitive people. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[open-datasets] Synthetic glucose polymer fiber; not FODMAP-classified in any public source reviewed (Monash label blog omits it; fodzyme/gourmend do not rate it). Fermentable and osmotic at high doses; common in 'high fiber' bars and sugar-free products. Flag as untested. OFF tag en:e1200."
       ],
       "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        },
         {
           "family": "open-datasets",
           "url": "https://world.openfoodfacts.org/api/v2/taxonomy?tagtype=additives&tags=en:e420,en:e421,en:e953,en:e965,en:e967,en:e968,en:e1200"
@@ -651,7 +801,8 @@
       "aliases": [
         "e322",
         "lecithin",
-        "lecithin (e322)"
+        "lecithin (e322)",
+        "sunflower lecithin"
       ],
       "category": "additive",
       "fructans": null,
@@ -667,17 +818,23 @@
       "moderateServing": null,
       "highServing": null,
       "quantitative": null,
-      "confidence": "medium",
+      "confidence": "high",
       "sourceFamilies": [
+        "label-supplement",
         "monash-public",
         "open-datasets"
       ],
       "conflicts": [],
       "notes": [
+        "[label-supplement] Emulsifier, no FODMAPs. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[monash-public] Not formally tested; considered low because it is fat-based and used in tiny amounts.",
         "[open-datasets] Emulsifier; low (Spoonful lists soy lecithin among low soy derivatives)."
       ],
       "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        },
         {
           "family": "monash-public",
           "url": "https://www.monashfodmap.com/blog/soy-lecithin-what-is-it-low-fodmap/"
@@ -685,6 +842,48 @@
         {
           "family": "open-datasets",
           "url": "https://blog.spoonfulapp.com/top-fodmap-ingredients/"
+        }
+      ]
+    },
+    {
+      "id": "sucralose",
+      "name": "sucralose",
+      "aliases": [
+        "e955",
+        "splenda"
+      ],
+      "category": "additive",
+      "fructans": null,
+      "gos": null,
+      "lactose": null,
+      "fructose": "low",
+      "polyols": "low",
+      "overall": "low",
+      "groupUnknown": false,
+      "tier": "primary",
+      "polyolType": null,
+      "lowServing": "any typical amount",
+      "moderateServing": null,
+      "highServing": null,
+      "quantitative": null,
+      "confidence": "medium",
+      "sourceFamilies": [
+        "label-supplement",
+        "open-datasets"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Not a FODMAP; tracked as artificial sweetener. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
+        "[open-datasets] Not a FODMAP; considered low though untested (A Little Bit Yummy, theibsdietitian, fodzyme). Granulated Splenda is bulked with dextrose/maltodextrin (fine)."
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        },
+        {
+          "family": "open-datasets",
+          "url": "https://theibsdietitian.com/blog/which-sweeteners-are-low-fodmap-dietitian-advice-for-ibs"
         }
       ]
     },
@@ -727,6 +926,71 @@
       ]
     },
     {
+      "id": "vitamins-and-mineral",
+      "name": "vitamins and minerals",
+      "aliases": [
+        "amylase",
+        "annatto",
+        "ascorbic acid",
+        "beta carotene",
+        "calcium carbonate",
+        "calcium propionate",
+        "caramel color",
+        "enzymes",
+        "folate",
+        "folic acid",
+        "iron",
+        "mixed tocopherols",
+        "natamycin",
+        "niacin",
+        "paprika extract",
+        "potassium sorbate",
+        "reduced iron",
+        "riboflavin",
+        "sodium benzoate",
+        "sodium nitrite",
+        "thiamin",
+        "thiamine mononitrate",
+        "tocopherols",
+        "turmeric extract",
+        "vitamin a palmitate",
+        "vitamin b12",
+        "vitamin c",
+        "vitamin d",
+        "vitamin d3",
+        "vitamin e",
+        "zinc oxide"
+      ],
+      "category": "additive",
+      "fructans": null,
+      "gos": null,
+      "lactose": null,
+      "fructose": null,
+      "polyols": null,
+      "overall": "low",
+      "groupUnknown": true,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": "any",
+      "moderateServing": null,
+      "highServing": null,
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Fortificants, preservatives and colors carry no FODMAPs. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        }
+      ]
+    },
+    {
       "id": "wheat-starch",
       "name": "wheat starch",
       "aliases": [
@@ -759,44 +1023,6 @@
         {
           "family": "open-datasets",
           "url": "https://github.com/gautham50050/Fodmap-scanner/blob/main/src/data/fodmapList.js"
-        }
-      ]
-    },
-    {
-      "id": "whey",
-      "name": "whey",
-      "aliases": [
-        "milk protein",
-        "sweet whey",
-        "whey powder",
-        "whey protein concentrate"
-      ],
-      "category": "additive",
-      "fructans": null,
-      "gos": null,
-      "lactose": "moderate",
-      "fructose": null,
-      "polyols": null,
-      "overall": "moderate",
-      "groupUnknown": false,
-      "tier": "primary",
-      "polyolType": null,
-      "lowServing": null,
-      "moderateServing": null,
-      "highServing": null,
-      "quantitative": null,
-      "confidence": "low",
-      "sourceFamilies": [
-        "open-datasets"
-      ],
-      "conflicts": [],
-      "notes": [
-        "[open-datasets] Lactose depends on processing: whey powder/concentrate moderate (Spoonful, gautham50050); whey protein isolate is low and sold FODMAP-certified. OFF tag en:whey."
-      ],
-      "sources": [
-        {
-          "family": "open-datasets",
-          "url": "https://blog.spoonfulapp.com/top-fodmap-ingredients/"
         }
       ]
     },
@@ -4010,41 +4236,6 @@
       ]
     },
     {
-      "id": "lemon-juice",
-      "name": "lemon juice",
-      "aliases": [
-        "lime juice"
-      ],
-      "category": "beverage",
-      "fructans": null,
-      "gos": null,
-      "lactose": null,
-      "fructose": "low",
-      "polyols": null,
-      "overall": "low",
-      "groupUnknown": false,
-      "tier": "primary",
-      "polyolType": null,
-      "lowServing": "1-2 tbsp",
-      "moderateServing": null,
-      "highServing": null,
-      "quantitative": null,
-      "confidence": "low",
-      "sourceFamilies": [
-        "open-datasets"
-      ],
-      "conflicts": [],
-      "notes": [
-        "[open-datasets] Low; standard low FODMAP cocktail mixer (kerenreiser, FODMAP Everyday)."
-      ],
-      "sources": [
-        {
-          "family": "open-datasets",
-          "url": "https://kerenreiser.com/low-fodmap-alcohol/"
-        }
-      ]
-    },
-    {
       "id": "lemon-lime-soda",
       "name": "lemon-lime soda",
       "aliases": [
@@ -5373,7 +5564,9 @@
       "id": "water",
       "name": "water",
       "aliases": [
+        "filtered water",
         "mineral water",
+        "purified water",
         "sparkling water",
         "still water",
         "tap water"
@@ -5395,11 +5588,13 @@
       "confidence": "high",
       "sourceFamilies": [
         "clinical-handouts",
+        "label-supplement",
         "monash-public",
         "open-datasets"
       ],
       "conflicts": [],
       "notes": [
+        "[label-supplement] No FODMAPs. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[monash-public] Carbonation can distend the gut (non-FODMAP).",
         "[open-datasets] Universal low."
       ],
@@ -5407,6 +5602,10 @@
         {
           "family": "clinical-handouts",
           "url": "https://www.ibsdiets.org/fodmap-diet/fodmap-food-list/"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         },
         {
           "family": "monash-public",
@@ -5593,7 +5792,10 @@
     {
       "id": "balsamic-vinegar",
       "name": "balsamic vinegar",
-      "aliases": [],
+      "aliases": [
+        "balsamic",
+        "balsamic glaze"
+      ],
       "category": "condiment",
       "fructans": null,
       "gos": null,
@@ -5620,11 +5822,15 @@
       "confidence": "high",
       "sourceFamilies": [
         "clinical-handouts",
+        "label-supplement",
         "literature",
         "open-datasets"
       ],
-      "conflicts": [],
+      "conflicts": [
+        "fructose: clinical-handouts=low, label-supplement=moderate, literature=low, open-datasets=low"
+      ],
       "notes": [
+        "[label-supplement] Excess fructose. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[literature] CNF 6196 fructose 7.38 < glucose 7.57 -> no excess -> low at 15 g. [excess fructose = 7.38 - 7.57 = 0.00 g/100 g; cutoff 0.15 g/serve] [oligo cutoff 0.2 g/serve]",
         "[open-datasets] Low at 1-2 tbsp; excess fructose accumulates (gautham50050 moderate, kwpav moderate). Balsamic glaze is much more concentrated."
       ],
@@ -5632,6 +5838,10 @@
         {
           "family": "clinical-handouts",
           "url": "https://mydoctor.kaiserpermanente.org/ncal/Images/Low_FODMAP_Diet_Handout_tcm75-2407402.pdf"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         },
         {
           "family": "literature",
@@ -6739,6 +6949,51 @@
         {
           "family": "open-datasets",
           "url": "https://github.com/gut-check/gut-check.github.io/blob/main/FODMAP_RESEARCH.md"
+        }
+      ]
+    },
+    {
+      "id": "lemon-juice",
+      "name": "lemon juice",
+      "aliases": [
+        "citric acid",
+        "e330",
+        "lemon juice concentrate",
+        "lime juice",
+        "lime juice concentrate"
+      ],
+      "category": "condiment",
+      "fructans": null,
+      "gos": null,
+      "lactose": null,
+      "fructose": "low",
+      "polyols": null,
+      "overall": "low",
+      "groupUnknown": false,
+      "tier": "primary",
+      "polyolType": null,
+      "lowServing": "1-2 tbsp",
+      "moderateServing": null,
+      "highServing": null,
+      "quantitative": null,
+      "confidence": "medium",
+      "sourceFamilies": [
+        "label-supplement",
+        "open-datasets"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Low. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
+        "[open-datasets] Low; standard low FODMAP cocktail mixer (kerenreiser, FODMAP Everyday)."
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        },
+        {
+          "family": "open-datasets",
+          "url": "https://kerenreiser.com/low-fodmap-alcohol/"
         }
       ]
     },
@@ -8253,7 +8508,10 @@
       "id": "tomato-paste",
       "name": "tomato paste",
       "aliases": [
-        "tomato concentrate"
+        "concentrated tomato",
+        "double concentrated tomato",
+        "tomato concentrate",
+        "tomato powder"
       ],
       "category": "condiment",
       "fructans": null,
@@ -8269,24 +8527,30 @@
       "moderateServing": "larger amounts",
       "highServing": "Kaiser, MNGI: avoid (label ingredient to avoid)",
       "quantitative": null,
-      "confidence": "medium",
+      "confidence": "high",
       "sourceFamilies": [
         "clinical-handouts",
+        "label-supplement",
         "open-datasets"
       ],
       "conflicts": [
-        "fructose: clinical-handouts=moderate, open-datasets=low",
+        "fructose: clinical-handouts=moderate, label-supplement=moderate, open-datasets=low",
         "[clinical-handouts] IBS Diets: 2 tbsp low",
         "[clinical-handouts] Kaiser/MNGI: avoid"
       ],
       "notes": [
         "[clinical-handouts] Concentrated fructose. IBS Diets allows 2 tbsp; Kaiser and MNGI put tomato paste in the avoid column.",
+        "[label-supplement] Excess fructose at larger amounts. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[open-datasets] Low at 2 tbsp (oseparovic); gautham50050 moderate at larger amounts (concentrated fructose)."
       ],
       "sources": [
         {
           "family": "clinical-handouts",
           "url": "https://www.ibsdiets.org/fodmap-diet/fodmap-food-list/"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         },
         {
           "family": "open-datasets",
@@ -8370,6 +8634,55 @@
       ]
     },
     {
+      "id": "vegetable-oil",
+      "name": "vegetable oil",
+      "aliases": [
+        "canola oil",
+        "corn oil",
+        "cottonseed oil",
+        "margarine",
+        "palm kernel oil",
+        "palm oil",
+        "peanut oil",
+        "rapeseed oil",
+        "safflower oil",
+        "sesame oil",
+        "shortening",
+        "soy oil",
+        "soybean oil",
+        "sunflower oil",
+        "vegetable shortening"
+      ],
+      "category": "condiment",
+      "fructans": null,
+      "gos": null,
+      "lactose": null,
+      "fructose": null,
+      "polyols": null,
+      "overall": "low",
+      "groupUnknown": true,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": "any typical amount",
+      "moderateServing": null,
+      "highServing": null,
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Fats carry no FODMAPs. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        }
+      ]
+    },
+    {
       "id": "vinaigrette",
       "name": "vinaigrette",
       "aliases": [
@@ -8411,6 +8724,7 @@
       "aliases": [
         "apple cider vinegar",
         "balsamic",
+        "cider vinegar",
         "distilled vinegar",
         "malt vinegar",
         "red wine vinegar",
@@ -8436,18 +8750,24 @@
       "confidence": "high",
       "sourceFamilies": [
         "clinical-handouts",
+        "label-supplement",
         "monash-public",
         "open-datasets"
       ],
       "conflicts": [],
       "notes": [
         "[clinical-handouts] FODMAP-free (malt vinegar FE2).",
+        "[label-supplement] Low; balsamic is the exception (moderate at 1 tbsp+). (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[open-datasets] Low in all sources (oseparovic, kwpav, melaniehuang, FF checklist)."
       ],
       "sources": [
         {
           "family": "clinical-handouts",
           "url": "https://mydoctor.kaiserpermanente.org/ncal/Images/Low_FODMAP_Diet_Handout_tcm75-2407402.pdf"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         },
         {
           "family": "monash-public",
@@ -8736,8 +9056,11 @@
       "id": "butter",
       "name": "butter",
       "aliases": [
+        "butter oil",
         "clarified butter",
-        "ghee"
+        "ghee",
+        "salted butter",
+        "unsalted butter"
       ],
       "category": "dairy",
       "fructans": null,
@@ -8765,6 +9088,7 @@
       "confidence": "high",
       "sourceFamilies": [
         "clinical-handouts",
+        "label-supplement",
         "literature",
         "monash-public",
         "open-datasets"
@@ -8772,6 +9096,7 @@
       "conflicts": [],
       "notes": [
         "[clinical-handouts] Virtually zero lactose; low in every source. Ghee also low.",
+        "[label-supplement] Fat; trace lactose. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[literature] USDA Foundation 790508 butter lactose 0.58 g/100 g (Chumpitazi 1.54). 10 g = 0.06 g -> low. [computed thresholds governed by lactose (0.58 g/100 g vs 1.0 g cutoff): low <=172 g, moderate 173-344 g, high >=345 g] [oligo cutoff 0.2 g/serve]",
         "[monash-public] 80%+ fat, negligible lactose.",
         "[open-datasets] Low (all sources); fat not FODMAP but can be a gut irritant."
@@ -8780,6 +9105,10 @@
         {
           "family": "clinical-handouts",
           "url": "https://www.fodmapeveryday.com/no-fodmap-content-foods/"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         },
         {
           "family": "literature",
@@ -8868,6 +9197,51 @@
       ]
     },
     {
+      "id": "casein",
+      "name": "casein",
+      "aliases": [
+        "calcium caseinate",
+        "caseinate",
+        "milk protein concentrate",
+        "milk protein isolate",
+        "sodium caseinate"
+      ],
+      "category": "dairy",
+      "fructans": null,
+      "gos": null,
+      "lactose": "low",
+      "fructose": null,
+      "polyols": null,
+      "overall": "low",
+      "groupUnknown": false,
+      "tier": "primary",
+      "polyolType": null,
+      "lowServing": "any typical amount",
+      "moderateServing": null,
+      "highServing": null,
+      "quantitative": null,
+      "confidence": "medium",
+      "sourceFamilies": [
+        "label-supplement",
+        "open-datasets"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Milk protein, negligible lactose. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
+        "[open-datasets] Protein fraction with negligible lactose; not flagged by any FODMAP source. Note: not lactose-free strictly but practically low."
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        },
+        {
+          "family": "open-datasets",
+          "url": "https://blog.spoonfulapp.com/top-fodmap-ingredients/"
+        }
+      ]
+    },
+    {
       "id": "cheddar",
       "name": "cheddar",
       "aliases": [
@@ -8942,6 +9316,46 @@
         {
           "family": "literature",
           "url": "https://food-nutrition.canada.ca/api/canadian-nutrient-file/"
+        }
+      ]
+    },
+    {
+      "id": "cheese-as-ingredient",
+      "name": "cheese (as ingredient)",
+      "aliases": [
+        "cheddar cheese powder",
+        "cheese culture",
+        "cheese cultures",
+        "cheese powder",
+        "parmesan cheese",
+        "romano cheese"
+      ],
+      "category": "dairy",
+      "fructans": null,
+      "gos": null,
+      "lactose": "low",
+      "fructose": null,
+      "polyols": null,
+      "overall": "low",
+      "groupUnknown": false,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": "typical amount",
+      "moderateServing": null,
+      "highServing": null,
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Hard cheeses are near lactose-free; cheese powders can include whey, check. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         }
       ]
     },
@@ -9250,7 +9664,9 @@
       "name": "cream",
       "aliases": [
         "double cream",
+        "half and half",
         "heavy cream",
+        "light cream",
         "single cream",
         "thickened cream",
         "whipping cream"
@@ -9272,13 +9688,15 @@
       "confidence": "high",
       "sourceFamilies": [
         "clinical-handouts",
+        "label-supplement",
         "monash-public",
         "open-datasets"
       ],
       "conflicts": [
-        "lactose: clinical-handouts=moderate, monash-public=moderate, open-datasets=low"
+        "lactose: clinical-handouts=moderate, label-supplement=moderate, monash-public=moderate, open-datasets=low"
       ],
       "notes": [
+        "[label-supplement] Lactose, less than milk by weight. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[monash-public] Cream-based sauces flagged high in Italy post.",
         "[open-datasets] Low at 2 tbsp - high fat, low lactose per serve (gut-check research log); Spoonful/gautham50050 moderate at larger amounts."
       ],
@@ -9286,6 +9704,10 @@
         {
           "family": "clinical-handouts",
           "url": "https://www.cuh.nhs.uk/patient-information/low-fodmap-diet-reducing-fermentable-carbohydrates-in-your-diet/"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         },
         {
           "family": "monash-public",
@@ -10384,8 +10806,15 @@
       "id": "milk-powder",
       "name": "milk powder",
       "aliases": [
+        "condensed milk",
+        "dried milk",
         "milk solids",
-        "skim milk powder"
+        "non-fat dry milk",
+        "nonfat dry milk",
+        "nonfat milk solids",
+        "skim milk powder",
+        "sweetened condensed milk",
+        "whole milk powder"
       ],
       "category": "dairy",
       "fructans": null,
@@ -10397,17 +10826,24 @@
       "groupUnknown": false,
       "tier": "primary",
       "polyolType": null,
-      "lowServing": null,
+      "lowServing": "small amounts as a minor ingredient",
       "moderateServing": null,
       "highServing": "as ingredient (for lactose intolerant)",
       "quantitative": null,
-      "confidence": "low",
+      "confidence": "medium",
       "sourceFamilies": [
+        "label-supplement",
         "monash-public"
       ],
       "conflicts": [],
-      "notes": [],
+      "notes": [
+        "[label-supplement] Concentrated lactose. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
       "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        },
         {
           "family": "monash-public",
           "url": "https://www.monashfodmap.com/blog/update-label-reading/"
@@ -11185,6 +11621,100 @@
       ]
     },
     {
+      "id": "whey",
+      "name": "whey",
+      "aliases": [
+        "lactose",
+        "milk permeate",
+        "milk protein",
+        "sweet whey",
+        "whey permeate",
+        "whey powder",
+        "whey protein concentrate",
+        "whey solids"
+      ],
+      "category": "dairy",
+      "fructans": null,
+      "gos": null,
+      "lactose": "moderate",
+      "fructose": null,
+      "polyols": null,
+      "overall": "moderate",
+      "groupUnknown": false,
+      "tier": "primary",
+      "polyolType": null,
+      "lowServing": "none (avoid) as an ingredient",
+      "moderateServing": null,
+      "highServing": "any",
+      "quantitative": null,
+      "confidence": "medium",
+      "sourceFamilies": [
+        "label-supplement",
+        "open-datasets"
+      ],
+      "conflicts": [
+        "lactose: label-supplement=high, open-datasets=moderate"
+      ],
+      "notes": [
+        "[label-supplement] Whey powder is mostly lactose. Whey protein ISOLATE is different and low. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
+        "[open-datasets] Lactose depends on processing: whey powder/concentrate moderate (Spoonful, gautham50050); whey protein isolate is low and sold FODMAP-certified. OFF tag en:whey."
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        },
+        {
+          "family": "open-datasets",
+          "url": "https://blog.spoonfulapp.com/top-fodmap-ingredients/"
+        }
+      ]
+    },
+    {
+      "id": "whey-protein-isolate",
+      "name": "whey protein isolate",
+      "aliases": [
+        "isolate protein powder",
+        "whey isolate",
+        "whey protein concentrate 80",
+        "wpi"
+      ],
+      "category": "dairy",
+      "fructans": null,
+      "gos": null,
+      "lactose": "low",
+      "fructose": null,
+      "polyols": null,
+      "overall": "low",
+      "groupUnknown": false,
+      "tier": "primary",
+      "polyolType": null,
+      "lowServing": "2 tbsp (about 30 g)",
+      "moderateServing": null,
+      "highServing": null,
+      "quantitative": null,
+      "confidence": "medium",
+      "sourceFamilies": [
+        "label-supplement",
+        "open-datasets"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Isolate has lactose removed; concentrate (WPC) can be moderate. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
+        "[open-datasets] Lactose removed by filtration; low at 2 tbsp (Casa de Sante lists whey, pea, brown rice powders). Check for inulin, chicory, polyol sweeteners in flavored powders."
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        },
+        {
+          "family": "open-datasets",
+          "url": "https://casadesante.com/blogs/low-fodmap-life/low-fodmap-soft-drinks"
+        }
+      ]
+    },
+    {
       "id": "whipped-cream",
       "name": "whipped cream",
       "aliases": [],
@@ -11269,6 +11799,46 @@
         {
           "family": "monash-public",
           "url": "https://www.monashfodmap.com/blog/what-is-lactose-intolerance/"
+        }
+      ]
+    },
+    {
+      "id": "yogurt-as-ingredient",
+      "name": "yogurt (as ingredient)",
+      "aliases": [
+        "cultured cream",
+        "cultured milk",
+        "cultured nonfat milk",
+        "cultured skim milk",
+        "live cultures",
+        "yogurt cultures"
+      ],
+      "category": "dairy",
+      "fructans": null,
+      "gos": null,
+      "lactose": "high",
+      "fructose": null,
+      "polyols": null,
+      "overall": "high",
+      "groupUnknown": false,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": "small amount",
+      "moderateServing": null,
+      "highServing": "main ingredient",
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Cultured milk still carries most of its lactose. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         }
       ]
     },
@@ -12417,6 +12987,7 @@
       "id": "coconut",
       "name": "coconut",
       "aliases": [
+        "coconut flakes",
         "coconut flesh",
         "desiccated coconut",
         "dried coconut",
@@ -12437,9 +13008,10 @@
       "moderateServing": "1/2 cup dried shredded (search snippet)",
       "highServing": "Glos: dried coconut in large quantities; Stanford: coconut limit",
       "quantitative": null,
-      "confidence": "medium",
+      "confidence": "high",
       "sourceFamilies": [
         "clinical-handouts",
+        "label-supplement",
         "monash-public"
       ],
       "conflicts": [
@@ -12447,12 +13019,17 @@
         "[clinical-handouts] Kate/IBS Diets/CDHF/CUH/Kaiser/FE: low at stated serves"
       ],
       "notes": [
+        "[label-supplement] Sorbitol at larger serves. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[monash-public] Fresh flesh low; dried shredded coconut moderate at 1/2 cup, 1 tbsp fine."
       ],
       "sources": [
         {
           "family": "clinical-handouts",
           "url": "https://www.ibsdiets.org/fodmap-diet/fodmap-food-list/"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         },
         {
           "family": "monash-public",
@@ -12806,6 +13383,53 @@
         {
           "family": "monash-public",
           "url": "https://www.monashfodmap.com/about-fodmap-and-ibs/high-and-low-fodmap-foods/"
+        }
+      ]
+    },
+    {
+      "id": "dried-fruit-piece",
+      "name": "dried fruit pieces",
+      "aliases": [
+        "apple pieces",
+        "date paste",
+        "date syrup",
+        "dates",
+        "dried apple",
+        "dried cranberries (sweetened)",
+        "dried figs",
+        "dried pear",
+        "fig paste",
+        "prune juice",
+        "prunes",
+        "raisins",
+        "sultanas"
+      ],
+      "category": "fruit",
+      "fructans": "moderate",
+      "gos": null,
+      "lactose": null,
+      "fructose": "high",
+      "polyols": "high",
+      "overall": "high",
+      "groupUnknown": false,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": "none (avoid) beyond a few pieces",
+      "moderateServing": null,
+      "highServing": "any",
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Dried fruit concentrates fructose and sorbitol; date paste also carries fructans. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         }
       ]
     },
@@ -15405,6 +16029,46 @@
       ]
     },
     {
+      "id": "barley-malt",
+      "name": "barley malt",
+      "aliases": [
+        "barley flour",
+        "barley malt extract",
+        "malt",
+        "malt extract",
+        "malt syrup",
+        "malted barley"
+      ],
+      "category": "grain",
+      "fructans": "moderate",
+      "gos": null,
+      "lactose": null,
+      "fructose": null,
+      "polyols": null,
+      "overall": "moderate",
+      "groupUnknown": false,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": "flavoring amounts",
+      "moderateServing": null,
+      "highServing": "main ingredient",
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Fructans; small flavoring amounts in cereals and beer are usually tolerated. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        }
+      ]
+    },
+    {
       "id": "barley-pearl-cooked",
       "name": "barley, pearl, cooked",
       "aliases": [
@@ -16619,6 +17283,51 @@
       ]
     },
     {
+      "id": "corn-starch",
+      "name": "corn starch",
+      "aliases": [
+        "arrowroot",
+        "cornflour",
+        "cornstarch",
+        "food starch",
+        "maize starch",
+        "modified corn starch",
+        "modified food starch",
+        "potato starch",
+        "rice starch",
+        "tapioca flour",
+        "tapioca starch"
+      ],
+      "category": "grain",
+      "fructans": null,
+      "gos": null,
+      "lactose": null,
+      "fructose": null,
+      "polyols": null,
+      "overall": "low",
+      "groupUnknown": true,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": "any typical amount",
+      "moderateServing": null,
+      "highServing": null,
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Starches carry no FODMAPs. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        }
+      ]
+    },
+    {
       "id": "corn-tortilla",
       "name": "corn tortilla",
       "aliases": [
@@ -16662,6 +17371,47 @@
         {
           "family": "open-datasets",
           "url": "https://github.com/kwpav/fodsearch-api/blob/main/resources/ingredients.csv"
+        }
+      ]
+    },
+    {
+      "id": "cornmeal",
+      "name": "cornmeal",
+      "aliases": [
+        "corn",
+        "corn flour (whole)",
+        "corn grits",
+        "hominy",
+        "masa",
+        "masa harina",
+        "polenta"
+      ],
+      "category": "grain",
+      "fructans": null,
+      "gos": null,
+      "lactose": null,
+      "fructose": null,
+      "polyols": "low",
+      "overall": "low",
+      "groupUnknown": false,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": "1 cup cooked",
+      "moderateServing": null,
+      "highServing": null,
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Low. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         }
       ]
     },
@@ -17312,6 +18062,44 @@
         {
           "family": "monash-public",
           "url": "https://www.monashfodmap.com/blog/getting-enough-fibre/"
+        }
+      ]
+    },
+    {
+      "id": "oat-flour",
+      "name": "oat flour",
+      "aliases": [
+        "ground oats",
+        "oat bran flour",
+        "oat fiber",
+        "oat fibre"
+      ],
+      "category": "grain",
+      "fructans": "low",
+      "gos": "low",
+      "lactose": null,
+      "fructose": null,
+      "polyols": null,
+      "overall": "low",
+      "groupUnknown": false,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": "1/2 cup",
+      "moderateServing": null,
+      "highServing": "1 cup+",
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Low at usual amounts. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         }
       ]
     },
@@ -18161,6 +18949,45 @@
       ]
     },
     {
+      "id": "rice-flour",
+      "name": "rice flour",
+      "aliases": [
+        "brown rice flour",
+        "glutinous rice flour",
+        "ground rice",
+        "rice bran",
+        "white rice flour"
+      ],
+      "category": "grain",
+      "fructans": null,
+      "gos": null,
+      "lactose": null,
+      "fructose": null,
+      "polyols": null,
+      "overall": "low",
+      "groupUnknown": true,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": "any typical amount",
+      "moderateServing": null,
+      "highServing": null,
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Low. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        }
+      ]
+    },
+    {
       "id": "rice-krispy",
       "name": "rice krispies",
       "aliases": [
@@ -18476,6 +19303,41 @@
         {
           "family": "open-datasets",
           "url": "https://blog.spoonfulapp.com/top-fodmap-ingredients/"
+        }
+      ]
+    },
+    {
+      "id": "rye-flour",
+      "name": "rye flour",
+      "aliases": [
+        "rye"
+      ],
+      "category": "grain",
+      "fructans": "high",
+      "gos": null,
+      "lactose": null,
+      "fructose": null,
+      "polyols": null,
+      "overall": "high",
+      "groupUnknown": false,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": null,
+      "moderateServing": null,
+      "highServing": "main ingredient",
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Fructans. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         }
       ]
     },
@@ -18882,6 +19744,41 @@
         {
           "family": "clinical-handouts",
           "url": "https://www.ibsdiets.org/fodmap-diet/fodmap-food-list/"
+        }
+      ]
+    },
+    {
+      "id": "spelt-flour",
+      "name": "spelt flour",
+      "aliases": [
+        "spelt"
+      ],
+      "category": "grain",
+      "fructans": "moderate",
+      "gos": null,
+      "lactose": null,
+      "fructose": null,
+      "polyols": null,
+      "overall": "moderate",
+      "groupUnknown": false,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": "sourdough spelt",
+      "moderateServing": null,
+      "highServing": "yeasted spelt bread",
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Lower fructan than wheat, still present. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         }
       ]
     },
@@ -19327,6 +20224,49 @@
       ]
     },
     {
+      "id": "wheat-flour",
+      "name": "wheat flour",
+      "aliases": [
+        "all-purpose flour",
+        "bleached flour",
+        "enriched flour",
+        "enriched wheat flour",
+        "flour",
+        "plain flour",
+        "unbleached flour",
+        "wheat",
+        "white flour"
+      ],
+      "category": "grain",
+      "fructans": "high",
+      "gos": null,
+      "lactose": null,
+      "fructose": null,
+      "polyols": null,
+      "overall": "high",
+      "groupUnknown": false,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": "small amounts as a minor ingredient",
+      "moderateServing": null,
+      "highServing": "main ingredient of bread, pasta, pastry",
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Fructans. Wheat is the dominant fructan source in Western diets; rating applies when flour is a main ingredient. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        }
+      ]
+    },
+    {
       "id": "wheat-flour-white",
       "name": "wheat flour, white",
       "aliases": [
@@ -19621,6 +20561,45 @@
         {
           "family": "open-datasets",
           "url": "https://blog.spoonfulapp.com/top-fodmap-ingredients/"
+        }
+      ]
+    },
+    {
+      "id": "whole-wheat-flour",
+      "name": "whole wheat flour",
+      "aliases": [
+        "wheat bran",
+        "wheat germ",
+        "whole grain wheat flour",
+        "wholemeal flour",
+        "wholewheat flour"
+      ],
+      "category": "grain",
+      "fructans": "high",
+      "gos": null,
+      "lactose": null,
+      "fructose": null,
+      "polyols": null,
+      "overall": "high",
+      "groupUnknown": false,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": null,
+      "moderateServing": null,
+      "highServing": "main ingredient",
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Higher fructan than white flour. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         }
       ]
     },
@@ -19972,7 +20951,8 @@
       "name": "cilantro",
       "aliases": [
         "coriander leaf",
-        "coriander seed"
+        "coriander seed",
+        "fresh coriander"
       ],
       "category": "herb-spice",
       "fructans": null,
@@ -19988,16 +20968,23 @@
       "moderateServing": null,
       "highServing": null,
       "quantitative": null,
-      "confidence": "low",
+      "confidence": "medium",
       "sourceFamilies": [
-        "clinical-handouts"
+        "clinical-handouts",
+        "label-supplement"
       ],
       "conflicts": [],
-      "notes": [],
+      "notes": [
+        "[label-supplement] Low. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
       "sources": [
         {
           "family": "clinical-handouts",
           "url": "https://www.katescarlata.com/s/Low-FODMAP-Checklist-2020_tab.pdf"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         }
       ]
     },
@@ -20448,11 +21435,15 @@
       "id": "garlic-powder",
       "name": "garlic powder",
       "aliases": [
+        "dehydrated garlic",
         "dried garlic",
         "garlic extract",
         "garlic flakes",
+        "garlic juice",
         "garlic salt",
-        "granulated garlic"
+        "granulated garlic",
+        "minced garlic",
+        "roasted garlic"
       ],
       "category": "herb-spice",
       "fructans": "high",
@@ -20479,17 +21470,23 @@
       },
       "confidence": "high",
       "sourceFamilies": [
+        "label-supplement",
         "literature",
         "monash-public",
         "open-datasets"
       ],
       "conflicts": [],
       "notes": [
+        "[label-supplement] Concentrated fructans; high even far down a list. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[literature] CNF 188 garlic powder fructose 0.31, glucose 0.07 -> 3 g excess fructose 0.007 -> low for fructose. Fructans not measured here but expected very high (dehydrated garlic ~3x fresh garlic 17.4 g/100 g) -> treat as high fructan; left null. [computed thresholds governed by excess fructose (0.24 g/100 g vs 0.15 g cutoff): low <=62 g, moderate 63-124 g, high >=125 g] [excess fructose = 0.31 - 0.07 = 0.24 g/100 g; cutoff 0.15 g/serve] [oligo cutoff 0.2 g/serve]",
         "[monash-public] Named exception to normal quantity rules: even very small amounts contribute significantly to FODMAP load.",
         "[open-datasets] Concentrated fructans; no safe serving (oseparovic, nathaliatg, gautham50050, Monash label blog 'definite avoid'). Present in most seasoning blends, chips, sauces, stocks, deli meats. OFF tag en:garlic-powder (~4.8k products)."
       ],
       "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        },
         {
           "family": "literature",
           "url": "https://food-nutrition.canada.ca/api/canadian-nutrient-file/"
@@ -20711,12 +21708,17 @@
       "id": "onion-powder",
       "name": "onion powder",
       "aliases": [
+        "dehydrated onion",
         "dried minced onion",
         "dried onion",
         "granulated onion",
+        "minced onion",
         "onion extract",
         "onion flakes",
-        "onion salt"
+        "onion juice",
+        "onion salt",
+        "shallot powder",
+        "toasted onion"
       ],
       "category": "herb-spice",
       "fructans": "high",
@@ -20743,19 +21745,25 @@
       },
       "confidence": "high",
       "sourceFamilies": [
+        "label-supplement",
         "literature",
         "monash-public",
         "open-datasets"
       ],
       "conflicts": [
-        "fructans: literature=low, monash-public=high, open-datasets=high"
+        "fructans: label-supplement=high, literature=low, monash-public=high, open-datasets=high"
       ],
       "notes": [
+        "[label-supplement] Concentrated fructans; high even far down a list. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[literature] Fructan 4.5 g/100 g (foodintolerances.org tabulation citing Muir 2007/FSANZ); CNF 194 fructose 1.67, glucose 0.73. 1 tsp 2 g = 0.09 g fructan vs 0.2 g -> low; moderate 5-8 g; high >=9 g. [computed thresholds governed by total oligosaccharides (4.50 g/100 g vs 0.2 g cutoff): low <=4 g, moderate 5-8 g, high >=9 g] [excess fructose = 1.67 - 0.73 = 0.94 g/100 g; cutoff 0.15 g/serve] [oligo cutoff 0.2 g/serve]",
         "[monash-public] Same exception as garlic powder.",
         "[open-datasets] Concentrated fructans; no safe serving. OFF synonyms: granulated onion, dried minced onion. Ubiquitous in savory packaged foods."
       ],
       "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        },
         {
           "family": "literature",
           "url": "https://foodintolerances.org/en/food-dictionary/fructan-and-fructooligosaccharide-content-of-food"
@@ -21023,7 +22031,10 @@
       "id": "salt",
       "name": "salt",
       "aliases": [
-        "sea salt"
+        "iodized salt",
+        "kosher salt",
+        "sea salt",
+        "sodium chloride"
       ],
       "category": "herb-spice",
       "fructans": null,
@@ -21039,19 +22050,25 @@
       "moderateServing": null,
       "highServing": null,
       "quantitative": null,
-      "confidence": "medium",
+      "confidence": "high",
       "sourceFamilies": [
         "clinical-handouts",
+        "label-supplement",
         "monash-public"
       ],
       "conflicts": [],
       "notes": [
-        "[clinical-handouts] Garlic salt and onion salt are high."
+        "[clinical-handouts] Garlic salt and onion salt are high.",
+        "[label-supplement] No FODMAPs. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
       ],
       "sources": [
         {
           "family": "clinical-handouts",
           "url": "https://mydoctor.kaiserpermanente.org/ncal/Images/Low_FODMAP_Diet_Handout_tcm75-2407402.pdf"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         },
         {
           "family": "monash-public",
@@ -21301,7 +22318,10 @@
       "name": "vanilla",
       "aliases": [
         "almond extract",
-        "vanilla extract"
+        "natural vanilla flavor",
+        "vanilla bean",
+        "vanilla extract",
+        "vanillin"
       ],
       "category": "herb-spice",
       "fructans": null,
@@ -21317,16 +22337,23 @@
       "moderateServing": null,
       "highServing": null,
       "quantitative": null,
-      "confidence": "low",
+      "confidence": "medium",
       "sourceFamilies": [
-        "clinical-handouts"
+        "clinical-handouts",
+        "label-supplement"
       ],
       "conflicts": [],
-      "notes": [],
+      "notes": [
+        "[label-supplement] Low. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
       "sources": [
         {
           "family": "clinical-handouts",
           "url": "https://www.katescarlata.com/s/Low-FODMAP-Checklist-2020_tab.pdf"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         }
       ]
     },
@@ -22526,6 +23553,50 @@
       ]
     },
     {
+      "id": "pea-flour",
+      "name": "pea flour",
+      "aliases": [
+        "bean flour",
+        "besan",
+        "chickpea flour",
+        "fava bean flour",
+        "garbanzo flour",
+        "gram flour",
+        "lentil flour",
+        "pea fiber",
+        "pea fibre",
+        "yellow pea flour"
+      ],
+      "category": "legume",
+      "fructans": "moderate",
+      "gos": "high",
+      "lactose": null,
+      "fructose": null,
+      "polyols": null,
+      "overall": "high",
+      "groupUnknown": false,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": "small amounts",
+      "moderateServing": null,
+      "highServing": "main ingredient",
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] GOS and fructans from legume flours. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        }
+      ]
+    },
+    {
       "id": "pinto-bean-boiled",
       "name": "pinto bean, boiled",
       "aliases": [],
@@ -22692,10 +23763,15 @@
       "id": "soy-flour",
       "name": "soy flour",
       "aliases": [
+        "defatted soy flour",
+        "soy grits",
         "soy protein (textured)",
         "soya flour",
+        "soybean flour",
+        "soybeans",
         "textured vegetable protein",
-        "tvp"
+        "tvp",
+        "whole soybeans"
       ],
       "category": "legume",
       "fructans": "low",
@@ -22722,6 +23798,7 @@
       },
       "confidence": "high",
       "sourceFamilies": [
+        "label-supplement",
         "literature",
         "monash-public",
         "open-datasets"
@@ -22730,10 +23807,15 @@
         "fructans: literature=low, open-datasets=high"
       ],
       "notes": [
+        "[label-supplement] GOS from whole soybean. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[literature] Italian 2025 soy flour raffinose 0.677 + stachyose 3.22 = 3.90 g/100 g -> 30 g = 1.17 g -> high. [computed thresholds governed by total oligosaccharides (3.90 g/100 g vs 0.3 g cutoff): low <=7 g, moderate 8-15 g, high >=16 g] [oligo cutoff 0.3 g/serve]",
         "[open-datasets] Monash label blog lists soy flour and lupin flour as oligosaccharide sources to avoid; TVP high GOS (gautham50050)."
       ],
       "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        },
         {
           "family": "literature",
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11858256/"
@@ -22745,6 +23827,45 @@
         {
           "family": "open-datasets",
           "url": "https://www.monashfodmap.com/blog/update-label-reading/"
+        }
+      ]
+    },
+    {
+      "id": "soy-protein-isolate",
+      "name": "soy protein isolate",
+      "aliases": [
+        "isolated soy protein",
+        "soy protein",
+        "soy protein concentrate",
+        "textured vegetable protein",
+        "tvp"
+      ],
+      "category": "legume",
+      "fructans": null,
+      "gos": "low",
+      "lactose": null,
+      "fructose": null,
+      "polyols": null,
+      "overall": "low",
+      "groupUnknown": false,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": "typical serve",
+      "moderateServing": null,
+      "highServing": null,
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Processing removes most GOS. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         }
       ]
     },
@@ -23135,9 +24256,10 @@
       "moderateServing": "1/2 cup",
       "highServing": "IBS Diets: almond meal high / high in large amounts",
       "quantitative": null,
-      "confidence": "medium",
+      "confidence": "high",
       "sourceFamilies": [
         "clinical-handouts",
+        "label-supplement",
         "open-datasets"
       ],
       "conflicts": [
@@ -23146,12 +24268,17 @@
       ],
       "notes": [
         "[clinical-handouts] Common in grain-free and keto baked goods; a slice of almond-flour cake contains far more than 10 almonds.",
+        "[label-supplement] GOS at larger amounts. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[open-datasets] Almonds GOS: low at 1/4 cup, moderate 1/2 cup (kwpav moderate, gautham50050 moderate; fodmap-diet/basket high)."
       ],
       "sources": [
         {
           "family": "clinical-handouts",
           "url": "https://www.ibsdiets.org/fodmap-diet/fodmap-food-list/"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         },
         {
           "family": "open-datasets",
@@ -24308,6 +25435,48 @@
       ]
     },
     {
+      "id": "cocoa",
+      "name": "cocoa",
+      "aliases": [
+        "cacao",
+        "cacao powder",
+        "chocolate liquor",
+        "cocoa butter",
+        "cocoa liquor",
+        "cocoa mass",
+        "cocoa powder",
+        "unsweetened chocolate"
+      ],
+      "category": "other",
+      "fructans": null,
+      "gos": null,
+      "lactose": null,
+      "fructose": null,
+      "polyols": null,
+      "overall": "low",
+      "groupUnknown": true,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": "2 tsp to 1 tbsp",
+      "moderateServing": null,
+      "highServing": null,
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Low; the milk and sweeteners in chocolate are what matter. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        }
+      ]
+    },
+    {
       "id": "egg-replacer",
       "name": "egg replacer",
       "aliases": [],
@@ -24515,6 +25684,46 @@
         {
           "family": "literature",
           "url": "https://pubmed.ncbi.nlm.nih.gov/29473657/"
+        }
+      ]
+    },
+    {
+      "id": "yeast",
+      "name": "yeast",
+      "aliases": [
+        "active dry yeast",
+        "baker's yeast",
+        "bakers yeast",
+        "brewer's yeast",
+        "fresh yeast",
+        "instant yeast"
+      ],
+      "category": "other",
+      "fructans": null,
+      "gos": null,
+      "lactose": null,
+      "fructose": null,
+      "polyols": null,
+      "overall": "low",
+      "groupUnknown": true,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": "any typical amount",
+      "moderateServing": null,
+      "highServing": null,
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] No FODMAPs. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         }
       ]
     },
@@ -26258,42 +27467,6 @@
       ]
     },
     {
-      "id": "whey-protein-isolate",
-      "name": "whey protein isolate",
-      "aliases": [
-        "isolate protein powder",
-        "wpi"
-      ],
-      "category": "processed",
-      "fructans": null,
-      "gos": null,
-      "lactose": "low",
-      "fructose": null,
-      "polyols": null,
-      "overall": "low",
-      "groupUnknown": false,
-      "tier": "primary",
-      "polyolType": null,
-      "lowServing": "2 tbsp (about 30 g)",
-      "moderateServing": null,
-      "highServing": null,
-      "quantitative": null,
-      "confidence": "low",
-      "sourceFamilies": [
-        "open-datasets"
-      ],
-      "conflicts": [],
-      "notes": [
-        "[open-datasets] Lactose removed by filtration; low at 2 tbsp (Casa de Sante lists whey, pea, brown rice powders). Check for inulin, chicory, polyol sweeteners in flavored powders."
-      ],
-      "sources": [
-        {
-          "family": "open-datasets",
-          "url": "https://casadesante.com/blogs/low-fodmap-life/low-fodmap-soft-drinks"
-        }
-      ]
-    },
-    {
       "id": "wholemeal-cracker",
       "name": "wholemeal cracker",
       "aliases": [],
@@ -26654,7 +27827,12 @@
       "id": "egg",
       "name": "egg",
       "aliases": [
-        "egg white"
+        "dried egg",
+        "egg powder",
+        "egg white",
+        "egg yolk",
+        "liquid egg",
+        "whole egg"
       ],
       "category": "protein",
       "fructans": null,
@@ -26670,19 +27848,25 @@
       "moderateServing": null,
       "highServing": null,
       "quantitative": null,
-      "confidence": "medium",
+      "confidence": "high",
       "sourceFamilies": [
         "clinical-handouts",
+        "label-supplement",
         "monash-public"
       ],
       "conflicts": [],
       "notes": [
-        "[clinical-handouts] FODMAP-free in every source."
+        "[clinical-handouts] FODMAP-free in every source.",
+        "[label-supplement] No FODMAPs. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
       ],
       "sources": [
         {
           "family": "clinical-handouts",
           "url": "https://www.fodmapeveryday.com/no-fodmap-content-foods/"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         },
         {
           "family": "monash-public",
@@ -26993,34 +28177,42 @@
       "id": "pea-protein",
       "name": "pea protein",
       "aliases": [
+        "pea protein concentrate",
+        "pea protein isolate",
         "pea protein powder"
       ],
       "category": "protein",
       "fructans": null,
-      "gos": null,
+      "gos": "low",
       "lactose": null,
       "fructose": null,
       "polyols": null,
       "overall": "low",
-      "groupUnknown": true,
+      "groupUnknown": false,
       "tier": "primary",
       "polyolType": null,
       "lowServing": "unrestricted (FE, CUH)",
       "moderateServing": null,
       "highServing": null,
       "quantitative": null,
-      "confidence": "low",
+      "confidence": "medium",
       "sourceFamilies": [
-        "clinical-handouts"
+        "clinical-handouts",
+        "label-supplement"
       ],
       "conflicts": [],
       "notes": [
-        "[clinical-handouts] Note that whole green peas are high; the isolate is low."
+        "[clinical-handouts] Note that whole green peas are high; the isolate is low.",
+        "[label-supplement] Isolate is low; whole pea flour is not. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
       ],
       "sources": [
         {
           "family": "clinical-handouts",
           "url": "https://www.cuh.nhs.uk/patient-information/low-fodmap-diet-reducing-fermentable-carbohydrates-in-your-diet/"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         }
       ]
     },
@@ -27785,16 +28977,22 @@
       "moderateServing": null,
       "highServing": "typical serve",
       "quantitative": null,
-      "confidence": "medium",
+      "confidence": "high",
       "sourceFamilies": [
+        "label-supplement",
         "monash-public",
         "open-datasets"
       ],
       "conflicts": [],
       "notes": [
+        "[label-supplement] Very high excess fructose. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[open-datasets] 70-90% fructose plus some fructans; high (oseparovic, gourmend 'tops the list', fodzyme technically low at 1 tsp). Common in 'natural' granola, yogurt, drinks."
       ],
       "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        },
         {
           "family": "monash-public",
           "url": "https://www.monashfodmap.com/blog/food-processing-and-fodmaps-what-you/"
@@ -27881,8 +29079,11 @@
       "name": "aspartame",
       "aliases": [
         "acesulfame k",
+        "acesulfame potassium",
         "canderel",
+        "e950",
         "e951",
+        "e954",
         "equal",
         "nutrasweet",
         "saccharin",
@@ -27903,20 +29104,26 @@
       "moderateServing": null,
       "highServing": null,
       "quantitative": null,
-      "confidence": "medium",
+      "confidence": "high",
       "sourceFamilies": [
         "clinical-handouts",
+        "label-supplement",
         "open-datasets"
       ],
       "conflicts": [],
       "notes": [
         "[clinical-handouts] Non-polyol artificial sweeteners are low FODMAP (IBS Diets, CUH, Glos, Kaiser). CUH oddly also lists saccharin and cyclamate under polyol labels.",
+        "[label-supplement] Not FODMAPs; tracked as artificial sweeteners. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[open-datasets] Amino-acid based; low (all sources). Avoid with PKU."
       ],
       "sources": [
         {
           "family": "clinical-handouts",
           "url": "https://www.ibsdiets.org/fodmap-diet/fodmap-food-list/"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         },
         {
           "family": "open-datasets",
@@ -28331,6 +29538,7 @@
       "confidence": "high",
       "sourceFamilies": [
         "clinical-handouts",
+        "label-supplement",
         "monash-public",
         "open-datasets"
       ],
@@ -28340,6 +29548,7 @@
       ],
       "notes": [
         "[clinical-handouts] Absorbed in the small intestine so Monash rates it lower than other polyols, but several hospital handouts still avoid it.",
+        "[label-supplement] Polyol but mostly absorbed in the small intestine; well tolerated by most. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[monash-public] Label-reading post lists erythritol as LOW (well absorbed); the sweeteners post groups it with polyols to be cautious about. Sources disagree.",
         "[open-datasets] Untested by Monash per A Little Bit Yummy/fodzyme; ~90% absorbed in small intestine so usually better tolerated, but gourmend says avoid and theibsdietitian notes it may worsen fructose absorption. Common base of stevia/monk-fruit blends (Truvia, Swerve). Flag rather than rate."
       ],
@@ -28347,6 +29556,10 @@
         {
           "family": "clinical-handouts",
           "url": "https://www.ibsdiets.org/fodmap-diet/fodmap-food-list/"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         },
         {
           "family": "monash-public",
@@ -28407,34 +29620,44 @@
       "id": "fruit-juice-concentrate",
       "name": "fruit juice concentrate",
       "aliases": [
+        "apple juice concentrate",
         "concentrated fruit juice",
-        "fruit puree concentrate"
+        "fruit concentrate",
+        "fruit puree concentrate",
+        "pear juice concentrate",
+        "white grape juice concentrate"
       ],
       "category": "sweetener",
       "fructans": null,
       "gos": null,
       "lactose": null,
       "fructose": "high",
-      "polyols": null,
+      "polyols": "moderate",
       "overall": "high",
       "groupUnknown": false,
       "tier": "primary",
       "polyolType": null,
-      "lowServing": null,
+      "lowServing": "none (avoid)",
       "moderateServing": null,
       "highServing": "as an ingredient",
       "quantitative": null,
-      "confidence": "medium",
+      "confidence": "high",
       "sourceFamilies": [
+        "label-supplement",
         "monash-public",
         "open-datasets"
       ],
       "conflicts": [],
       "notes": [
+        "[label-supplement] Apple and pear concentrates carry excess fructose and sorbitol. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[monash-public] Label red flag for excess fructose.",
         "[open-datasets] Usually apple/pear/grape concentrate - Monash label blog and CDHF flag as excess-fructose source in cereals, jams, 'no added sugar' products."
       ],
       "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        },
         {
           "family": "monash-public",
           "url": "https://www.monashfodmap.com/blog/update-label-reading/"
@@ -28449,38 +29672,48 @@
       "id": "glucose",
       "name": "glucose",
       "aliases": [
+        "brown rice syrup",
+        "corn syrup",
         "corn syrup solids",
         "dextrose",
         "glucose syrup",
         "maltodextrin",
-        "maltose"
+        "maltose",
+        "rice syrup",
+        "tapioca syrup"
       ],
       "category": "sweetener",
       "fructans": null,
       "gos": null,
       "lactose": null,
-      "fructose": null,
+      "fructose": "low",
       "polyols": null,
       "overall": "low",
-      "groupUnknown": true,
+      "groupUnknown": false,
       "tier": "primary",
       "polyolType": null,
       "lowServing": "unrestricted",
       "moderateServing": null,
       "highServing": null,
       "quantitative": null,
-      "confidence": "low",
+      "confidence": "medium",
       "sourceFamilies": [
-        "clinical-handouts"
+        "clinical-handouts",
+        "label-supplement"
       ],
       "conflicts": [],
       "notes": [
-        "[clinical-handouts] Allowed label ingredients in Kaiser, MNGI, CUH."
+        "[clinical-handouts] Allowed label ingredients in Kaiser, MNGI, CUH.",
+        "[label-supplement] Glucose-based; not HFCS. Low FODMAP. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
       ],
       "sources": [
         {
           "family": "clinical-handouts",
           "url": "https://www.mngi.com/media/353/download"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         }
       ]
     },
@@ -28616,11 +29849,14 @@
       "name": "high fructose corn syrup",
       "aliases": [
         "corn sugar",
+        "crystalline fructose",
+        "fructose",
         "fructose-glucose syrup",
         "glucose-fructose syrup",
         "hfcs",
         "hfcs-55",
         "hfcs-90",
+        "high-fructose corn syrup",
         "isoglucose"
       ],
       "category": "sweetener",
@@ -28633,21 +29869,27 @@
       "groupUnknown": false,
       "tier": "primary",
       "polyolType": null,
-      "lowServing": null,
+      "lowServing": "none (avoid)",
       "moderateServing": null,
       "highServing": "as ingredient",
       "quantitative": null,
-      "confidence": "medium",
+      "confidence": "high",
       "sourceFamilies": [
+        "label-supplement",
         "monash-public",
         "open-datasets"
       ],
       "conflicts": [],
       "notes": [
+        "[label-supplement] Excess fructose. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[monash-public] Avoid if sensitive to excess fructose.",
         "[open-datasets] Excess fructose; high at all amounts (Monash label-reading blog, Spoonful, every sweetener guide). EU labels call it 'glucose-fructose syrup'; OFF synonym 'isoglucose'. oseparovic mislabels its group as oligos."
       ],
       "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        },
         {
           "family": "monash-public",
           "url": "https://www.monashfodmap.com/blog/sweeteners-and-low-fodmap-diet/"
@@ -28701,6 +29943,7 @@
       "name": "honey",
       "aliases": [
         "clover honey",
+        "honey powder",
         "manuka honey",
         "raw honey"
       ],
@@ -28730,6 +29973,7 @@
       "confidence": "high",
       "sourceFamilies": [
         "clinical-handouts",
+        "label-supplement",
         "literature",
         "monash-public",
         "open-datasets"
@@ -28737,6 +29981,7 @@
       "conflicts": [],
       "notes": [
         "[clinical-handouts] Excess fructose. Avoid in every handout: Stanford, Kate, Kaiser, MNGI, IBS Diets, CUH, Glos, CDHF, FE, Mayo. Common in honey-roasted nuts, granola, glazes, Asian sauces, 'natural' sweetened products.",
+        "[label-supplement] Excess fructose. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[literature] CNF 4294 honey fructose 40.94, glucose 35.75 -> excess 5.2 g/100 g (foodintolerances.org 39/34). 1 tbsp 20 g = 1.04 g vs 0.15 -> high; low <=2 g (using the 0.4 g cutoff instead: low <=7 g, matching the Monash 7 g serve). [computed thresholds governed by excess fructose (5.19 g/100 g vs 0.15 g cutoff): low <=2 g, moderate 3-5 g, high >=6 g] [excess fructose = 40.94 - 35.75 = 5.19 g/100 g; cutoff 0.15 g/serve] [oligo cutoff 0.2 g/serve]",
         "[monash-public] Maple syrup is the swap.",
         "[open-datasets] About 40% fructose; low only at 1 tsp (moderate per A Little Bit Yummy), high at 1 tbsp (fodzyme, gourmend, Spoonful, Monash label blog). Common hidden sweetener in cereals, sauces, marinades."
@@ -28745,6 +29990,10 @@
         {
           "family": "clinical-handouts",
           "url": "https://cdhf.ca/en/understanding-the-fodmap-diet/"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         },
         {
           "family": "literature",
@@ -28820,11 +30069,13 @@
       "confidence": "high",
       "sourceFamilies": [
         "clinical-handouts",
+        "label-supplement",
         "monash-public",
         "open-datasets"
       ],
       "conflicts": [],
       "notes": [
+        "[label-supplement] Polyol sweetener. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[open-datasets] Polyol (glucose-mannitol/glucose-sorbitol); high. Sugar-free hard candy, cake decorations. OFF tag en:e953."
       ],
       "sources": [
@@ -28833,46 +30084,9 @@
           "url": "https://www.cuh.nhs.uk/patient-information/low-fodmap-diet-reducing-fermentable-carbohydrates-in-your-diet/"
         },
         {
-          "family": "monash-public",
-          "url": "https://www.monashfodmap.com/blog/food-additives-and-fodmaps/"
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         },
-        {
-          "family": "open-datasets",
-          "url": "https://www.monashfodmap.com/blog/update-label-reading/"
-        }
-      ]
-    },
-    {
-      "id": "lactitol",
-      "name": "lactitol",
-      "aliases": [
-        "966",
-        "e966"
-      ],
-      "category": "sweetener",
-      "fructans": null,
-      "gos": null,
-      "lactose": null,
-      "fructose": null,
-      "polyols": "high",
-      "overall": "high",
-      "groupUnknown": false,
-      "tier": "primary",
-      "polyolType": "lactitol",
-      "lowServing": null,
-      "moderateServing": null,
-      "highServing": "as sweetener",
-      "quantitative": null,
-      "confidence": "medium",
-      "sourceFamilies": [
-        "monash-public",
-        "open-datasets"
-      ],
-      "conflicts": [],
-      "notes": [
-        "[open-datasets] Polyol listed in Monash label-reading blog and Casa de Sante; sugar-free chocolate, some laxatives."
-      ],
-      "sources": [
         {
           "family": "monash-public",
           "url": "https://www.monashfodmap.com/blog/food-additives-and-fodmaps/"
@@ -28912,18 +30126,24 @@
       "confidence": "high",
       "sourceFamilies": [
         "clinical-handouts",
+        "label-supplement",
         "monash-public",
         "open-datasets"
       ],
       "conflicts": [],
       "notes": [
         "[clinical-handouts] Common in sugar-free chocolate and protein bars (MNGI lists hydrogenated starch hydrolysates and polydextrose).",
+        "[label-supplement] Polyol sweetener, strongly laxative. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[open-datasets] Polyol; high. Sugar-free chocolate and candy; notorious laxative effect. OFF tag en:e965."
       ],
       "sources": [
         {
           "family": "clinical-handouts",
           "url": "https://www.mngi.com/media/353/download"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         },
         {
           "family": "monash-public",
@@ -28992,17 +30212,23 @@
       "confidence": "high",
       "sourceFamilies": [
         "clinical-handouts",
+        "label-supplement",
         "monash-public",
         "open-datasets"
       ],
       "conflicts": [],
       "notes": [
+        "[label-supplement] Polyol sweetener. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[open-datasets] Polyol; high. Sugar-free products, some medications; natural in mushrooms, cauliflower, celery. OFF tag en:e421."
       ],
       "sources": [
         {
           "family": "clinical-handouts",
           "url": "https://www.cuh.nhs.uk/patient-information/low-fodmap-diet-reducing-fermentable-carbohydrates-in-your-diet/"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         },
         {
           "family": "monash-public",
@@ -29189,17 +30415,19 @@
       "confidence": "high",
       "sourceFamilies": [
         "clinical-handouts",
+        "label-supplement",
         "literature",
         "open-datasets"
       ],
       "conflicts": [
-        "fructose: clinical-handouts=high, literature=moderate, open-datasets=high",
+        "fructose: clinical-handouts=high, label-supplement=moderate, literature=moderate, open-datasets=high",
         "[clinical-handouts] Glos NHS: treacle suitable",
         "[clinical-handouts] CUH NHS: treacle avoid",
         "[clinical-handouts] Kate: small amounts in a product OK",
         "[clinical-handouts] Kaiser/MNGI/IBS Diets: avoid"
       ],
       "notes": [
+        "[label-supplement] Excess fructose at larger amounts. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[literature] CNF 4299 fancy molasses fructose 12.79, glucose 11.92 -> excess 0.87; 20 g = 0.17 g vs 0.15 -> moderate; low <=17 g. Blackstrap (CNF 4300) fructose 7.9, glucose 7.4 -> 20 g = 0.10 g -> low. [computed thresholds governed by excess fructose (0.87 g/100 g vs 0.15 g cutoff): low <=17 g, moderate 18-34 g, high >=35 g] [excess fructose = 12.79 - 11.92 = 0.87 g/100 g; cutoff 0.15 g/serve] [oligo cutoff 0.2 g/serve]",
         "[open-datasets] Low at 1 tsp, high at 1 tbsp (fodzyme, A Little Bit Yummy, Spoonful). ts-sz allows 1 tbsp and oseparovic rates high without serving - conflicting; use 1 tsp threshold. Gives brown sugar its color in trace amounts (fine)."
       ],
@@ -29207,6 +30435,10 @@
         {
           "family": "clinical-handouts",
           "url": "https://www.ibsdiets.org/fodmap-diet/fodmap-food-list/"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         },
         {
           "family": "literature",
@@ -29474,18 +30706,24 @@
       "confidence": "high",
       "sourceFamilies": [
         "clinical-handouts",
+        "label-supplement",
         "monash-public",
         "open-datasets"
       ],
       "conflicts": [],
       "notes": [
         "[clinical-handouts] Sugar-free gum, mints, candy, cough drops, 'diet' products (Stanford, Kate, Kaiser, CUH, Glos, MNGI).",
+        "[label-supplement] Polyol sweetener. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[open-datasets] Polyol; high in every source. Sugar-free gum, mints, candies, cough drops, some diet drinks; also naturally in stone fruit. OFF additive tag en:e420 (21k+ products)."
       ],
       "sources": [
         {
           "family": "clinical-handouts",
           "url": "https://www.cuh.nhs.uk/patient-information/low-fodmap-diet-reducing-fermentable-carbohydrates-in-your-diet/"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         },
         {
           "family": "monash-public",
@@ -29535,6 +30773,9 @@
       "name": "stevia",
       "aliases": [
         "e960",
+        "luo han guo",
+        "monk fruit",
+        "monk fruit extract",
         "reb a",
         "rebaudioside a",
         "stevia leaf extract",
@@ -29554,14 +30795,16 @@
       "moderateServing": null,
       "highServing": null,
       "quantitative": null,
-      "confidence": "medium",
+      "confidence": "high",
       "sourceFamilies": [
         "clinical-handouts",
+        "label-supplement",
         "open-datasets"
       ],
       "conflicts": [],
       "notes": [
         "[clinical-handouts] Low in every source. Check blends for erythritol or inulin filler.",
+        "[label-supplement] Not FODMAPs. Blends often add erythritol. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[open-datasets] Low at 2 tsp (A Little Bit Yummy, fodzyme). Warning in every source: retail stevia products are often bulked with erythritol, inulin or maltodextrin - read the label."
       ],
       "sources": [
@@ -29570,44 +30813,12 @@
           "url": "https://www.katescarlata.com/s/Low-FODMAP-Checklist-2020_tab.pdf"
         },
         {
-          "family": "open-datasets",
-          "url": "https://alittlebityummy.com/blog/the-ultimate-guide-to-low-fodmap-sugars-sweeteners/"
-        }
-      ]
-    },
-    {
-      "id": "sucralose",
-      "name": "sucralose",
-      "aliases": [
-        "e955",
-        "splenda"
-      ],
-      "category": "sweetener",
-      "fructans": null,
-      "gos": null,
-      "lactose": null,
-      "fructose": "low",
-      "polyols": "low",
-      "overall": "low",
-      "groupUnknown": false,
-      "tier": "primary",
-      "polyolType": null,
-      "lowServing": null,
-      "moderateServing": null,
-      "highServing": null,
-      "quantitative": null,
-      "confidence": "low",
-      "sourceFamilies": [
-        "open-datasets"
-      ],
-      "conflicts": [],
-      "notes": [
-        "[open-datasets] Not a FODMAP; considered low though untested (A Little Bit Yummy, theibsdietitian, fodzyme). Granulated Splenda is bulked with dextrose/maltodextrin (fine)."
-      ],
-      "sources": [
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
+        },
         {
           "family": "open-datasets",
-          "url": "https://theibsdietitian.com/blog/which-sweeteners-are-low-fodmap-dietitian-advice-for-ibs"
+          "url": "https://alittlebityummy.com/blog/the-ultimate-guide-to-low-fodmap-sugars-sweeteners/"
         }
       ]
     },
@@ -29618,6 +30829,11 @@
         "beet sugar",
         "brown sugar",
         "cane sugar",
+        "caster sugar",
+        "evaporated cane juice",
+        "granulated sugar",
+        "icing sugar",
+        "invert sugar",
         "palm sugar",
         "powdered sugar",
         "raw sugar",
@@ -29628,28 +30844,34 @@
       "fructans": null,
       "gos": null,
       "lactose": null,
-      "fructose": null,
+      "fructose": "low",
       "polyols": null,
       "overall": "low",
-      "groupUnknown": true,
+      "groupUnknown": false,
       "tier": "primary",
       "polyolType": null,
       "lowServing": "1/4 cup / 50 g (CDHF, FE3); unrestricted elsewhere",
       "moderateServing": null,
       "highServing": null,
       "quantitative": null,
-      "confidence": "low",
+      "confidence": "medium",
       "sourceFamilies": [
-        "clinical-handouts"
+        "clinical-handouts",
+        "label-supplement"
       ],
       "conflicts": [],
       "notes": [
-        "[clinical-handouts] Sucrose is low FODMAP in every source (glucose:fructose 1:1)."
+        "[clinical-handouts] Sucrose is low FODMAP in every source (glucose:fructose 1:1).",
+        "[label-supplement] Sucrose is glucose + fructose in equal parts, so no excess fructose. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
       ],
       "sources": [
         {
           "family": "clinical-handouts",
           "url": "https://cdhf.ca/en/understanding-the-fodmap-diet/"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         }
       ]
     },
@@ -29864,17 +31086,23 @@
       "confidence": "high",
       "sourceFamilies": [
         "clinical-handouts",
+        "label-supplement",
         "monash-public",
         "open-datasets"
       ],
       "conflicts": [],
       "notes": [
+        "[label-supplement] Polyol sweetener. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)",
         "[open-datasets] Polyol; high (all sources). Sugar-free gum, mints, toothpaste (not swallowed - fine). OFF tag en:e967."
       ],
       "sources": [
         {
           "family": "clinical-handouts",
           "url": "https://www.cuh.nhs.uk/patient-information/low-fodmap-diet-reducing-fermentable-carbohydrates-in-your-diet/"
+        },
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         },
         {
           "family": "monash-public",
@@ -34215,6 +35443,45 @@
         {
           "family": "open-datasets",
           "url": "https://fodmapfriendly.com/wp-content/uploads/2021/07/Low-FODMAP-Foods-Checklist.pdf"
+        }
+      ]
+    },
+    {
+      "id": "tomato-puree",
+      "name": "tomato puree",
+      "aliases": [
+        "canned tomatoes",
+        "crushed tomatoes",
+        "diced tomatoes",
+        "tomato pulp",
+        "tomato sauce (plain)"
+      ],
+      "category": "vegetable",
+      "fructans": null,
+      "gos": null,
+      "lactose": null,
+      "fructose": "low",
+      "polyols": null,
+      "overall": "low",
+      "groupUnknown": false,
+      "tier": "variant",
+      "polyolType": null,
+      "lowServing": "1/2 cup",
+      "moderateServing": null,
+      "highServing": "1 cup",
+      "quantitative": null,
+      "confidence": "low",
+      "sourceFamilies": [
+        "label-supplement"
+      ],
+      "conflicts": [],
+      "notes": [
+        "[label-supplement] Low at usual amounts; check for onion and garlic. (Label-ingredient supplement compiled 2026-09-21 from Monash public label-reading guidance and the other research files; lowest merge priority.)"
+      ],
+      "sources": [
+        {
+          "family": "label-supplement",
+          "url": "https://www.monashfodmap.com/blog/how-read-food-label-low-fodmap-diet/"
         }
       ]
     },

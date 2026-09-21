@@ -89,12 +89,13 @@ function viewFromUser(u: Food, userFoods: Map<string, Food>, overridesByRef: Map
     }
   }
   const ref = u.refId ? REF_BY_ID.get(u.refId) ?? null : null;
-  const untested = !worst(fodmap) && !(u.kind === 'dish' && u.ingredients.length);
+  const derived = u.kind === 'dish' && u.ingredients.length > 0 && !u.overrideFodmap;
+  const untested = !worst(fodmap) && !derived;
   return {
     id: u.id, name: u.name, category: u.category, kind: u.kind, fodmap, overall: worst(fodmap),
     groupUnknown, polyolType: ref?.polyolType ?? null,
     servings: { low: ref?.lowServing ?? null, moderate: ref?.moderateServing ?? null, high: ref?.highServing ?? null },
-    confidence: u.overrideFodmap ? 'user' : untested ? 'low' : ref?.confidence ?? 'user',
+    confidence: u.overrideFodmap ? 'user' : derived ? 'medium' : untested ? 'low' : ref?.confidence ?? 'user',
     conflictCount: ref?.conflictCount ?? 0, tags: [...tags], ingredients: u.ingredients, ref, user: u, favorite: u.favorite,
   };
 }

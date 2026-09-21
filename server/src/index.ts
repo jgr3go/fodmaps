@@ -5,6 +5,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import { applyChanges, changesSince, counts, type Row, type Table } from './db.js';
 import { summarize } from './analyze.js';
 import { lookup } from './lookup.js';
+import { readLabel } from './label.js';
 
 const TOKEN = process.env.API_TOKEN;
 if (!TOKEN || TOKEN.length < 24) { console.error('API_TOKEN must be set (npm run token to generate one)'); process.exit(1); }
@@ -56,6 +57,21 @@ app.post('/lookup', async (c) => {
   if (!process.env.ANTHROPIC_API_KEY) return c.json({ error: 'The server has no ANTHROPIC_API_KEY yet. Add it to /etc/gutlog-api.env and restart gutlog-api.' }, 503);
   try {
     return c.json(await lookup(body.name));
+  } catch (e) {
+    if (e instanceof Anthropic.RateLimitError) return c.json({ error: 'rate limited, try again in a minute' }, 429);
+    if (e instanceof Anthropic.APIError) return c.json({ error: `model API error ${e.status}: ${e.message}` }, 502);
+    return c.json({ error: (e as Error).message }, 500);
+  }
+});
+
+app.post('/label', async (c) => {
+  const body = (await c.req.json().catch(() => null)) as { image?: string; mediaType?: string } | null;
+  if (!body?.image || typeof body.image !== 'string') return c.json({ error: 'image required' }, 400);
+  if (body.image.length > 6_000_000) return c.json({ error: 'image too large' }, 413);
+  const mt = body.mediaType === 'image/png' || body.mediaType === 'image/webp' ? body.mediaType : 'image/jpeg';
+  if (!process.env.ANTHROPIC_API_KEY) return c.json({ error: 'The server has no ANTHROPIC_API_KEY yet.' }, 503);
+  try {
+    return c.json(await readLabel(body.image, mt));
   } catch (e) {
     if (e instanceof Anthropic.RateLimitError) return c.json({ error: 'rate limited, try again in a minute' }, 429);
     if (e instanceof Anthropic.APIError) return c.json({ error: `model API error ${e.status}: ${e.message}` }, 502);
