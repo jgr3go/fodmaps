@@ -77,7 +77,29 @@ export async function getDayLog(date: string): Promise<DayLog | undefined> {
 export async function upsertDayLog(date: string, patch: Partial<DayLog>): Promise<DayLog> {
   const cur = (await db.dayLogs.get(date)) ?? { id: date, distress: null, symptoms: [], exercise: null, flags: [], notes: '', updatedAt: 0, deleted: 0 as const };
   const next: DayLog = { ...cur, ...patch, id: date, deleted: 0, updatedAt: now() };
+  if ('distress' in patch && !('autoZero' in patch)) next.autoZero = false;
   await db.dayLogs.put(next); return next;
+}
+/**
+ * A day with food logged but no rating is almost always a day that felt fine and never got rated. Once the day is
+ * over, record it as 0 (marked autoZero) so it counts as a good day instead of vanishing from the analysis.
+ * Days with a timed flare-up are left alone: the flare-up already scores them.
+ */
+export async function backfillZeroDays(todayStr: string, lookbackDays = 45): Promise<number> {
+  const { addDays } = await import('../lib/dates');
+  const from = addDays(todayStr, -lookbackDays), to = addDays(todayStr, -1);
+  const entries = await entriesBetween(from, to);
+  const dates = [...new Set(entries.map((e) => e.date))];
+  if (!dates.length) return 0;
+  const logs = new Map((await dayLogsBetween(from, to)).map((d) => [d.id, d]));
+  const events = new Set((await eventsBetween(from, to)).map((e) => e.date));
+  let n = 0;
+  for (const date of dates) {
+    const log = logs.get(date);
+    if (log?.distress != null || events.has(date)) continue;
+    await upsertDayLog(date, { distress: 0, autoZero: true }); n++;
+  }
+  return n;
 }
 export async function dayLogsBetween(from: string, to: string): Promise<DayLog[]> {
   return (await db.dayLogs.where('id').between(from, to, true, true).toArray()).filter((d) => !d.deleted);

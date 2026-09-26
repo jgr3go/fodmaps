@@ -10,7 +10,7 @@ export function buildDigest(a: Analysis) {
     symptoms: f.bySymptom.filter((s) => s.lift > 0.15 && s.n >= 4).map((s) => `${s.symptom} +${Math.round(s.lift * 100)}pp`),
   }));
   return {
-    period: { from: a.from, to: a.to, loggedDays: a.loggedDays, entries: a.entryCount, meanDistress: r2(a.meanDistress), badDays: a.badDays },
+    period: { from: a.from, to: a.to, loggedDays: a.loggedDays, entries: a.entryCount, meanDistress: r2(a.meanDistress), badDays: a.badDays, autoZeroDays: a.autoZeroDays, note: 'autoZeroDays were recorded as 0 automatically because food was logged but the day was never rated; treat them as probably-fine, not certainly-fine.' },
     foods: feat(['food', 'ingredient'], 25),
     groups: feat(['group'], 5),
     tags: feat(['tag'], 10),

@@ -7,6 +7,9 @@ const Insights = lazy(() => import('./screens/Insights'));
 import Settings from './screens/Settings';
 import Phases from './screens/Phases';
 import { useAutoSync } from './lib/sync';
+import { useEffect } from 'react';
+import { backfillZeroDays } from './db/repo';
+import { today } from './lib/dates';
 
 const tabs = [
   { to: '/', label: 'Today', icon: '◔' },
@@ -17,6 +20,13 @@ const tabs = [
 
 export default function App() {
   useAutoSync();
+  useEffect(() => {
+    const run = () => { backfillZeroDays(today()).catch(() => {}); };
+    run();
+    const onVis = () => { if (document.visibilityState === 'visible') run(); };
+    document.addEventListener('visibilitychange', onVis);
+    return () => document.removeEventListener('visibilitychange', onVis);
+  }, []);
   return (
     <HashRouter>
       <div className="mx-auto min-h-full max-w-lg">

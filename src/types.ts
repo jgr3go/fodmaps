@@ -115,6 +115,7 @@ export interface DayLog {
   symptoms: Symptom[];
   exercise: Exercise | null;
   flags?: DayFlag[];          // day context, optional for rows written before this field existed
+  autoZero?: boolean;         // distress was filled in as 0 automatically (food logged, never rated); cleared when the user rates
   notes: string;
   updatedAt: number;
   deleted: 0 | 1;

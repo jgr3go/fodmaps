@@ -35,6 +35,7 @@ export interface LoadCorrelation { group: Group | 'total'; rhoSameDay: number; r
 export interface Adjustment { key: string; label: string; lift: number; days: number }
 export interface Analysis {
   from: string; to: string; loggedDays: number; entryCount: number; meanDistress: number; badDays: number;
+  autoZeroDays: number;       // days recorded as 0 automatically (food logged, never rated)
   days: DaySeries[]; features: FeatureResult[]; loadCorrelation: LoadCorrelation[];
   /** Non-food effects (context flags, exercise) subtracted from those days' scores before foods were scored. */
   adjustments: Adjustment[];
@@ -250,6 +251,7 @@ export function analyze(input: AnalysisInput): Analysis {
   const distressVals = scoredDates.map((d) => scores.get(d)!);
   return {
     from, to, loggedDays, entryCount: entries.length, meanDistress: mean(distressVals), badDays: distressVals.filter((v) => v >= 6).length,
+    autoZeroDays: dayLogs.filter((d) => d.autoZero && d.distress === 0 && d.id >= from && d.id <= to).length,
     days, features, loadCorrelation, adjustments,
   };
 }

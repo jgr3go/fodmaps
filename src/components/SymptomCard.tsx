@@ -2,7 +2,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { useState } from 'react';
 import { Button, Card, Chip, Label } from './ui';
 import { addEvent, deleteEvent, eventsForDate, getDayLog, upsertDayLog } from '../db/repo';
-import { nowTime } from '../lib/dates';
+import { nowTime, today } from '../lib/dates';
 import { DAY_FLAGS, EXERCISE, SYMPTOMS, type DayFlag, type Exercise, type Symptom } from '../types';
 
 export function SymptomCard({ date }: { date: string }) {
@@ -27,7 +27,11 @@ export function SymptomCard({ date }: { date: string }) {
       </div>
       <input type="range" min={0} max={10} step={1} value={distress ?? 0} onChange={(e) => upsertDayLog(date, { distress: Number(e.target.value) })} className="mt-1 w-full" />
       <div className="flex justify-between text-[10px] text-slate-400"><span>0 fine</span><span>5 uncomfortable</span><span>10 worst</span></div>
-      {distress == null && <p className="mt-1 text-xs text-slate-400">Slide to record. Recording 0 on good days matters as much as bad ones.</p>}
+      <div className="mt-2 flex items-center gap-2">
+        <button onClick={() => upsertDayLog(date, { distress: 0 })} className={`rounded-full border px-3 py-1 text-xs font-medium ${distress === 0 && !log?.autoZero ? 'border-emerald-600 bg-emerald-600 text-white' : 'border-emerald-300 bg-emerald-50 text-emerald-800'}`}>✓ Felt fine (0)</button>
+        {distress == null && <span className="text-[11px] text-slate-400">{date === today() ? 'Untouched days with food logged are recorded as 0 tomorrow.' : 'Not rated. Will be recorded as 0 automatically.'}</span>}
+        {log?.autoZero && <span className="text-[11px] text-slate-400">Recorded as 0 automatically. Slide or tap to change.</span>}
+      </div>
 
       <div className="mt-3"><Label>Symptoms</Label>
         <div className="flex flex-wrap gap-1.5">{SYMPTOMS.map((s) => <Chip key={s} tone="rose" active={symptoms.includes(s)} onClick={() => toggle(s)}>{s}</Chip>)}</div>
