@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from 'react';
 import { Button, Chip, Label, Sheet } from './ui';
 import { FodmapPills } from './FodmapPills';
 import { searchFoods, type SearchHit } from '../lib/search';
+import { MealBuilder, type MealItem } from './MealBuilder';
+import type { Ingredient } from '../types';
 import { useFoodResolver } from '../db/hooks';
 import { addEntry, foodFromFreeText, newFood, recentFoodIds, saveFood } from '../db/repo';
 import { useLiveQuery } from 'dexie-react-hooks';
@@ -17,7 +19,7 @@ export function AddFoodSheet({ open, onClose, date, slot }: { open: boolean; onC
   const [time, setTime] = useState<string>('');
   const [withTime, setWithTime] = useState(false);
   const [ingredientMode, setIngredientMode] = useState(false);
-  const [pending, setPending] = useState<{ name: string; ingredients: string[] } | null>(null);
+  const [pending, setPending] = useState<{ name: string; items: MealItem[] } | null>(null);
   const recents = useLiveQuery(() => recentFoodIds(24), [], [] as string[]);
   const favorites = useMemo(() => foods.filter((f) => f.favorite).map((f) => (f.source === 'override' && f.refId ? `ref:${f.refId}` : f.id)), [foods]);
 
@@ -56,20 +58,15 @@ export function AddFoodSheet({ open, onClose, date, slot }: { open: boolean; onC
   async function addFreeText() {
     // Comma-separated text = ad-hoc dish made of its parts. Otherwise a plain free-text food, still counted.
     if (isCommaList) {
-      const parts = q.split(',').map((s) => s.trim()).filter(Boolean);
-      setPending({ name: parts.join(', ').slice(0, 60), ingredients: parts }); setIngredientMode(true); return;
+      const parts = q.split(',').map((s) => s.trim().toLowerCase()).filter(Boolean);
+      const items: MealItem[] = parts.map((p) => { const h = searchFoods(p, foods, 1)[0]; return h && h.score < 0.15 ? { foodId: h.id, name: h.name, weight: 1 } : { foodId: null, name: p, weight: 1 }; });
+      setPending({ name: parts.join(', ').slice(0, 60), items }); setIngredientMode(true); return;
     }
     const f = await foodFromFreeText(q);
     await commit(f.id);
   }
-  async function saveDish(name: string, parts: string[]) {
-    const ingredients = [] as { foodId: string }[];
-    for (const p of parts) {
-      const best = searchFoods(p, foods, 1)[0];
-      const id = best && best.score < 0.15 ? best.id : (await foodFromFreeText(p)).id;
-      ingredients.push({ foodId: id });
-    }
-    const dish = await saveFood(newFood({ name: name.trim().toLowerCase(), kind: 'dish', ingredients, category: 'other' }));
+  async function saveDish(name: string, ingredients: Ingredient[]) {
+    const dish = await saveFood(newFood({ name, kind: 'dish', ingredients, category: 'other', favorite: true }));
     await commit(dish.id);
   }
 
@@ -90,8 +87,8 @@ export function AddFoodSheet({ open, onClose, date, slot }: { open: boolean; onC
 
   return (
     <Sheet open={open} onClose={onClose} title={`Add to ${SLOT_LABEL[slot]}`} anchor="top">
-      {ingredientMode && pending ? (
-        <DishForm initialName={pending.name} initialParts={pending.ingredients} onCancel={() => setIngredientMode(false)} onSave={saveDish} />
+      {ingredientMode ? (
+        <MealBuilder initialName={pending?.name ?? ''} initialItems={pending?.items ?? []} saveLabel="Save meal and add" onCancel={() => { setIngredientMode(false); setPending(null); }} onSave={saveDish} />
       ) : (
         <>
           <input autoFocus value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search food, or type ingredients separated by commas"
@@ -127,39 +124,12 @@ export function AddFoodSheet({ open, onClose, date, slot }: { open: boolean; onC
               </li>
             </ul>
           )}
-          {q.trim().length < 2 && (<>{quick(favorites, 'Favorites')}{quick(recents ?? [], 'Recent')}</>)}
+          {q.trim().length < 2 && (<>
+            {quick(favorites, 'Favorites')}{quick(recents ?? [], 'Recent')}
+            <button onClick={() => { setPending(null); setIngredientMode(true); }} className="mt-4 w-full rounded-xl border border-dashed border-teal-300 px-3 py-2 text-sm text-teal-800">+ New meal (several ingredients, saved for reuse)</button>
+          </>)}
         </>
       )}
     </Sheet>
-  );
-}
-
-export function DishForm({ initialName, initialParts, onCancel, onSave }: { initialName: string; initialParts: string[]; onCancel: () => void; onSave: (name: string, parts: string[]) => void }) {
-  const [name, setName] = useState(initialName);
-  const [parts, setParts] = useState(initialParts);
-  const [draft, setDraft] = useState('');
-  return (
-    <div>
-      <Label>Dish name</Label>
-      <input value={name} onChange={(e) => setName(e.target.value)} className="w-full rounded-xl border border-slate-300 px-3 py-2" />
-      <div className="mt-3"><Label>Ingredients</Label></div>
-      <ul className="space-y-1">
-        {parts.map((p, i) => (
-          <li key={i} className="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-1.5 text-sm">
-            <span>{p}</span><button className="text-slate-400" onClick={() => setParts(parts.filter((_, j) => j !== i))}>✕</button>
-          </li>
-        ))}
-      </ul>
-      <div className="mt-2 flex gap-2">
-        <input value={draft} onChange={(e) => setDraft(e.target.value)} placeholder="add ingredient" className="flex-1 rounded-xl border border-slate-300 px-3 py-2 text-sm"
-          onKeyDown={(e) => { if (e.key === 'Enter' && draft.trim()) { setParts([...parts, draft.trim()]); setDraft(''); } }} />
-        <Button kind="ghost" onClick={() => { if (draft.trim()) { setParts([...parts, draft.trim()]); setDraft(''); } }}>+</Button>
-      </div>
-      <p className="mt-2 text-xs text-slate-500">Ingredients are what the analysis attributes to. Each is matched to the reference table when possible.</p>
-      <div className="mt-4 flex gap-2">
-        <Button kind="ghost" onClick={onCancel}>Back</Button>
-        <Button className="flex-1" disabled={!name.trim() || !parts.length} onClick={() => onSave(name, parts)}>Save dish and add</Button>
-      </div>
-    </div>
   );
 }

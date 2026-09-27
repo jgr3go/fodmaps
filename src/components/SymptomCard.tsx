@@ -1,6 +1,7 @@
 import { useLiveQuery } from 'dexie-react-hooks';
 import { useState } from 'react';
 import { Button, Card, Chip, Label } from './ui';
+import { Scale } from './Scale';
 import { addEvent, deleteEvent, eventsForDate, getDayLog, upsertDayLog } from '../db/repo';
 import { nowTime, today } from '../lib/dates';
 import { DAY_FLAGS, EXERCISE, SYMPTOMS, type DayFlag, type Exercise, type Symptom } from '../types';
@@ -25,7 +26,7 @@ export function SymptomCard({ date }: { date: string }) {
         <h3 className="text-sm font-semibold">How was your gut today?</h3>
         <span className={`text-2xl font-bold ${distress == null ? 'text-slate-300' : distress >= 7 ? 'text-rose-600' : distress >= 4 ? 'text-amber-600' : 'text-emerald-600'}`}>{distress ?? '–'}</span>
       </div>
-      <input type="range" min={0} max={10} step={1} value={distress ?? 0} onChange={(e) => upsertDayLog(date, { distress: Number(e.target.value) })} className="mt-1 w-full" />
+      <div className="mt-2"><Scale value={distress} onChange={(v) => upsertDayLog(date, { distress: v })} /></div>
       <div className="flex justify-between text-[10px] text-slate-400"><span>0 fine</span><span>5 uncomfortable</span><span>10 worst</span></div>
       <div className="mt-2 flex items-center gap-2">
         <button onClick={() => upsertDayLog(date, { distress: 0 })} className={`rounded-full border px-3 py-1 text-xs font-medium ${distress === 0 && !log?.autoZero ? 'border-emerald-600 bg-emerald-600 text-white' : 'border-emerald-300 bg-emerald-50 text-emerald-800'}`}>✓ Felt fine (0)</button>
@@ -67,9 +68,9 @@ export function SymptomCard({ date }: { date: string }) {
           <div className="mt-2 rounded-xl bg-slate-50 p-3">
             <div className="flex items-center gap-2">
               <input type="time" value={evTime} onChange={(e) => setEvTime(e.target.value)} className="rounded-lg border border-slate-300 px-2 py-1 text-sm" />
-              <input type="range" min={0} max={10} value={evSev} onChange={(e) => setEvSev(Number(e.target.value))} className="flex-1" />
-              <span className="w-6 text-right text-sm font-semibold">{evSev}</span>
+              <span className="text-xs text-slate-500">severity</span>
             </div>
+            <div className="mt-2"><Scale value={evSev} onChange={setEvSev} size="sm" /></div>
             <div className="mt-2 flex flex-wrap gap-1.5">{SYMPTOMS.map((s) => <Chip key={s} tone="rose" active={evSym.includes(s)} onClick={() => setEvSym(evSym.includes(s) ? evSym.filter((x) => x !== s) : [...evSym, s])}>{s}</Chip>)}</div>
             <Button className="mt-2 w-full" onClick={async () => { await addEvent({ date, time: evTime, severity: evSev, symptoms: evSym, notes: '' }); setShowEvent(false); setEvSym([]); }}>Save flare-up</Button>
             <p className="mt-1 text-[11px] text-slate-500">Timed flare-ups let the analysis separate fast reactions (allergy-like, within hours) from slow ones (FODMAP-like, next day or later).</p>

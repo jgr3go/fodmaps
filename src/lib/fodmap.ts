@@ -36,13 +36,14 @@ export function loadOf(p: FodmapProfile, portion: Portion): Record<Group, number
   return { fructans: val(p.fructans), gos: val(p.gos), lactose: val(p.lactose), fructose: val(p.fructose), polyols: val(p.polyols) };
 }
 
-/** Dish profile = per-group max over ingredients, each scaled by its weight (weight < 1 steps down one). */
+/** Dish profile = per-group max over ingredients; an ingredient's size steps its rating down (S, weight <= 0.5) or up (L, weight >= 1.5). */
 export function deriveDishProfile(ingredients: { profile: FodmapProfile; weight?: number }[]): FodmapProfile {
   const out = { ...EMPTY_PROFILE };
   for (const { profile, weight = 1 } of ingredients) {
     for (const g of GROUPS) {
       let r = profile[g]; if (!r) continue;
-      if (weight < 0.5) r = BY_RANK[Math.max(1, RANK[r] - 1)] ?? r;
+      if (weight <= 0.5) r = BY_RANK[Math.max(1, RANK[r] - 1)] ?? r;
+      else if (weight >= 1.5) r = BY_RANK[Math.min(3, RANK[r] + 1)] ?? r;
       const cur = out[g];
       if (!cur || RANK[r] > RANK[cur]) out[g] = r;
     }

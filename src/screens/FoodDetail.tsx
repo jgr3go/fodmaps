@@ -1,15 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { FodmapPills, RatingPill } from '../components/FodmapPills';
-import { DishForm } from '../components/AddFoodSheet';
+import { MealBuilder, itemsFromIngredients } from '../components/MealBuilder';
 import { FindRatings } from '../components/FindRatings';
 import { LabelImport } from '../components/LabelImport';
 import { Button, Card, Label } from '../components/ui';
 import { useFoodResolver } from '../db/hooks';
-import { clearOverrideProfile, deleteFood, foodFromFreeText, saveFood, setOverrideProfile, toggleFavorite } from '../db/repo';
+import { clearOverrideProfile, deleteFood, saveFood, setOverrideProfile, toggleFavorite } from '../db/repo';
 import { EMPTY_PROFILE, isRefKey, scanIngredientText } from '../lib/fodmap';
-import { searchFoods } from '../lib/search';
-import { GROUPS, GROUP_LABEL, type FodmapProfile, type Rating } from '../types';
+import { GROUPS, GROUP_LABEL, type FodmapProfile, type Ingredient, type Rating } from '../types';
 import tagsJson from '../../data/tags.json';
 
 const TAG_LABEL = (tagsJson as { tags: Record<string, string> }).tags;
@@ -19,7 +18,7 @@ export default function FoodDetail() {
   const { id = '' } = useParams();
   const foodId = decodeURIComponent(id);
   const nav = useNavigate();
-  const { foods, resolve, ready } = useFoodResolver();
+  const { resolve, ready } = useFoodResolver();
   const view = resolve(foodId);
   const [details, setDetails] = useState<Details | null>(null);
   const [editing, setEditing] = useState(false);
@@ -49,13 +48,8 @@ export default function FoodDetail() {
     else if (view!.user) await saveFood({ ...view!.user, overrideFodmap: false });
     setEditing(false);
   }
-  async function saveIngredients(name: string, parts: string[]) {
-    const ingredients: { foodId: string }[] = [];
-    for (const p of parts) {
-      const best = searchFoods(p, foods, 1)[0];
-      ingredients.push({ foodId: best && best.score < 0.15 && best.id !== view!.id ? best.id : (await foodFromFreeText(p)).id });
-    }
-    await saveFood({ ...view!.user!, name: name.trim().toLowerCase(), kind: 'dish', ingredients, source: 'user' });
+  async function saveIngredients(name: string, ingredients: Ingredient[]) {
+    await saveFood({ ...view!.user!, name, kind: 'dish', ingredients: ingredients.filter((i) => i.foodId !== view!.id), source: 'user' });
     setIngredientEdit(false);
   }
 
@@ -112,11 +106,11 @@ export default function FoodDetail() {
           <div className="flex items-center justify-between"><Label>Ingredients</Label>
             {!ingredientEdit && <button className="text-xs font-medium text-teal-700" onClick={() => setIngredientEdit(true)}>{view.ingredients.length ? 'edit' : '+ add ingredients'}</button>}</div>
           {ingredientEdit ? (
-            <DishForm initialName={view.name} initialParts={view.ingredients.map((i) => resolve(i.foodId)?.name ?? '?')} onCancel={() => setIngredientEdit(false)} onSave={saveIngredients} />
+            <MealBuilder initialName={view.name} initialItems={itemsFromIngredients(view.ingredients, resolve)} excludeId={view.id} saveLabel="Save ingredients" onCancel={() => setIngredientEdit(false)} onSave={saveIngredients} />
           ) : view.ingredients.length ? (
             <ul className="divide-y divide-slate-100">
               {view.ingredients.map((i) => { const iv = resolve(i.foodId); return iv ? (
-                <li key={i.foodId}><Link to={`/foods/${encodeURIComponent(iv.id)}`} className="flex items-center justify-between py-1.5 text-sm"><span>{iv.name}</span><FodmapPills profile={iv.fodmap} overall={iv.overall} /></Link></li>
+                <li key={i.foodId}><Link to={`/foods/${encodeURIComponent(iv.id)}`} className="flex items-center justify-between py-1.5 text-sm"><span>{iv.name}<span className="ml-1.5 text-[10px] text-slate-400">{(i.weight ?? 1) <= 0.5 ? 'S' : (i.weight ?? 1) >= 1.5 ? 'L' : 'M'}</span></span><FodmapPills profile={iv.fodmap} overall={iv.overall} /></Link></li>
               ) : null; })}
             </ul>
           ) : <p className="text-xs text-slate-500">No ingredients yet. The analysis can only blame this food as a whole until you add them.</p>}

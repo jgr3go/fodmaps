@@ -47,13 +47,14 @@ export interface AnalysisInput {
 interface Exposure { date: string; minutes: number; dose: number }
 interface Feature { key: string; kind: FeatureKind; label: string; foodId?: string; exposures: Exposure[] }
 
-function flattenIngredients(v: FoodView, resolve: (id: string) => FoodView | null, depth = 0, seen = new Set<string>()): FoodView[] {
+function flattenIngredients(v: FoodView, resolve: (id: string) => FoodView | null, depth = 0, seen = new Set<string>(), scale = 1): { view: FoodView; weight: number }[] {
   if (depth > 3) return [];
-  const out: FoodView[] = [];
+  const out: { view: FoodView; weight: number }[] = [];
   for (const i of v.ingredients) {
     if (seen.has(i.foodId)) continue; seen.add(i.foodId);
     const iv = resolve(i.foodId); if (!iv) continue;
-    out.push(iv, ...flattenIngredients(iv, resolve, depth + 1, seen));
+    const w = scale * (i.weight ?? 1);
+    out.push({ view: iv, weight: w }, ...flattenIngredients(iv, resolve, depth + 1, seen, w));
   }
   return out;
 }
@@ -69,11 +70,11 @@ export function buildFeatures(entries: Entry[], dayLogs: DayLog[], resolve: (id:
     const w = PORTION_WEIGHT[e.portion];
     add(`food:${v.id}`, v.kind === 'dish' ? 'food' : 'food', v.name, { date: e.date, minutes, dose: w }, v.id);
     const parts = v.kind === 'dish' ? flattenIngredients(v, resolve) : [];
-    for (const p of parts) add(`food:${p.id}`, 'ingredient', p.name, { date: e.date, minutes, dose: w }, p.id);
+    for (const p of parts) add(`food:${p.view.id}`, 'ingredient', p.view.name, { date: e.date, minutes, dose: w * p.weight }, p.view.id);
     const profile = adjustProfile(v.fodmap, e.portion);
     const load = loadOf(profile, 'M');
     for (const g of GROUPS) if (load[g] >= 1.5) add(`group:${g}`, 'group', g, { date: e.date, minutes, dose: load[g] });
-    const tags = new Set([...v.tags, ...parts.flatMap((p) => p.tags)]);
+    const tags = new Set([...v.tags, ...parts.flatMap((p) => p.view.tags)]);
     for (const t of tags) add(`tag:${t}`, 'tag', t, { date: e.date, minutes, dose: w });
   }
   for (const d of dayLogs) {

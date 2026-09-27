@@ -1,5 +1,9 @@
 import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { MealBuilder } from '../components/MealBuilder';
+import { Sheet } from '../components/ui';
+import { newFood, saveFood } from '../db/repo';
+import type { Ingredient } from '../types';
 import { FodmapPills } from '../components/FodmapPills';
 import { Card, Chip, Empty, Label } from '../components/ui';
 import { useFoodResolver } from '../db/hooks';
@@ -14,6 +18,12 @@ export default function Foods() {
   const [q, setQ] = useState('');
   const [tab, setTab] = useState<'mine' | 'reference'>('mine');
   const [cat, setCat] = useState<Category | null>(null);
+  const [building, setBuilding] = useState(false);
+  const nav = useNavigate();
+  async function saveMeal(name: string, ingredients: Ingredient[]) {
+    const dish = await saveFood(newFood({ name, kind: 'dish', ingredients, category: 'other', favorite: true }));
+    setBuilding(false); nav(`/foods/${encodeURIComponent(dish.id)}`);
+  }
 
   const mine = useMemo(() => foods.filter((f) => f.source !== 'override').sort((a, b) => a.name.localeCompare(b.name)), [foods]);
   const overridden = useMemo(() => [...overrides.values()].filter((o) => o.overrideFodmap || o.favorite), [overrides]);
@@ -40,10 +50,13 @@ export default function Foods() {
         <Card>{hits.length ? <ul className="divide-y divide-slate-100">{hits.map((h) => <Row key={h.id} id={h.id} />)}</ul> : <Empty>no matches</Empty>}</Card>
       ) : (
         <>
-          <div className="flex gap-2">
+          <div className="flex items-center gap-2">
             <Chip active={tab === 'mine'} onClick={() => setTab('mine')}>My foods ({mine.length})</Chip>
             <Chip active={tab === 'reference'} onClick={() => setTab('reference')}>Reference ({REFERENCE.length})</Chip>
+            <span className="flex-1" />
+            <button onClick={() => setBuilding(true)} className="rounded-full bg-teal-700 px-3 py-1 text-xs font-semibold text-white">+ New meal</button>
           </div>
+          <Sheet open={building} onClose={() => setBuilding(false)} title="New meal" anchor="top"><MealBuilder onCancel={() => setBuilding(false)} onSave={saveMeal} /></Sheet>
           {tab === 'mine' && (
             <>
               {needIngredients.length > 0 && (
