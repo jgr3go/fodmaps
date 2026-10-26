@@ -1,14 +1,19 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Button, Label } from './ui';
 import { FodmapPills } from './FodmapPills';
 import { useFoodResolver } from '../db/hooks';
 import { foodFromFreeText } from '../db/repo';
 import { deriveDishProfile } from '../lib/fodmap';
+import { matchIngredients, positionWeight } from '../lib/ingredients';
+import { fetchRecipe, type RecipeAmount } from '../lib/recipe';
 import { searchFoods } from '../lib/search';
 import { PORTION_WEIGHT, type Ingredient, type Portion } from '../types';
 
 export interface MealItem { foodId: string | null; name: string; weight: number }
 const portionOf = (w: number): Portion => (w <= 0.5 ? 'S' : w >= 1.5 ? 'L' : 'M');
+/** Recipe amount -> ingredient weight. Garlic, onion and the other always-counted items never drop below M. */
+const AMOUNT_WEIGHT: Record<RecipeAmount, number> = { large: PORTION_WEIGHT.L, medium: PORTION_WEIGHT.M, small: PORTION_WEIGHT.S };
+const recipeWeight = (name: string, amount: RecipeAmount) => (positionWeight(name, 99) === 1 ? Math.max(AMOUNT_WEIGHT[amount], PORTION_WEIGHT.M) : AMOUNT_WEIGHT[amount]);
 
 /**
  * Build or edit a meal: name, ingredient search with the same autocomplete and FODMAP pills as the add sheet, and an
@@ -23,6 +28,13 @@ export function MealBuilder({ initialName = '', initialItems = [], excludeId, sa
   const [items, setItems] = useState<MealItem[]>(initialItems);
   const [q, setQ] = useState('');
   const [busy, setBusy] = useState(false);
+  const [asking, setAsking] = useState<{ text: string; state: 'busy' | 'ok' | 'error' } | null>(null);
+  const [elapsed, setElapsed] = useState(0);
+  const askBusy = asking?.state === 'busy';
+  useEffect(() => {
+    if (!askBusy) return; setElapsed(0);
+    const t = setInterval(() => setElapsed((e) => e + 1), 1000); return () => clearInterval(t);
+  }, [askBusy]);
   const pool = useMemo(() => foods.filter((f) => f.id !== excludeId), [foods, excludeId]);
   const hits = useMemo(() => searchFoods(q, pool, 8), [q, pool]);
   const preview = useMemo(() => deriveDishProfile(items.map((it) => ({ profile: (it.foodId ? resolve(it.foodId)?.fodmap : undefined) ?? { fructans: null, gos: null, lactose: null, fructose: null, polyols: null }, weight: it.weight }))), [items, resolve]);
@@ -31,6 +43,23 @@ export function MealBuilder({ initialName = '', initialItems = [], excludeId, sa
     if (items.some((it) => (foodId ? it.foodId === foodId : it.name === label))) { setQ(''); return; }
     setItems([...items, { foodId, name: label, weight: 1 }]); setQ('');
   };
+  /** Fill the list from a standard recipe for the named dish; matched names get their rating, the rest are created on save. */
+  async function askClaude() {
+    setAsking({ text: 'Asking Claude for a standard recipe…', state: 'busy' });
+    try {
+      const r = await fetchRecipe(name.trim());
+      if (!r.ingredients.length) { setAsking({ text: `Claude didn't recognise "${name.trim()}" as a dish${r.notes ? `: ${r.notes}` : '.'}`, state: 'error' }); return; }
+      const matched = matchIngredients(r.ingredients.map((i) => i.name), pool, resolve, excludeId);
+      const next = [...items]; let added = 0;
+      matched.forEach((m, i) => {
+        const label = m.view?.name ?? m.name;
+        if (next.some((it) => (m.foodId ? it.foodId === m.foodId : it.name === label))) return;
+        next.push({ foodId: m.foodId, name: label, weight: recipeWeight(m.name, r.ingredients[i].amount) }); added++;
+      });
+      setItems(next);
+      setAsking({ text: `Added ${added} ingredient${added === 1 ? '' : 's'} from a typical ${r.dish}. ${r.notes} Remove what wasn't in yours and fix sizes.`, state: 'ok' });
+    } catch (e) { setAsking({ text: `Failed: ${(e as Error).message}`, state: 'error' }); }
+  }
   async function save() {
     setBusy(true);
     try {
@@ -48,7 +77,13 @@ export function MealBuilder({ initialName = '', initialItems = [], excludeId, sa
       <Label>Meal name</Label>
       <input value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g. usual breakfast, chicken tikka" className="w-full rounded-xl border border-slate-300 px-3 py-2 text-base" />
       <div className="mt-3 flex items-center justify-between"><Label>Ingredients</Label>{items.length > 0 && <FodmapPills profile={preview} />}</div>
-      {items.length === 0 && <p className="text-xs text-slate-400">Add what's in it. The meal's rating is derived from its ingredients and their sizes.</p>}
+      {items.length === 0 && <p className="text-xs text-slate-400">Add what's in it, or let Claude fill in a standard recipe. The meal's rating is derived from its ingredients and their sizes.</p>}
+      {name.trim().length >= 3 && (
+        <div className="mt-1 flex items-center gap-2">
+          <Button kind="ghost" onClick={askClaude} disabled={askBusy || busy}>{askBusy ? `Asking… ${elapsed}s` : items.length ? '✨ Add standard ingredients' : '✨ Ask Claude for the ingredients'}</Button>
+        </div>
+      )}
+      {asking && <p className={`mt-1 text-xs ${asking.state === 'error' ? 'text-rose-700' : 'text-teal-700'}`}>{askBusy && <span className="mr-1 inline-block h-2 w-2 animate-pulse rounded-full bg-teal-600" />}{asking.text}</p>}
       <ul className="divide-y divide-slate-100">
         {items.map((it, i) => { const v = it.foodId ? resolve(it.foodId) : null; return (
           <li key={i} className="flex items-center gap-2 py-1.5">

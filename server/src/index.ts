@@ -6,6 +6,7 @@ import { applyChanges, changesSince, counts, type Row, type Table } from './db.j
 import { summarize } from './analyze.js';
 import { lookup } from './lookup.js';
 import { readLabel } from './label.js';
+import { recipe } from './recipe.js';
 
 const TOKEN = process.env.API_TOKEN;
 if (!TOKEN || TOKEN.length < 24) { console.error('API_TOKEN must be set (npm run token to generate one)'); process.exit(1); }
@@ -72,6 +73,19 @@ app.post('/label', async (c) => {
   if (!process.env.ANTHROPIC_API_KEY) return c.json({ error: 'The server has no ANTHROPIC_API_KEY yet.' }, 503);
   try {
     return c.json(await readLabel(body.image, mt));
+  } catch (e) {
+    if (e instanceof Anthropic.RateLimitError) return c.json({ error: 'rate limited, try again in a minute' }, 429);
+    if (e instanceof Anthropic.APIError) return c.json({ error: `model API error ${e.status}: ${e.message}` }, 502);
+    return c.json({ error: (e as Error).message }, 500);
+  }
+});
+
+app.post('/recipe', async (c) => {
+  const body = (await c.req.json().catch(() => null)) as { name?: string } | null;
+  if (!body?.name || typeof body.name !== 'string' || body.name.trim().length < 2) return c.json({ error: 'name required' }, 400);
+  if (!process.env.ANTHROPIC_API_KEY) return c.json({ error: 'The server has no ANTHROPIC_API_KEY yet.' }, 503);
+  try {
+    return c.json(await recipe(body.name));
   } catch (e) {
     if (e instanceof Anthropic.RateLimitError) return c.json({ error: 'rate limited, try again in a minute' }, 429);
     if (e instanceof Anthropic.APIError) return c.json({ error: `model API error ${e.status}: ${e.message}` }, 502);
