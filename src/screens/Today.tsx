@@ -12,9 +12,11 @@ import { adjustProfile, worst } from '../lib/fodmap';
 import { SLOTS, SLOT_LABEL, type Entry, type Portion, type Slot } from '../types';
 
 export default function Today() {
-  const [params] = useSearchParams();
+  // The day lives in the URL (?d=) so that coming back from a food's detail page lands on the same day, not on today.
+  const [params, setParams] = useSearchParams();
   const wanted = params.get('d');
-  const [date, setDate] = useState(wanted && /^\d{4}-\d{2}-\d{2}$/.test(wanted) && wanted <= today() ? wanted : today());
+  const date = wanted && /^\d{4}-\d{2}-\d{2}$/.test(wanted) && wanted <= today() ? wanted : today();
+  const setDate = (d: string) => setParams(d === today() ? {} : { d }, { replace: true });
   const [adding, setAdding] = useState<Slot | null>(null);
   const entries = useLiveQuery(() => entriesForDate(date), [date], [] as Entry[]);
   const { resolve } = useFoodResolver();

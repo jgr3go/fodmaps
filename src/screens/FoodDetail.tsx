@@ -56,7 +56,7 @@ export default function FoodDetail() {
   return (
     <div className="space-y-3">
       <div className="flex items-center gap-2">
-        <button onClick={() => nav(-1)} className="text-slate-500">‹ back</button>
+        <button onClick={() => ((window.history.state?.idx ?? 0) > 0 ? nav(-1) : nav('/foods'))} className="text-slate-500">‹ back</button>
         <h1 className="flex-1 truncate text-lg font-semibold">{view.name}</h1>
         <button onClick={() => toggleFavorite(view.id)} className={`text-xl ${view.favorite ? 'text-amber-500' : 'text-slate-300'}`}>★</button>
       </div>

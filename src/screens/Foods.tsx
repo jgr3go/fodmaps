@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { MealBuilder } from '../components/MealBuilder';
 import { Sheet } from '../components/ui';
 import { newFood, saveFood } from '../db/repo';
@@ -15,9 +15,19 @@ const CATS: Category[] = ['vegetable', 'fruit', 'grain', 'legume', 'nut-seed', '
 
 export default function Foods() {
   const { foods, resolve, overrides } = useFoodResolver();
-  const [q, setQ] = useState('');
-  const [tab, setTab] = useState<'mine' | 'reference'>('mine');
-  const [cat, setCat] = useState<Category | null>(null);
+  // Search, tab and category live in the URL so back from a food restores the list you were looking at.
+  const [params, setParams] = useSearchParams();
+  const q = params.get('q') ?? '';
+  const tab: 'mine' | 'reference' = params.get('tab') === 'reference' ? 'reference' : 'mine';
+  const cat = (params.get('cat') as Category | null) ?? null;
+  const patch = (next: Record<string, string | null>) => {
+    const p = new URLSearchParams(params);
+    for (const [k, v] of Object.entries(next)) v ? p.set(k, v) : p.delete(k);
+    setParams(p, { replace: true });
+  };
+  const setQ = (v: string) => patch({ q: v || null });
+  const setTab = (v: 'mine' | 'reference') => patch({ tab: v === 'mine' ? null : v });
+  const setCat = (v: Category | null) => patch({ cat: v });
   const [building, setBuilding] = useState(false);
   const nav = useNavigate();
   async function saveMeal(name: string, ingredients: Ingredient[]) {

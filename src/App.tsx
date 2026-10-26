@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { HashRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { HashRouter, NavLink, Route, Routes, useLocation, useNavigationType } from 'react-router-dom';
 import Today from './screens/Today';
 import Foods from './screens/Foods';
 import FoodDetail from './screens/FoodDetail';
@@ -7,7 +7,7 @@ const Insights = lazy(() => import('./screens/Insights'));
 import Settings from './screens/Settings';
 import Phases from './screens/Phases';
 import { useAutoSync } from './lib/sync';
-import { useEffect } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
 import { backfillZeroDays } from './db/repo';
 import { today } from './lib/dates';
 
@@ -17,6 +17,20 @@ const tabs = [
   { to: '/insights', label: 'Insights', icon: '∿' },
   { to: '/settings', label: 'Settings', icon: '⚙' },
 ];
+
+/** Restore the scroll position when going back; start new pages at the top. HashRouter has no built-in restoration. */
+function ScrollMemory() {
+  const { key } = useLocation();
+  const type = useNavigationType();
+  useLayoutEffect(() => {
+    const saved = type === 'POP' ? Number(sessionStorage.getItem(`scroll:${key}`) ?? 0) : 0;
+    const id = requestAnimationFrame(() => window.scrollTo(0, saved));
+    const save = () => sessionStorage.setItem(`scroll:${key}`, String(window.scrollY));
+    window.addEventListener('scroll', save, { passive: true });
+    return () => { cancelAnimationFrame(id); save(); window.removeEventListener('scroll', save); };
+  }, [key, type]);
+  return null;
+}
 
 export default function App() {
   useAutoSync();
@@ -29,6 +43,7 @@ export default function App() {
   }, []);
   return (
     <HashRouter>
+      <ScrollMemory />
       <div className="mx-auto min-h-full max-w-lg">
         <main className="safe-bottom px-4 pt-3">
           <Routes>
